@@ -3,7 +3,7 @@ import Contact from './Components/Contact';
 import Navigation from './Components/Navigation';
 import Projects from './Components/Projects';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Navigation />
