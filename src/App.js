@@ -8,7 +8,11 @@ import styled from "styled-components";
 const AppWrapper = styled.div``;
 
 const MainWrapper = styled.main`
-  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 102px;
 `;
 
 const App = () => {
