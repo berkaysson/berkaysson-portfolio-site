@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import useScroll from "../Hooks/useScroll";
+import { useEffect, useState } from "react";
 
 const NavigationWrapper = styled.div`
   width: 100%;
@@ -10,16 +12,19 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
 
   .logo {
-    display: block;
     padding: 0 8px;
     img {
-      display: block;
       margin: auto 8px;
       width: 25px;
       height: auto;
     }
+  }
+
+  &.nav-hidden {
+    transform: translateY(-100%);
   }
 `;
 
@@ -33,8 +38,20 @@ const NavigationMenuWrapper = styled.nav`
 `;
 
 const Navigation = () => {
+  const [navClassList, setNavClassList] = useState([]);
+  const scroll = useScroll();
+
+  useEffect(() => {
+    const _classList = [];
+
+    if (scroll.y > 100 && scroll.y - scroll.lastY > 0)
+      _classList.push("nav-hidden");
+
+    setNavClassList(_classList);
+  }, [scroll.y, scroll.lastY]);
+
   return (
-    <NavigationWrapper>
+    <NavigationWrapper className={navClassList.join(" ")}>
       <a href="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </a>
