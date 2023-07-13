@@ -3,16 +3,21 @@ import Contact from './Components/Contact';
 import Navigation from './Components/Navigation';
 import Projects from './Components/Projects';
 import Skills from './Components/Skills';
+import styled  from 'styled-components';
+
+const AppWrapper = styled.main`
+
+`;
 
 const App = () => {
   return (
-    <div className="App">
+    <AppWrapper>
       <Navigation />
       <About />
       <Skills />
       <Projects />
       <Contact />
-    </div>
+    </AppWrapper>
   );
 }
 
