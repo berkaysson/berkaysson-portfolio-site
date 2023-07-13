@@ -15,10 +15,10 @@ const NavigationWrapper = styled.div`
   transition: transform 0.2s ease-in-out;
 
   .logo {
-    padding: 0 8px;
+    padding: 0 ${({ theme }) => theme.sizes.sl};
     img {
-      margin: auto 8px;
-      width: 25px;
+      margin: auto ${({ theme }) => theme.sizes.sl};
+      width: ${({ theme }) => theme.sizes.xlg};
       height: auto;
     }
   }
@@ -29,11 +29,13 @@ const NavigationWrapper = styled.div`
 `;
 
 const NavigationMenuWrapper = styled.nav`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: ${({ theme }) => theme.sizes.xlg};
+  margin-right: ${({ theme }) => theme.sizes.xlg};
   a {
-    font-size: 22px;
-    line-height: 50px;
-    height: 50px;
-    position: relative;
+    font-size: ${({ theme }) => theme.sizes.lg};
   }
 `;
 
@@ -44,7 +46,7 @@ const Navigation = () => {
   useEffect(() => {
     const _classList = [];
 
-    if (scroll.y > 100 && scroll.y - scroll.lastY > 0)
+    if (scroll.y > 99 && scroll.y - scroll.lastY > 0)
       _classList.push("nav-hidden");
 
     setNavClassList(_classList);
