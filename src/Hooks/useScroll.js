@@ -1,37 +1,35 @@
-import { useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
-export function useScroll() {
-  // storing this to get the scroll direction
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  // the offset of the document.body
-  const [bodyOffset, setBodyOffset] = useState(
-    document.body.getBoundingClientRect()
-  );
-  // the vertical direction
-  const [scrollY, setScrollY] = useState(bodyOffset.top);
-  // the horizontal direction
-  const [scrollX, setScrollX] = useState(bodyOffset.left);
-  // scroll direction would be either up or down
-  const [scrollDirection, setScrollDirection] = useState();
-
-  const listener = (e) => {
-    setBodyOffset(document.body.getBoundingClientRect());
-    setScrollY(-bodyOffset.top);
-    setScrollX(bodyOffset.left);
-    setScrollDirection(lastScrollTop > -bodyOffset.top ? "down" : "up");
-    setLastScrollTop(-bodyOffset.top);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", listener);
-    return () => {
-      window.removeEventListener("scroll", listener);
-    };
+export default function useScroll() {
+  const [data, setData] = useState({
+    x: 0,
+    y: 0,
+    lastX: 0,
+    lastY: 0
   });
 
-  return {
-    scrollY,
-    scrollX,
-    scrollDirection,
-  };
+  // set up event listeners
+  useEffect(() => {
+    const handleScroll = () => {
+      setData((last) => {
+        return {
+          x: window.scrollX,
+          y: window.scrollY,
+          lastX: last.x,
+          lastY: last.y
+        };
+      });
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return data;
 }
+
+export const ScrollContext = createContext(null);
