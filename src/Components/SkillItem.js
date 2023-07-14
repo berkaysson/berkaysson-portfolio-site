@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 const SkillItemWrapper = styled.li`
   border: 1px solid blue;
@@ -6,8 +7,13 @@ const SkillItemWrapper = styled.li`
   height: 150px;
   position: relative;
   text-align: center;
+  //fade out transition
+  transition: ${({ theme }) => theme.transitions.main};
+  transform: scale(${({ inView }) => (inView ? 1 : 0)});
+  opacity: ${({ inView }) => (inView ? 1 : 0)};
+  filter: blur(${({ inView }) => (inView ? 0 : "3px")});
 
-  img{
+  img {
     border: 1px solid green;
     position: absolute;
     top: 0;
@@ -16,7 +22,7 @@ const SkillItemWrapper = styled.li`
     width: 100%;
     z-index: 2;
   }
-  span{
+  span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,9 +31,17 @@ const SkillItemWrapper = styled.li`
   }
 `;
 
-const SkillItem = ({ skill }) => {
+const SkillItem = ({ skill, index }) => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
   return (
-    <SkillItemWrapper>
+    <SkillItemWrapper
+      style={{ transitionDelay: `${index / Math.exp(3)}s` }}
+      ref={ref}
+      inView={inView}
+    >
       <span>{skill}</span>
       <img src="" alt="skillItemImg" />
     </SkillItemWrapper>
