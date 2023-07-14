@@ -12,7 +12,6 @@ const AboutHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
   height: 75vh;
   text-align: center;
   border: 1px solid red;
