@@ -12,7 +12,8 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.2s ease-out, blur 0.3s ease-out;
+  opacity: 1;
+  transition: ${({theme}) => theme.transitions.main};
 
   .logo {
     padding: 0 ${({ theme }) => theme.sizes.sl};
@@ -25,7 +26,8 @@ const NavigationWrapper = styled.div`
 
   &.nav-hidden {
     transform: scale(0);
-    filter: blur(2px);
+    filter: blur(3px);
+    opacity: 0;
     z-index: 0;
   }
 `;
