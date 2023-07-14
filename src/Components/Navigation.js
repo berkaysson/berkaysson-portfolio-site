@@ -12,7 +12,7 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-out, blur 0.3s ease-out;
 
   .logo {
     padding: 0 ${({ theme }) => theme.sizes.sl};
@@ -24,7 +24,9 @@ const NavigationWrapper = styled.div`
   }
 
   &.nav-hidden {
-    transform: translateY(-100%);
+    transform: scale(0);
+    filter: blur(5px);
+    z-index: 0;
   }
 `;
 
@@ -48,7 +50,6 @@ const Navigation = () => {
 
     if (scroll.y > 99 && scroll.y - scroll.lastY > 0)
       _classList.push("nav-hidden");
-
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
 
