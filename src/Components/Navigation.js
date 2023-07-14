@@ -25,7 +25,7 @@ const NavigationWrapper = styled.div`
 
   &.nav-hidden {
     transform: scale(0);
-    filter: blur(5px);
+    filter: blur(2px);
     z-index: 0;
   }
 `;
@@ -48,7 +48,7 @@ const Navigation = () => {
   useEffect(() => {
     const _classList = [];
 
-    if (scroll.y > 99 && scroll.y - scroll.lastY > 0)
+    if (scroll.y > 99 || scroll.y - scroll.lastY > 0)
       _classList.push("nav-hidden");
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
