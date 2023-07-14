@@ -40,9 +40,9 @@ const Skills = () => {
     <SkillsWrapper>
       <h2>What are My Skills</h2>
       <SkillsListWrapper>
-        {
-          skills.map((skill)=>(<SkillItem skill={skill} />))
-        }
+        {skills.map((skill, index) => (
+          <SkillItem skill={skill} key={index} index={index} />
+        ))}
       </SkillsListWrapper>
     </SkillsWrapper>
   );
