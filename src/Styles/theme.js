@@ -12,5 +12,8 @@ export const theme = {
     md: "16px",
     lg: "24px",
     xlg: "34px"
+  },
+  transitions: {
+    main:"filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease"
   }
 };
