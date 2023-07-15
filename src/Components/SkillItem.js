@@ -8,7 +8,7 @@ const SkillItemWrapper = styled.li`
   position: relative;
   text-align: center;
   //fade out transition
-  transition: ${({ theme }) => theme.transitions.main};
+  transition: ${({ theme, inView }) => inView ? theme.transitions.main : "none"};
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
