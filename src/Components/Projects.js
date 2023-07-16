@@ -73,8 +73,14 @@ const ProjectItemHeader = styled.div`
 `;
 
 const ProjectItemContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.sizes.md};
 
-`
+  p:last-child {
+    font-size: ${({ theme }) => theme.sizes.sl};
+  }
+`;
 
 const Projects = () => {
   const { ref, inView } = useInView({
@@ -94,10 +100,10 @@ const Projects = () => {
           <ProjectItemContent>
             <p>
               Lifemap is a powerful life tracking platform designed to help you
-              stay organized and achieve your goals.
+              stay organized and achieve your goals
             </p>
             <p>
-              Utilized by JavaScript, React.js, CSS, Material UI, and
+              Devoloped with JavaScript, React.js, CSS, Material UI, and
               styled-components
             </p>
           </ProjectItemContent>
