@@ -1,37 +1,111 @@
+import { useInView } from "react-intersection-observer";
+import { styled } from "styled-components";
+
+const ProjectsWrapper = styled.div`
+  border: 1px solid red;
+  padding: ${({ theme }) => theme.sizes.xlg};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: ${({ theme }) => theme.sizes.lg};
+  }
+`;
+
+const ProjectItem = styled.div`
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: ${({ theme }) => theme.sizes.xlg} ${({ theme }) => theme.sizes.sl};
+  transition: ${({ theme, inView }) =>
+    inView ? theme.transitions.main : "none"};
+  transform: scale(${({ inView }) => (inView ? 1 : 0)});
+  opacity: ${({ inView }) => (inView ? 1 : 0)};
+  filter: blur(${({ inView }) => (inView ? 0 : "3px")});
+`;
+
+const MainImg = styled.img`
+  border: 1px solid green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+`;
+
+const ProjectContent = styled.div`
+  z-index: 2;
+  background-color: gray;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.sizes.lg};
+  text-align: center;
+  padding: ${({ theme }) => theme.sizes.lg};
+  font-size: 20px;
+`;
+
+const DetailsButton = styled.a`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+const DemoButton = styled.a`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+const ProjectItemHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+`;
+
+const ProjectItemContent = styled.div`
+
+`
+
 const Projects = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
   return (
-    <div>
+    <ProjectsWrapper>
       <h1>Projects</h1>
-      <div>
-        <h2>lifemap</h2>
-        <p>
-          Lifemap is a powerful life tracking platform designed to help you stay
-          organized and achieve your goals. It provides a comprehensive solution
-          for tracking your activities and finances, allowing you to have a
-          clear overview of your progress and make informed decisions.
-        </p>
-        <ul>
-          <li>
-            Utilized JavaScript, React.js, CSS, Material UI, and
-            styled-components for development
-          </li>
-          <li>
-            Implemented features for activity tracking, habit-building, task
-            management, and financial tracking along their user friendly
-            interfaces
-          </li>
-          <li>
-            Integrated React Router for navigation and Firebase Auth for user
-            authentication
-          </li>
-          <li>
-            Implemented Firebase Realtime Database and IndexedDB for data
-            storage and management
-          </li>
-        </ul>
-        <a href="/">More details...</a>
-      </div>
-    </div>
+      <ProjectItem ref={ref} inView={inView}>
+        <MainImg src="" alt="lifemapImg" />
+        <ProjectContent>
+          <ProjectItemHeader>
+            <img src="" alt="lifemapLogo" />
+            <h2>lifemap</h2>
+          </ProjectItemHeader>
+          <ProjectItemContent>
+            <p>
+              Lifemap is a powerful life tracking platform designed to help you
+              stay organized and achieve your goals.
+            </p>
+            <p>
+              Utilized by JavaScript, React.js, CSS, Material UI, and
+              styled-components
+            </p>
+          </ProjectItemContent>
+        </ProjectContent>
+        <DetailsButton href="/">More details...</DetailsButton>
+        <DemoButton href="">Live Demo</DemoButton>
+      </ProjectItem>
+    </ProjectsWrapper>
   );
 };
 
