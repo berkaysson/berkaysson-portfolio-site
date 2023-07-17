@@ -3,6 +3,7 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Navigation from "./Components/Navigation";
 import Projects from "./Components/Projects";
+import ProjectLifemap from "./Components/Projects/lifemap";
 import Skills from "./Components/Skills";
 import styled from "styled-components";
 
@@ -30,6 +31,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Contact />
+        <ProjectLifemap />
       </MainWrapper>
       <Footer />
     </AppWrapper>
