@@ -50,7 +50,7 @@ const Navigation = () => {
   useEffect(() => {
     const _classList = [];
 
-    if (scroll.y > 99 || scroll.y - scroll.lastY > 0)
+    if (scroll.y > 99 && scroll.y - scroll.lastY > 0)
       _classList.push("nav-hidden");
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
