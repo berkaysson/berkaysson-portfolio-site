@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -50,10 +51,12 @@ const ProjectContent = styled.div`
   font-size: 20px;
 `;
 
-const DetailsButton = styled.a`
+const DetailsButton = styled(Link)`
   position: absolute;
   bottom: 0;
   right: 0;
+  cursor: pointer;
+  z-index: 3;
 `;
 
 const DemoButton = styled.a`
@@ -108,7 +111,7 @@ const Projects = () => {
             </p>
           </ProjectItemContent>
         </ProjectContent>
-        <DetailsButton href="/">More details...</DetailsButton>
+        <DetailsButton to="/project-lifemap">More details...</DetailsButton>
         <DemoButton href="">Live Demo</DemoButton>
       </ProjectItem>
     </ProjectsWrapper>
