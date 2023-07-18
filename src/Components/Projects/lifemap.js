@@ -1,5 +1,9 @@
+import Navigation from "../Navigation";
+
 const ProjectLifemap = () => {
   return (
+    <>
+    <Navigation source={"project"} />
     <div>
       <h1>lifemap</h1>
       <h2>Front&Back end development</h2>
@@ -127,6 +131,7 @@ const ProjectLifemap = () => {
         <img src="" alt="summaryImg" />
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import useScroll from "../Hooks/useScroll";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavigationWrapper = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ const NavigationWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   opacity: 1;
-  transition: ${({theme}) => theme.transitions.main};
+  transition: ${({ theme }) => theme.transitions.main};
 
   .logo {
     padding: 0 ${({ theme }) => theme.sizes.sl};
@@ -43,7 +44,7 @@ const NavigationMenuWrapper = styled.nav`
   }
 `;
 
-const Navigation = () => {
+const Navigation = ({ source = "home" }) => {
   const [navClassList, setNavClassList] = useState([]);
   const scroll = useScroll();
 
@@ -57,14 +58,18 @@ const Navigation = () => {
 
   return (
     <NavigationWrapper className={navClassList.join(" ")}>
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
-      </a>
-      <NavigationMenuWrapper>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </NavigationMenuWrapper>
+      </Link>
+      {source === "home" ? (
+        <NavigationMenuWrapper>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </NavigationMenuWrapper>
+      ) : (
+        ""
+      )}
     </NavigationWrapper>
   );
 };

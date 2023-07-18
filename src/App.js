@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Home from "./Components/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
+import { useState } from "react";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -28,7 +29,6 @@ const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <AppWrapper>
-        <Navigation />
         <MainWrapper>
           <Routes>
             <Route path="/" index element={<Home />} />
