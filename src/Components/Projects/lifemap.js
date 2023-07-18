@@ -3,7 +3,7 @@ import Navigation from "../Navigation";
 const ProjectLifemap = () => {
   return (
     <>
-    <Navigation source={"project"} />
+    <Navigation currentPath={"project"} />
     <div>
       <h1>lifemap</h1>
       <h2>Front&Back end development</h2>

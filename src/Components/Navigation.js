@@ -12,7 +12,8 @@ const NavigationWrapper = styled.div`
   z-index: 3;
   display: flex;
   align-items: center;
-  justify-content: ${({source})=> source === "project" ? "center" : "space-between"};
+  justify-content: ${({ currentPath }) =>
+    currentPath === "project" ? "center" : "space-between"};
   opacity: 1;
   transition: ${({ theme }) => theme.transitions.main};
 
@@ -44,7 +45,7 @@ const NavigationMenuWrapper = styled.nav`
   }
 `;
 
-const Navigation = ({ source = "home" }) => {
+const Navigation = ({ currentPath = "home" }) => {
   const [navClassList, setNavClassList] = useState([]);
   const scroll = useScroll();
 
@@ -57,11 +58,11 @@ const Navigation = ({ source = "home" }) => {
   }, [scroll.y, scroll.lastY]);
 
   return (
-    <NavigationWrapper source={source} className={navClassList.join(" ")}>
+    <NavigationWrapper currentPath={currentPath} className={navClassList.join(" ")}>
       <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </Link>
-      {source === "home" ? (
+      {currentPath === "home" ? (
         <NavigationMenuWrapper>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
