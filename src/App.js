@@ -1,12 +1,9 @@
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-import Navigation from "./Components/Navigation";
-import ProjectLifemap from "./Components/Projects/lifemap";
 import styled from "styled-components";
-import Home from "./Components/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
-import { useState } from "react";
+import AnimatedRoutes from "./Components/AnimatedRoutes";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -30,10 +27,7 @@ const App = () => {
       <ScrollToTop />
       <AppWrapper>
         <MainWrapper>
-          <Routes>
-            <Route path="/" index element={<Home />} />
-            <Route path="/project-lifemap" element={<ProjectLifemap />} />
-          </Routes>
+          <AnimatedRoutes />
           <Contact />
         </MainWrapper>
         <Footer />
