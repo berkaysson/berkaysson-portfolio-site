@@ -12,7 +12,7 @@ const NavigationWrapper = styled.div`
   z-index: 3;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({source})=> source === "project" ? "center" : "space-between"};
   opacity: 1;
   transition: ${({ theme }) => theme.transitions.main};
 
@@ -57,7 +57,7 @@ const Navigation = ({ source = "home" }) => {
   }, [scroll.y, scroll.lastY]);
 
   return (
-    <NavigationWrapper className={navClassList.join(" ")}>
+    <NavigationWrapper source={source} className={navClassList.join(" ")}>
       <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </Link>
