@@ -88,7 +88,7 @@ const Projects = () => {
   });
 
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper id="projects">
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
         <MainImg src="" alt="lifemapImg" />

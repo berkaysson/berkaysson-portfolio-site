@@ -57,7 +57,7 @@ const AboutSection = styled.section`
 
 const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <AboutHeader>
         <h3>Hi, I'm Berkay Sonel</h3>
         <img src="" alt="berkayPhoto" />

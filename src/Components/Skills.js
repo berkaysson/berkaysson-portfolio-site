@@ -37,7 +37,7 @@ const Skills = () => {
     "Styled-Components",
   ];
   return (
-    <SkillsWrapper>
+    <SkillsWrapper id="skills">
       <h2>What are My Skills</h2>
       <SkillsListWrapper>
         {skills.map((skill, index) => (

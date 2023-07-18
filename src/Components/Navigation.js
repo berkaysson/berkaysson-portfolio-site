@@ -61,9 +61,9 @@ const Navigation = () => {
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </a>
       <NavigationMenuWrapper>
-        <a href="/">About</a>
-        <a href="/">Projects</a>
-        <a href="/">Contact</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </NavigationMenuWrapper>
     </NavigationWrapper>
   );
