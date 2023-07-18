@@ -22,7 +22,7 @@ const MainWrapper = styled.main`
 const App = () => {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <AppWrapper>
         <MainWrapper>
           <AnimatedRoutes />
