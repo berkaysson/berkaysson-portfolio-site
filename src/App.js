@@ -19,6 +19,7 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 102px;
 `;
 
 const App = () => {
