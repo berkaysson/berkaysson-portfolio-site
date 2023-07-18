@@ -4,6 +4,7 @@ import Navigation from "./Components/Navigation";
 import ProjectLifemap from "./Components/Projects/lifemap";
 import styled from "styled-components";
 import Home from "./Components/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -22,15 +23,19 @@ const MainWrapper = styled.main`
 
 const App = () => {
   return (
-    <AppWrapper>
-      <Navigation />
-      <MainWrapper>
-        <Home />
-        <ProjectLifemap />
-        <Contact />
-      </MainWrapper>
-      <Footer />
-    </AppWrapper>
+    <BrowserRouter>
+      <AppWrapper>
+        <Navigation />
+        <MainWrapper>
+          <Routes>
+            <Route path="/" index element={<Home />} />
+            <Route path="/project-lifemap" element={<ProjectLifemap />} />
+          </Routes>
+          <Contact />
+        </MainWrapper>
+        <Footer />
+      </AppWrapper>
+    </BrowserRouter>
   );
 };
 
