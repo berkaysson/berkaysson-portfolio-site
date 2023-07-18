@@ -15,5 +15,21 @@ export const theme = {
   },
   transitions: {
     main:"filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease"
+  },
+  framerAnimations: {
+    pageTransition:{
+      initial:{
+        opacity:0
+      },
+      animate:{
+        opacity:1
+      },
+      exit:{
+        opacity:0
+      },
+      transition:{
+        duration:0.5,
+      }
+    }
   }
 };
