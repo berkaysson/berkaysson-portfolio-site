@@ -1,10 +1,15 @@
 import Contact from "../Contact";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
+import { motion } from "framer-motion";
 
 const ProjectLifemap = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Navigation currentPath={"project"} />
       <div>
         <h1>lifemap</h1>
@@ -137,7 +142,7 @@ const ProjectLifemap = () => {
       </div>
       <Contact />
       <Footer />
-    </>
+    </motion.div>
   );
 };
 

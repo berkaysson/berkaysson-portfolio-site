@@ -4,10 +4,14 @@ import Footer from "./Footer";
 import Navigation from "./Navigation";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <Navigation />
       <About />
@@ -15,7 +19,7 @@ const Home = () => {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </motion.div>
   );
 };
 
