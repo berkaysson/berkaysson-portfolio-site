@@ -5,6 +5,7 @@ import ProjectLifemap from "./Components/Projects/lifemap";
 import styled from "styled-components";
 import Home from "./Components/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./Hooks/ScrollToTop";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -25,6 +26,7 @@ const MainWrapper = styled.main`
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AppWrapper>
         <Navigation />
         <MainWrapper>
