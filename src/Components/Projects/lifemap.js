@@ -1,3 +1,4 @@
+import { theme } from "../../Styles/theme";
 import Contact from "../Contact";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
@@ -6,9 +7,10 @@ import { motion } from "framer-motion";
 const ProjectLifemap = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={theme.framerAnimations.pageTransition.initial}
+      animate={theme.framerAnimations.pageTransition.animate}
+      exit={theme.framerAnimations.pageTransition.exit}
+      transition={theme.framerAnimations.pageTransition.transition}
     >
       <Navigation currentPath={"project"} />
       <div>

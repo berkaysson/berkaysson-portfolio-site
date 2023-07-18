@@ -1,3 +1,4 @@
+import { theme } from "../Styles/theme";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -9,9 +10,10 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={theme.framerAnimations.pageTransition.initial}
+      animate={theme.framerAnimations.pageTransition.animate}
+      exit={theme.framerAnimations.pageTransition.exit}
+      transition={theme.framerAnimations.pageTransition.transition}
     >
       <Navigation />
       <About />
