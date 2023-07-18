@@ -1,11 +1,9 @@
-import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Navigation from "./Components/Navigation";
-import Projects from "./Components/Projects";
 import ProjectLifemap from "./Components/Projects/lifemap";
-import Skills from "./Components/Skills";
 import styled from "styled-components";
+import Home from "./Components/Home";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -27,11 +25,9 @@ const App = () => {
     <AppWrapper>
       <Navigation />
       <MainWrapper>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Home />
         <ProjectLifemap />
+        <Contact />
       </MainWrapper>
       <Footer />
     </AppWrapper>
