@@ -1,5 +1,3 @@
-import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
@@ -28,9 +26,7 @@ const App = () => {
       <AppWrapper>
         <MainWrapper>
           <AnimatedRoutes />
-          <Contact />
         </MainWrapper>
-        <Footer />
       </AppWrapper>
     </BrowserRouter>
   );
