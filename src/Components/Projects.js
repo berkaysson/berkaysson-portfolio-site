@@ -9,6 +9,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: ${({ theme }) => theme.sizes.lg};
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
