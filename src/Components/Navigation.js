@@ -16,7 +16,6 @@ const NavigationWrapper = styled(motion.div)`
   justify-content: ${({ currentPath }) =>
     currentPath === "/project-lifemap" ? "center" : "space-between"};
   opacity: 1;
-  transition: ${({ theme }) => theme.transitions.main};
 
   .logo {
     padding: 0 ${({ theme }) => theme.sizes.sl};
