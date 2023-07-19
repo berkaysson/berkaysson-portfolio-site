@@ -38,12 +38,15 @@ export const theme = {
     navTransition: {
       visible: {
         opacity: 1,
+        y:0
       },
       hidden: {
         opacity: 0,
+        y:-50,
       },
       exit: {
         opacity: 0,
+        y:-50
       },
       transition: { ease: [0.5, 1, 0.5, 1], duration: 0.5 },
     },
