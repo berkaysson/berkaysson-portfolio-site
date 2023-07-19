@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import useScroll from "../Hooks/useScroll";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavigationWrapper = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ const NavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${({ currentPath }) =>
-    currentPath === "project" ? "center" : "space-between"};
+    currentPath === "/project-lifemap" ? "center" : "space-between"};
   opacity: 1;
   transition: ${({ theme }) => theme.transitions.main};
 
@@ -45,9 +45,13 @@ const NavigationMenuWrapper = styled.nav`
   }
 `;
 
-const Navigation = ({ currentPath = "home" }) => {
+const Navigation = () => {
   const [navClassList, setNavClassList] = useState([]);
+  const [currentPath, setCurrentPath] = useState("/");
   const scroll = useScroll();
+  const location = useLocation();
+
+  useEffect(()=>{setCurrentPath(location.pathname)}, [location]);
 
   useEffect(() => {
     const _classList = [];
@@ -62,7 +66,7 @@ const Navigation = ({ currentPath = "home" }) => {
       <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </Link>
-      {currentPath === "home" ? (
+      {currentPath === "/" ? (
         <NavigationMenuWrapper>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
