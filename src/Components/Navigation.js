@@ -13,8 +13,7 @@ const NavigationWrapper = styled(motion.div)`
   z-index: 3;
   display: flex;
   align-items: center;
-  justify-content: ${({ currentPath }) =>
-    currentPath === "/project-lifemap" ? "center" : "space-between"};
+  justify-content: space-between;
   opacity: 1;
 
   .logo {
