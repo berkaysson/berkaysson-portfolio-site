@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
 import AnimatedRoutes from "./Components/AnimatedRoutes";
+import Navigation from "./Components/Navigation";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -22,9 +23,10 @@ const MainWrapper = styled.main`
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <AppWrapper>
         <MainWrapper>
+          <Navigation />
           <AnimatedRoutes />
         </MainWrapper>
       </AppWrapper>

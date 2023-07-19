@@ -2,7 +2,6 @@ import { theme } from "../Styles/theme";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import Navigation from "./Navigation";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import { motion } from "framer-motion";
@@ -15,7 +14,6 @@ const Home = () => {
       exit={theme.framerAnimations.pageTransition.exit}
       transition={theme.framerAnimations.pageTransition.transition}
     >
-      <Navigation />
       <About />
       <Skills />
       <Projects />
