@@ -1,6 +1,7 @@
-import { useInView } from "react-intersection-observer";
+import { useInView } from "framer-motion";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -86,9 +87,8 @@ const ProjectItemContent = styled.div`
 `;
 
 const Projects = () => {
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
     <ProjectsWrapper id="projects">

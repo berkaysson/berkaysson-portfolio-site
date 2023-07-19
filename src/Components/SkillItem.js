@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
-import { useInView } from "react-intersection-observer";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const SkillItemWrapper = styled.li`
   border: 1px solid blue;
@@ -8,7 +9,8 @@ const SkillItemWrapper = styled.li`
   position: relative;
   text-align: center;
   //fade out transition
-  transition: ${({ theme, inView }) => inView ? theme.transitions.main : "none"};
+  transition: ${({ theme, inView }) =>
+    inView ? theme.transitions.main : "none"};
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
@@ -32,9 +34,8 @@ const SkillItemWrapper = styled.li`
 `;
 
 const SkillItem = ({ skill, index }) => {
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
     <SkillItemWrapper
