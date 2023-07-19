@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import useScroll from "../Hooks/useScroll";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion, useScroll as framerUseScroll, useMotionValueEvent } from "framer-motion";
+import { theme } from "../Styles/theme";
 
-const NavigationWrapper = styled.div`
+const NavigationWrapper = styled(motion.div)`
   width: 100%;
   height: 100px;
   position: fixed;
@@ -25,13 +26,6 @@ const NavigationWrapper = styled.div`
       height: auto;
     }
   }
-
-  &.nav-hidden {
-    transform: scale(0);
-    filter: blur(3px);
-    opacity: 0;
-    z-index: 0;
-  }
 `;
 
 const NavigationMenuWrapper = styled.nav`
@@ -46,23 +40,32 @@ const NavigationMenuWrapper = styled.nav`
 `;
 
 const Navigation = () => {
-  const [navClassList, setNavClassList] = useState([]);
   const [currentPath, setCurrentPath] = useState("/");
-  const scroll = useScroll();
+  const [hidden, setHidden] = useState(false);
+  const {scrollY} = framerUseScroll();
   const location = useLocation();
 
-  useEffect(()=>{setCurrentPath(location.pathname)}, [location]);
-
   useEffect(() => {
-    const _classList = [];
+    setCurrentPath(location.pathname);
+  }, [location]);
 
-    if (scroll.y > 99 && scroll.y - scroll.lastY > 0)
-      _classList.push("nav-hidden");
-    setNavClassList(_classList);
-  }, [scroll.y, scroll.lastY]);
+  useMotionValueEvent(scrollY, "change", (latest)=>{
+    if(scrollY?.current < scrollY?.prev){
+      setHidden(false);
+    }
+    else if(scrollY?.current > 99 && scrollY?.current > scrollY?.prev){
+      setHidden(true);
+    }
+  })
 
   return (
-    <NavigationWrapper currentPath={currentPath} className={navClassList.join(" ")}>
+    <NavigationWrapper
+      currentPath={currentPath}
+      variants={theme.framerAnimations.navTransition}
+      animate={hidden ? "hidden" : "visible"}
+      exit={"exit"}
+      transition={theme.framerAnimations.navTransition.transition}
+    >
       <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </Link>
