@@ -28,7 +28,7 @@ export const theme = {
         opacity:0
       },
       transition:{
-        duration:0.5,
+        duration:0.5, // dependent on setTimeout in ScrollToTop hook
         ease:[0.22, 1, 0.36, 1],
       }
     }
