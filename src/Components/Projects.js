@@ -2,7 +2,7 @@ import { useInView } from "framer-motion";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png"
+import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -32,6 +32,7 @@ const ProjectItem = styled.div`
 const MainImgWrapper = styled.div`
   overflow: hidden;
   display: inline-block;
+  position: relative;
 `;
 
 const MainImg = styled.img`
@@ -40,7 +41,7 @@ const MainImg = styled.img`
   vertical-align: center;
   transition: transform 0.2s ease;
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
 `;
@@ -99,7 +100,7 @@ const Projects = () => {
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
         <MainImgWrapper>
-          <MainImg src={lifemapLaunchImg} alt="lifemapImg" />
+          <MainImg id="lifemapImg" src={lifemapLaunchImg} alt="lifemapImg" />
         </MainImgWrapper>
         
         <ProjectContent>
