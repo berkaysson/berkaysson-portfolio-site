@@ -2,6 +2,7 @@ import { useInView } from "framer-motion";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png"
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -18,11 +19,9 @@ const ProjectsWrapper = styled.div`
 
 const ProjectItem = styled.div`
   border: 1px solid blue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.sizes.xlg} ${({ theme }) => theme.sizes.sl};
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 0;
   transition: ${({ theme, inView }) =>
     inView ? theme.transitions.main : "none"};
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
@@ -31,25 +30,18 @@ const ProjectItem = styled.div`
 `;
 
 const MainImg = styled.img`
-  border: 1px solid green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  height: auto;
   width: 100%;
-  z-index: 1;
 `;
 
 const ProjectContent = styled.div`
-  z-index: 2;
   background-color: gray;
-  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: ${({ theme }) => theme.sizes.lg};
   text-align: center;
-  padding: ${({ theme }) => theme.sizes.lg};
   font-size: 20px;
 `;
 
@@ -95,7 +87,7 @@ const Projects = () => {
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
-        <MainImg src="" alt="lifemapImg" />
+        <MainImg src={lifemapLaunchImg} alt="lifemapImg" />
         <ProjectContent>
           <ProjectItemHeader>
             <img src="" alt="lifemapLogo" />
