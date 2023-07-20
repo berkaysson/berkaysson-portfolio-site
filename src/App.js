@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
 import AnimatedRoutes from "./Components/AnimatedRoutes";
 import Navigation from "./Components/Navigation";
+import useMousePosition from "./Hooks/useMousePosition.js";
+import MouseTooltip from "./Hooks/MouseToolTip";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -20,17 +22,35 @@ const MainWrapper = styled.main`
   padding-top: 102px;
 `;
 
+const MouseFollower = styled.div`
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  pointer-events: none;
+`;
+
 const App = () => {
+  const { target: onMouseTarget } = useMousePosition();
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <AppWrapper>
-        <MainWrapper>
-          <Navigation />
-          <AnimatedRoutes />
-        </MainWrapper>
-      </AppWrapper>
-    </BrowserRouter>
+    <>
+      {onMouseTarget === "lifemapImg" ? (
+        <MouseTooltip children={<MouseFollower />} />
+      ) : (
+        ""
+      )}
+
+      <BrowserRouter>
+        <ScrollToTop />
+        <AppWrapper>
+          <MainWrapper>
+            <Navigation />
+            <AnimatedRoutes />
+          </MainWrapper>
+        </AppWrapper>
+      </BrowserRouter>
+    </>
   );
 };
 
