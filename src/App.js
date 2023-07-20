@@ -35,11 +35,10 @@ const App = () => {
   const { target: onMouseTarget } = useMousePosition();
   return (
     <>
-      {onMouseTarget === "lifemapImg" ? (
-        <MouseTooltip children={<MouseFollower />} />
-      ) : (
-        ""
-      )}
+      <MouseTooltip
+        visible={onMouseTarget === "lifemapImg"}
+        children={<MouseFollower />}
+      />
 
       <BrowserRouter>
         <ScrollToTop />
