@@ -29,9 +29,20 @@ const ProjectItem = styled.div`
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
 `;
 
+const MainImgWrapper = styled.div`
+  overflow: hidden;
+  display: inline-block;
+`;
+
 const MainImg = styled.img`
-  height: auto;
+  height: 100%;
   width: 100%;
+  vertical-align: center;
+  transition: transform 0.2s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 `;
 
 const ProjectContent = styled.div`
@@ -87,7 +98,10 @@ const Projects = () => {
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
-        <MainImg src={lifemapLaunchImg} alt="lifemapImg" />
+        <MainImgWrapper>
+          <MainImg src={lifemapLaunchImg} alt="lifemapImg" />
+        </MainImgWrapper>
+        
         <ProjectContent>
           <ProjectItemHeader>
             <img src="" alt="lifemapLogo" />
