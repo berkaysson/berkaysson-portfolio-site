@@ -30,14 +30,16 @@ const MouseFollower = styled.div`
   backdrop-filter: blur(10px) contrast(1.5);
   border-radius: 50%;
   pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: ${({ onMouseTarget }) => (onMouseTarget ? 1 : 0)};
 
-  &::after{
+  &::after {
     font-size: 12px;
     text-shadow: 0 0 1px black;
     position: absolute;
     top: 35%;
     left: 9%;
-    color: #ABC4FF;
+    color: #abc4ff;
     content: "PREVIEW";
   }
 `;
@@ -47,8 +49,9 @@ const App = () => {
   return (
     <>
       <MouseTooltip
-        visible={onMouseTarget === "lifemapImg"}
-        children={<MouseFollower />}
+        children={
+          <MouseFollower onMouseTarget={onMouseTarget === "lifemapImg"} />
+        }
       />
 
       <BrowserRouter>
