@@ -25,13 +25,23 @@ const MainWrapper = styled.main`
 const MouseFollower = styled.div`
   width: 62px;
   height: 62px;
-  transform: translate(-50%, -70%);
   background-color: transparent;
   backdrop-filter: blur(10px) contrast(1.5);
   border-radius: 50%;
   pointer-events: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.8s;
   opacity: ${({ onMouseTarget }) => (onMouseTarget ? 1 : 0)};
+  transform: ${({ onMouseTarget }) => (onMouseTarget ? "scale(1) translate(-50%, -70%)" : "scale(0.5) translate(-50%, -70%)")};
+
+  &::before{
+    position: absolute;
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
 
   &::after {
     font-size: 12px;
