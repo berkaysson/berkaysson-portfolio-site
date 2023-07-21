@@ -23,8 +23,8 @@ const MainWrapper = styled.main`
 `;
 
 const MouseFollower = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   transform: translate(-50%, -50%);
   background-color: transparent;
   backdrop-filter: blur(10px) contrast(1.5);
@@ -33,11 +33,11 @@ const MouseFollower = styled.div`
 
   &::after{
     font-size: 12px;
-    text-shadow: 0 0 5px gray;
+    text-shadow: 0 0 1px black;
     position: absolute;
-    top: 33%;
-    left: 8%;
-    color: lightpink;
+    top: 35%;
+    left: 9%;
+    color: #ABC4FF;
     content: "PREVIEW";
   }
 `;
