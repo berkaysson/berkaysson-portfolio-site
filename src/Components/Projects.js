@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png";
-import LifemapLogo from "../Images/lifemap/LifemapLogo"
+import LifemapLogo from "../Images/lifemap/LifemapLogo";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -116,12 +116,19 @@ const Projects = () => {
           </ProjectItemHeader>
           <ProjectItemContent>
             <p>
-              Lifemap is a powerful life tracking platform designed to help you
-              stay organized and achieve your goals
+              <b
+                style={{
+                  color: "#abc4ff",
+                }}
+              >
+                lifemap
+              </b>{" "}
+              is a powerful life tracking platform designed to help you stay
+              organized and achieve your goals
             </p>
             <p>
-              Devoloped with JavaScript, React.js, CSS, Material UI, and
-              styled-components
+              Devoloped with JavaScript, React.js, CSS, Material UI,
+              styled-components and more
             </p>
           </ProjectItemContent>
         </ProjectContent>
