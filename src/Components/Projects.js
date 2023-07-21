@@ -29,7 +29,7 @@ const ProjectItem = styled.div`
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
 `;
 
-const MainImgWrapper = styled.div`
+const MainImgWrapper = styled.a`
   overflow: hidden;
   display: inline-block;
   position: relative;
@@ -45,7 +45,7 @@ const MainImg = styled.img`
   &:hover {
     filter: grayscale(0) contrast(1.1);
     transform: scale(1.1);
-    cursor: none;
+    cursor: pointer;
   }
 `;
 
@@ -66,12 +66,6 @@ const DetailsButton = styled(Link)`
   right: 0;
   cursor: pointer;
   z-index: 3;
-`;
-
-const DemoButton = styled.a`
-  position: absolute;
-  bottom: 0;
-  left: 0;
 `;
 
 const ProjectItemHeader = styled.div`
@@ -102,10 +96,14 @@ const Projects = () => {
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
-        <MainImgWrapper>
+        <MainImgWrapper
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://berkaysson.github.io/lifemap/"
+        >
           <MainImg id="lifemapImg" src={lifemapLaunchImg} alt="lifemapImg" />
         </MainImgWrapper>
-        
+
         <ProjectContent>
           <ProjectItemHeader>
             <img src="" alt="lifemapLogo" />
@@ -123,7 +121,6 @@ const Projects = () => {
           </ProjectItemContent>
         </ProjectContent>
         <DetailsButton to="/project-lifemap">More details...</DetailsButton>
-        <DemoButton href="">Live Demo</DemoButton>
       </ProjectItem>
     </ProjectsWrapper>
   );
