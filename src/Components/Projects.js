@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png";
+import LifemapLogo from "../Images/lifemap/LifemapLogo"
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -76,6 +77,11 @@ const ProjectItemHeader = styled.div`
     font-size: 1.2em;
     font-weight: bold;
   }
+
+  svg {
+    width: 120px;
+    height: auto;
+  }
 `;
 
 const ProjectItemContent = styled.div`
@@ -106,8 +112,7 @@ const Projects = () => {
 
         <ProjectContent>
           <ProjectItemHeader>
-            <img src="" alt="lifemapLogo" />
-            <h2>lifemap</h2>
+            <LifemapLogo />
           </ProjectItemHeader>
           <ProjectItemContent>
             <p>
