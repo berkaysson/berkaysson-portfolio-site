@@ -45,6 +45,7 @@ const MainImg = styled.img`
   &:hover {
     filter: grayscale(0) contrast(1.1);
     transform: scale(1.1);
+    cursor: none;
   }
 `;
 
