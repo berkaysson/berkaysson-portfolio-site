@@ -29,11 +29,20 @@ const MouseFollower = styled.div`
   backdrop-filter: blur(10px) contrast(1.5);
   border-radius: 50%;
   pointer-events: none;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #abc4ff;
+  text-shadow: 0 0 1px black;
   transition: opacity 0.2s, transform 0.8s;
-  opacity: ${({ onMouseTarget }) => (onMouseTarget ? 1 : 0)};
-  transform: ${({ onMouseTarget }) => (onMouseTarget ? "scale(1) translate(-50%, -70%)" : "scale(0.5) translate(-50%, -70%)")};
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transform: ${({ visible }) =>
+    visible
+      ? "scale(1) translate(-50%, -70%)"
+      : "scale(0.5) translate(-50%, -70%)"};
 
-  &::before{
+  &::before {
     position: absolute;
     content: "";
     background-color: black;
@@ -41,16 +50,7 @@ const MouseFollower = styled.div`
     height: 100%;
     border-radius: 50%;
     opacity: 0.6;
-  }
-
-  &::after {
-    font-size: 12px;
-    text-shadow: 0 0 1px black;
-    position: absolute;
-    top: 35%;
-    left: 9%;
-    color: #abc4ff;
-    content: "PREVIEW";
+    z-index: -1;
   }
 `;
 
@@ -60,7 +60,12 @@ const App = () => {
     <>
       <MouseTooltip
         children={
-          <MouseFollower onMouseTarget={onMouseTarget === "lifemapImg"} />
+          <MouseFollower
+            visible={onMouseTarget === "lifemapImg"}
+            onMouseTarget={onMouseTarget}
+          >
+            PREVIEW
+          </MouseFollower>
         }
       />
 
