@@ -25,7 +25,7 @@ const MainWrapper = styled.main`
 const MouseFollower = styled.div`
   width: 62px;
   height: 62px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   background-color: transparent;
   backdrop-filter: blur(10px) contrast(1.5);
   border-radius: 50%;
