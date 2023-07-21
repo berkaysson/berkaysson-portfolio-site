@@ -34,6 +34,7 @@ const MouseTooltip = ({
     return () => {
       removeListener();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ const MouseTooltip = ({
     if (listenerActive && !visible) {
       removeListener();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible, listenerActive]);
 
   return (
