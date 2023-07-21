@@ -23,12 +23,23 @@ const MainWrapper = styled.main`
 `;
 
 const MouseFollower = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 60px;
+  height: 60px;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color: transparent;
+  backdrop-filter: blur(10px) contrast(1.5);
   border-radius: 50%;
   pointer-events: none;
+
+  &::after{
+    font-size: 12px;
+    text-shadow: 0 0 5px gray;
+    position: absolute;
+    top: 33%;
+    left: 8%;
+    color: lightpink;
+    content: "PREVIEW";
+  }
 `;
 
 const App = () => {
