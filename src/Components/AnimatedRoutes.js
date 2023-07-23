@@ -3,13 +3,13 @@ import Home from "./Home";
 import ProjectLifemap from "./Projects/lifemap";
 import { AnimatePresence } from "framer-motion";
 
-const AnimatedRoutes = () => {
+const AnimatedRoutes = ({projectContentRef}) => {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" index element={<Home />} />
+        <Route path="/" index element={<Home projectContentRef={projectContentRef} />} />
         <Route path="/project-lifemap" element={<ProjectLifemap />} />
       </Routes>
     </AnimatePresence>

@@ -6,6 +6,7 @@ import Navigation from "./Components/Navigation";
 import useMousePosition from "./Hooks/useMousePosition.js";
 import MouseTooltip from "./Hooks/MouseToolTip";
 import MouseFollower from "./Components/MouseFollower";
+import { useEffect, useRef, useState } from "react";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -24,14 +25,23 @@ const MainWrapper = styled.main`
 `;
 
 const App = () => {
-  const { targetID: onMouseTarget } = useMousePosition();
+  const [mouseFollowerText, setMouseFollowerText] = useState("");
+  const { targetID: onMouseTarget, target } = useMousePosition();
+  const projectContentRef = useRef();
+  const isMouseOverProjectContent = projectContentRef.current?.contains(target);
+  
+  useEffect(()=>{
+    if(onMouseTarget === "lifemapImg") setMouseFollowerText("PREVIEW");
+    else if(isMouseOverProjectContent) setMouseFollowerText("DETAILS");
+  }, [isMouseOverProjectContent, onMouseTarget]);
+
   return (
     <>
       <MouseTooltip
         children={
           <MouseFollower
-            text={"PREVIEW"}
-            visible={onMouseTarget === "lifemapImg"}
+            text={mouseFollowerText}
+            visible={onMouseTarget === "lifemapImg" || isMouseOverProjectContent}
           />
         }
       />
@@ -41,7 +51,7 @@ const App = () => {
         <AppWrapper>
           <MainWrapper>
             <Navigation />
-            <AnimatedRoutes />
+            <AnimatedRoutes projectContentRef={projectContentRef} />
           </MainWrapper>
         </AppWrapper>
       </BrowserRouter>

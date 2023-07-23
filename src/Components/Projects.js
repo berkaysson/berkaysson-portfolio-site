@@ -94,7 +94,7 @@ const ProjectItemContent = styled.div`
   }
 `;
 
-const Projects = () => {
+const Projects = ({projectContentRef}) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -110,7 +110,7 @@ const Projects = () => {
           <MainImg id="lifemapImg" src={lifemapLaunchImg} alt="lifemapImg" />
         </MainImgWrapper>
 
-        <ProjectContent>
+        <ProjectContent ref={projectContentRef} id="lifemapContent">
           <ProjectItemHeader>
             <LifemapLogo />
           </ProjectItemHeader>
