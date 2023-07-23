@@ -50,7 +50,7 @@ const MainImg = styled.img`
   }
 `;
 
-const ProjectContent = styled.div`
+const ProjectContent = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,7 +115,7 @@ const Projects = ({projectContentRef}) => {
           <MainImg id="lifemapImg" src={lifemapLaunchImg} alt="lifemapImg" />
         </MainImgWrapper>
 
-        <ProjectContent ref={projectContentRef} id="lifemapContent">
+        <ProjectContent to="/project-lifemap" ref={projectContentRef} id="lifemapContent">
           <ProjectItemHeader>
             <LifemapLogo />
           </ProjectItemHeader>
