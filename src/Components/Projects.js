@@ -51,7 +51,6 @@ const MainImg = styled.img`
 `;
 
 const ProjectContent = styled.div`
-  background-color: gray;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,6 +58,12 @@ const ProjectContent = styled.div`
   gap: ${({ theme }) => theme.sizes.lg};
   text-align: center;
   font-size: 20px;
+  transition: transform 0.5s ease;
+
+  &:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+  }
 `;
 
 const DetailsButton = styled(Link)`

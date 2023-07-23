@@ -4,16 +4,17 @@ const MouseFollowerWrapper = styled.div`
   width: 62px;
   height: 62px;
   background-color: transparent;
-  backdrop-filter: blur(10px) contrast(1.5);
+  backdrop-filter: ${({ mouseFollowerType }) =>
+    mouseFollowerType === "lifemapImg" ? "blur(10px) contrast(1.5)" : "none"};
   border-radius: 50%;
   pointer-events: none;
   font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #abc4ff;
-  text-shadow: 0 0 1px black;
-  transition: opacity 0.2s, transform 0.8s;
+  color: white;
+  text-shadow: 0 0 2px black;
+  transition: all 0.3s, transform 0.8s;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transform: ${({ visible }) =>
     visible
@@ -21,9 +22,11 @@ const MouseFollowerWrapper = styled.div`
       : "scale(0.5) translate(-50%, -70%)"};
 
   &::before {
+    transition: background-color 0.3s;
     position: absolute;
     content: "";
-    background-color: black;
+    background-color: ${({ mouseFollowerType }) =>
+    mouseFollowerType === "lifemapImg" ? "#ff6d00" : "black"};
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -32,8 +35,15 @@ const MouseFollowerWrapper = styled.div`
   }
 `;
 
-const MouseFollower = ({ visible, text }) => {
-  return <MouseFollowerWrapper visible={visible}>{text}</MouseFollowerWrapper>;
+const MouseFollower = ({ visible, text, mouseFollowerType }) => {
+  return (
+    <MouseFollowerWrapper
+      mouseFollowerType={mouseFollowerType}
+      visible={visible}
+    >
+      {text}
+    </MouseFollowerWrapper>
+  );
 };
 
 export default MouseFollower;

@@ -26,13 +26,19 @@ const MainWrapper = styled.main`
 
 const App = () => {
   const [mouseFollowerText, setMouseFollowerText] = useState("");
+  const [mouseFollowerType, setMouseFollowerType] = useState("");
   const { targetID: onMouseTarget, target } = useMousePosition();
   const projectContentRef = useRef();
   const isMouseOverProjectContent = projectContentRef.current?.contains(target);
-  
-  useEffect(()=>{
-    if(onMouseTarget === "lifemapImg") setMouseFollowerText("PREVIEW");
-    else if(isMouseOverProjectContent) setMouseFollowerText("DETAILS");
+
+  useEffect(() => {
+    if (onMouseTarget === "lifemapImg") {
+      setMouseFollowerText("PREVIEW");
+      setMouseFollowerType("lifemapImg");
+    } else if (isMouseOverProjectContent) {
+      setMouseFollowerText("DETAILS");
+      setMouseFollowerType("lifemapContent");
+    }
   }, [isMouseOverProjectContent, onMouseTarget]);
 
   return (
@@ -41,7 +47,10 @@ const App = () => {
         children={
           <MouseFollower
             text={mouseFollowerText}
-            visible={onMouseTarget === "lifemapImg" || isMouseOverProjectContent}
+            mouseFollowerType={mouseFollowerType}
+            visible={
+              onMouseTarget === "lifemapImg" || isMouseOverProjectContent
+            }
           />
         }
       />
