@@ -24,7 +24,7 @@ const MainWrapper = styled.main`
 `;
 
 const App = () => {
-  const { target: onMouseTarget } = useMousePosition();
+  const { targetID: onMouseTarget } = useMousePosition();
   return (
     <>
       <MouseTooltip
