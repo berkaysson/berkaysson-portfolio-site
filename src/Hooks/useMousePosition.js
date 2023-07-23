@@ -4,6 +4,7 @@ const useMousePosition = () => {
     x: null,
     y: null,
     targetID: null,
+    target: null,
   });
   React.useEffect(() => {
     const updateMousePosition = (ev) => {
@@ -11,6 +12,7 @@ const useMousePosition = () => {
         x: ev.clientX,
         y: ev.clientY,
         targetID: ev.target.id,
+        target: ev.target
       });
     };
     window.addEventListener("mousemove", updateMousePosition);
