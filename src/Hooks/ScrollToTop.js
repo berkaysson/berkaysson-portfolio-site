@@ -10,7 +10,7 @@ const ScrollToTop = () => {
     // it should be equal to duration time of page transitions
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 300);
+    }, 220);
   }, [pathname]);
 };
 
