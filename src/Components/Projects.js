@@ -58,10 +58,10 @@ const ProjectContent = styled(Link)`
   gap: ${({ theme }) => theme.sizes.lg};
   text-align: center;
   font-size: 20px;
-  transition: transform 0.5s ease;
+  transition: background-color 0.5s ease;
 
   &:hover{
-    transform: scale(0.9);
+    background-color: lightgray;
     cursor: pointer;
   }
 `;
