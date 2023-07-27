@@ -15,13 +15,14 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 102px;
+  padding-top: 100px;
 `;
 
 const App = () => {
