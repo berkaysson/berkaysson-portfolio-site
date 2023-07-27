@@ -15,7 +15,7 @@ const AboutHeader = styled.header`
   width: 100%;
   text-align: center;
   border: 1px solid red;
-  padding:0 ${({ theme }) => theme.sizes.xlg};
+  padding: 0 ${({ theme }) => theme.sizes.xlg};
 
   h3 {
     font-size: ${({ theme }) => theme.sizes.xlg};
@@ -29,6 +29,14 @@ const AboutHeader = styled.header`
     border: 1px solid blue;
     height: auto;
     width: 400px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 ${({ theme }) => theme.sizes.md};
   }
 `;
 
@@ -48,10 +56,14 @@ const AboutSection = styled.section`
   p {
     font-size: ${({ theme }) => theme.sizes.sl};
 
-    &:last-child{
+    &:last-child {
       font-size: ${({ theme }) => theme.sizes.md};
       text-align: center;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
@@ -95,10 +107,9 @@ const About = () => {
 
         <p>
           You can find my skills, projects, and links below. Feel free to
-          explore and get in touch. I look forward to the opportunity of collaborating on exciting
-          projects with you.
+          explore and get in touch. I look forward to the opportunity of
+          collaborating on exciting projects with you.
         </p>
-        
       </AboutSection>
     </AboutWrapper>
   );

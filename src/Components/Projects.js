@@ -16,6 +16,10 @@ const ProjectsWrapper = styled.div`
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
+
+  @media(max-width:768px){
+    padding:${({ theme }) => theme.sizes.md};
+  }
 `;
 
 const ProjectItem = styled.div`
@@ -28,6 +32,18 @@ const ProjectItem = styled.div`
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    min-width: 550px;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    min-width: auto;
+  }
 `;
 
 const MainImgWrapper = styled.a`
@@ -63,6 +79,10 @@ const ProjectContent = styled(Link)`
   &:hover{
     background-color: lightgray;
     cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    padding: ${({ theme }) => theme.sizes.lg};
   }
 `;
 

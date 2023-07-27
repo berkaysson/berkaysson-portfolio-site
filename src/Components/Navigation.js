@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, useScroll as framerUseScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll as framerUseScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 import { theme } from "../Styles/theme";
 
 const NavigationWrapper = styled(motion.div)`
@@ -22,6 +26,10 @@ const NavigationWrapper = styled(motion.div)`
       margin: auto ${({ theme }) => theme.sizes.sl};
       width: ${({ theme }) => theme.sizes.xlg};
       height: auto;
+
+      @media (max-width: 768px) {
+        width: ${({ theme }) => theme.sizes.lg};
+      }
     }
   }
 `;
@@ -32,29 +40,31 @@ const NavigationMenuWrapper = styled.nav`
   align-items: center;
   gap: ${({ theme }) => theme.sizes.xlg};
   margin-right: ${({ theme }) => theme.sizes.xlg};
-  a {
-    font-size: ${({ theme }) => theme.sizes.lg};
+  font-size: ${({ theme }) => theme.sizes.lg};
+
+  @media (max-width: 500px) {
+    gap: ${({ theme }) => theme.sizes.md};
+    font-size: ${({ theme }) => theme.sizes.md};
   }
 `;
 
 const Navigation = () => {
   const [currentPath, setCurrentPath] = useState("/");
   const [hidden, setHidden] = useState(false);
-  const {scrollY} = framerUseScroll();
+  const { scrollY } = framerUseScroll();
   const location = useLocation();
 
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);
 
-  useMotionValueEvent(scrollY, "change", (latest)=>{
-    if(scrollY?.current < scrollY?.prev){
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-    }
-    else if(scrollY?.current > 99 && scrollY?.current > scrollY?.prev){
+    } else if (scrollY?.current > 99 && scrollY?.current > scrollY?.prev) {
       setHidden(true);
     }
-  })
+  });
 
   return (
     <NavigationWrapper

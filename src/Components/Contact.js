@@ -11,6 +11,10 @@ const ContactWrapper = styled.div`
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
+
+  @media(max-width:768px){
+    padding:${({ theme }) => theme.sizes.md};
+  }
 `;
 
 const ContactFormWrapper = styled.form`
@@ -35,6 +39,10 @@ const ContactFormWrapper = styled.form`
     textarea{
       resize: none;
     }
+  }
+
+  @media(max-width:768px){
+    padding:${({ theme }) => theme.sizes.md};
   }
 `;
 

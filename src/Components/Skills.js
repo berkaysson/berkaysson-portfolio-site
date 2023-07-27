@@ -12,6 +12,10 @@ const SkillsWrapper = styled.div`
   h2 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
+
+  @media(max-width:768px){
+    padding:${({ theme }) => theme.sizes.md};
+  }
 `;
 
 const SkillsListWrapper = styled.ul`
