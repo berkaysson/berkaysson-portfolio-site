@@ -12,6 +12,7 @@ const AboutHeader = styled.header`
   align-items: center;
   justify-content: space-evenly;
   height: 75vh;
+  width: 100%;
   text-align: center;
   border: 1px solid red;
   padding:0 ${({ theme }) => theme.sizes.xlg};
