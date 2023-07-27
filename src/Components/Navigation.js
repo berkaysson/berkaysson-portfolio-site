@@ -45,6 +45,7 @@ const NavigationMenuWrapper = styled.nav`
   @media (max-width: 500px) {
     gap: ${({ theme }) => theme.sizes.md};
     font-size: ${({ theme }) => theme.sizes.md};
+    margin-right: ${({ theme }) => theme.sizes.sl};
   }
 `;
 

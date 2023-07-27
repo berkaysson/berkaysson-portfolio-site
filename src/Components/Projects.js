@@ -44,6 +44,10 @@ const ProjectItem = styled.div`
     width: 90%;
     min-width: auto;
   }
+
+  @media(max-width:425px){
+    width: 100%;
+  }
 `;
 
 const MainImgWrapper = styled.a`
@@ -83,6 +87,11 @@ const ProjectContent = styled(Link)`
 
   @media (max-width: 1024px) {
     padding: ${({ theme }) => theme.sizes.lg};
+  }
+
+  @media(max-width:425px){
+    font-size: 16px;
+    gap:${({ theme }) => theme.sizes.sl};
   }
 `;
 
