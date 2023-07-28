@@ -2,19 +2,77 @@ import { theme } from "../../Styles/theme";
 import Contact from "../Contact";
 import Footer from "../Footer";
 import { motion } from "framer-motion";
+import styled from "@emotion/styled";
+import LifemapLogo from "../../Images/lifemap/LifemapLogo";
+
+const ProjectLifemapContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ProjectLifemapWrapper = styled.div`
+  padding: ${({ theme }) => theme.sizes.xlg};
+  border: 1px solid red;
+
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.sizes.md};
+  }
+`;
+
+const ProjectHeaderWrapper = styled.header`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10%;
+  gap: ${({ theme }) => theme.sizes.md};
+
+  svg{
+    height: 50px;
+  }
+
+  h2{
+    font-size: ${({ theme }) => theme.sizes.lg};
+  }
+`;
+
+const ProjectContentItem = styled.div`
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto auto;
+  border: 1px solid blue;
+  position: relative;
+  padding-top: 2rem;
+  padding: 1rem;
+
+  h2{
+    grid-area: 1/1/2/3;
+  }
+
+  p{
+    text-align: justify;
+    padding-right: 2rem;
+  }
+
+  img{
+    border: 1px solid green;
+  }
+`;
 
 const ProjectLifemap = () => {
   return (
-    <motion.div
+    <ProjectLifemapContainer
       initial={theme.framerAnimations.pageTransition.initial}
       animate={theme.framerAnimations.pageTransition.animate}
       exit={theme.framerAnimations.pageTransition.exit}
       transition={theme.framerAnimations.pageTransition.transition}
+      theme={theme}
     >
-      <div>
-        <h1>lifemap</h1>
-        <h2>Front&Back end development</h2>
-        <div>
+      <ProjectLifemapWrapper theme={theme}>
+        <ProjectHeaderWrapper theme={theme}>
+          <LifemapLogo />
+          <h2>Front&Back end development</h2>
+        </ProjectHeaderWrapper>
+        <ProjectContentItem>
           <h2>Project Overview</h2>
           <p>
             Lifemap is a powerful life tracking platform designed to help you
@@ -23,8 +81,8 @@ const ProjectLifemap = () => {
             have a clear overview of your progress and make informed decisions.
           </p>
           <img src="" alt="projectOverviewImg" />
-        </div>
-        <div>
+        </ProjectContentItem>
+        <ProjectContentItem>
           <h2>Purpose and Inspiration</h2>
           <p>
             I developed Lifemap with a clear purpose in mind — to effectively
@@ -32,16 +90,14 @@ const ProjectLifemap = () => {
             productivity and strives to make the most of every moment, I
             recognized the need for a tool that could help me stay on track and
             remember important tasks and activities.
-          </p>
-          <p>
+            <br />
             Lifemap empowers users to take control of their time and achieve
             their goals. For instance, if you're learning a new instrument and
             want to establish a regular practice routine, Lifemap allows you to
             create a habit with a defined frequency (daily, weekly, or monthly).
             You can then track your progress by adding activities whenever you
             practice the instrument.
-          </p>
-          <p>
+            <br />
             In addition to activity tracking and habit-building, Lifemap offers
             other features. You can create tasks and manage your finances. I am
             still working on this project time to time, there is always room for
@@ -50,8 +106,8 @@ const ProjectLifemap = () => {
             elements.
           </p>
           <img src="" alt="purposeImg" />
-        </div>
-        <div>
+        </ProjectContentItem>
+        <ProjectContentItem>
           <h2>Technologies</h2>
           <p>
             For Lifemap, I utilized various technologies to build a robust and
@@ -61,8 +117,7 @@ const ProjectLifemap = () => {
             and efficient rendering. To ensure a visually appealing and
             responsive design; CSS, Material UI, and styled-components were
             employed for styling and theming.
-          </p>
-          <p>
+            <br />
             Given the extensive range of features, I opted to create Lifemap as
             a single-page web application using React Router, enabling seamless
             navigation and a smooth user experience. As for data management, I
@@ -76,8 +131,8 @@ const ProjectLifemap = () => {
             to track their activities and manage their life goals effectively.
           </p>
           <img src="" alt="techImg" />
-        </div>
-        <div>
+        </ProjectContentItem>
+        <ProjectContentItem>
           <h2>Challenges and Problems</h2>
           <p>
             Like most of the projects, I ran into a few bumps along the way. The
@@ -88,8 +143,7 @@ const ProjectLifemap = () => {
             that the databases and app states interacted smoothly. To tackle
             this, I employed Promises and leveraged the useEffect hook to
             efficiently fetch and synchronize data.
-          </p>
-          <p>
+            <br />
             The development of Lifemap also presented other challenges.
             Designing the logic for tracking tasks and habits proved to be a
             complex task. Furthermore managing numerous functions, components,
@@ -99,8 +153,8 @@ const ProjectLifemap = () => {
             organized.
           </p>
           <img src="" alt="challengesImg" />
-        </div>
-        <div>
+        </ProjectContentItem>
+        <ProjectContentItem>
           <h2>Learnings</h2>
           <p>
             I could spend pages to describing the things i learned from this
@@ -111,8 +165,8 @@ const ProjectLifemap = () => {
             maintainability.
           </p>
           <img src="" alt="learningsImg" />
-        </div>
-        <div>
+        </ProjectContentItem>
+        <ProjectContentItem>
           <h2>Summary</h2>
           <ul>
             <li>
@@ -138,11 +192,11 @@ const ProjectLifemap = () => {
             </li>
           </ul>
           <img src="" alt="summaryImg" />
-        </div>
-      </div>
+        </ProjectContentItem>
+      </ProjectLifemapWrapper>
       <Contact />
       <Footer />
-    </motion.div>
+    </ProjectLifemapContainer>
   );
 };
 
