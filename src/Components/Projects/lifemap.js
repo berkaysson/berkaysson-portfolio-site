@@ -26,11 +26,11 @@ const ProjectHeaderWrapper = styled.header`
   margin: 10%;
   gap: ${({ theme }) => theme.sizes.md};
 
-  svg{
+  svg {
     height: 50px;
   }
 
-  h2{
+  h2 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
 `;
@@ -41,19 +41,21 @@ const ProjectContentItem = styled.div`
   grid-template-rows: auto auto;
   border: 1px solid blue;
   position: relative;
-  padding-top: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  grid-gap: 1rem;
+  justify-content: center;
 
-  h2{
+  h2 {
     grid-area: 1/1/2/3;
   }
 
-  p{
+  p {
+    grid-area: ${({ order }) => (order % 2 === 0 ? "2/1/3/2" : "2/2/3/3")};
     text-align: justify;
-    padding-right: 2rem;
   }
 
-  img{
+  img {
+    grid-area: ${({ order }) => (order % 2 === 0 ? "2/2/3/2" : "2/1/3/2")};
     border: 1px solid green;
   }
 `;
@@ -72,7 +74,7 @@ const ProjectLifemap = () => {
           <LifemapLogo />
           <h2>Front&Back end development</h2>
         </ProjectHeaderWrapper>
-        <ProjectContentItem>
+        <ProjectContentItem order={1}>
           <h2>Project Overview</h2>
           <p>
             Lifemap is a powerful life tracking platform designed to help you
@@ -82,7 +84,7 @@ const ProjectLifemap = () => {
           </p>
           <img src="" alt="projectOverviewImg" />
         </ProjectContentItem>
-        <ProjectContentItem>
+        <ProjectContentItem order={2}>
           <h2>Purpose and Inspiration</h2>
           <p>
             I developed Lifemap with a clear purpose in mind — to effectively
@@ -107,7 +109,7 @@ const ProjectLifemap = () => {
           </p>
           <img src="" alt="purposeImg" />
         </ProjectContentItem>
-        <ProjectContentItem>
+        <ProjectContentItem order={3}>
           <h2>Technologies</h2>
           <p>
             For Lifemap, I utilized various technologies to build a robust and
@@ -132,7 +134,7 @@ const ProjectLifemap = () => {
           </p>
           <img src="" alt="techImg" />
         </ProjectContentItem>
-        <ProjectContentItem>
+        <ProjectContentItem order={4}>
           <h2>Challenges and Problems</h2>
           <p>
             Like most of the projects, I ran into a few bumps along the way. The
@@ -154,7 +156,7 @@ const ProjectLifemap = () => {
           </p>
           <img src="" alt="challengesImg" />
         </ProjectContentItem>
-        <ProjectContentItem>
+        <ProjectContentItem order={5}>
           <h2>Learnings</h2>
           <p>
             I could spend pages to describing the things i learned from this
@@ -166,7 +168,7 @@ const ProjectLifemap = () => {
           </p>
           <img src="" alt="learningsImg" />
         </ProjectContentItem>
-        <ProjectContentItem>
+        <ProjectContentItem order={6}>
           <h2>Summary</h2>
           <ul>
             <li>
