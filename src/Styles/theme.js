@@ -20,19 +20,25 @@ export const theme = {
     pageTransition: {
       initial: {
         opacity: 0,
-        y: -200,
+        y: -100,
+        transform: "scale(0.7)",
+        filter: "blur(6px)"
       },
       animate: {
         opacity: 1,
         y: 0,
+        transform: "scale(1)",
+        filter: "blur(0)"
       },
       exit: {
         opacity: 0,
-        y: -200,
+        y: -100,
+        transform: "scale(0.7)",
+        filter: "blur(6px)"
       },
       transition: {
-        duration: 0.5, // dependent on setTimeout in ScrollToTop hook
-        ease: [0.5, 1, 0.5, 1],
+        duration: 0.7, // dependent on setTimeout in ScrollToTop hook
+        ease: [0.2, 1, 0.2, 1],
       },
     },
     navTransition: {
