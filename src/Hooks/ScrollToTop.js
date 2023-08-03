@@ -7,10 +7,10 @@ const ScrollToTop = () => {
 
   // Automatically scrolls to top whenever pathname changes
   useEffect(() => {
-    // it should be equal to duration time of page transitions
+    // do not remove setTimeout, without it it is not working
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 220);
+    }, 0);
   }, [pathname]);
 };
 
