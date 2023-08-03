@@ -21,7 +21,7 @@ const ProjectContentItemWrapper = styled.div`
     grid-area: 1/1/2/3;
   }
 
-  p {
+  p, ul {
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/1/3/2" : "2/2/3/3")};
     text-align: justify;
   }
@@ -33,7 +33,7 @@ const ProjectContentItemWrapper = styled.div`
 
   @media (max-width: 1024px) {
     grid-template-rows: auto auto auto;
-    p {
+    p, ul {
       grid-area: 3/1/4/3;
     }
 
