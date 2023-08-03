@@ -10,7 +10,7 @@ const ScrollToTop = () => {
     // do not remove setTimeout, without it it is not working
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 0);
+    }, 100);
   }, [pathname]);
 };
 
