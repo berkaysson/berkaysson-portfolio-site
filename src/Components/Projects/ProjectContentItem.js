@@ -30,6 +30,17 @@ const ProjectContentItemWrapper = styled.div`
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/2/3/2" : "2/1/3/2")};
     border: 1px solid green;
   }
+
+  @media (max-width: 1024px) {
+    grid-template-rows: auto auto auto;
+    p {
+      grid-area: 3/1/4/3;
+    }
+
+    img {
+      grid-area: 2/1/3/3;
+    }
+  }
 `;
 
 const ProjectContentItem = ({ order, children }) => {
