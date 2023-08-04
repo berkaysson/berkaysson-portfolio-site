@@ -37,7 +37,7 @@ export const theme = {
         filter: "blur(6px)"
       },
       transition: {
-        duration: 0.7, // dependent on setTimeout in ScrollToTop hook
+        duration: 0.7,
         ease: [0.2, 1, 0.2, 1],
       },
     },
