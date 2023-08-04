@@ -6,7 +6,7 @@ import {
   useScroll as framerUseScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { theme } from "../Styles/theme";
+import { theme } from "../../Styles/theme";
 
 const NavigationWrapper = styled(motion.div)`
   width: 100%;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./Hooks/ScrollToTop";
 import AnimatedRoutes from "./Components/AnimatedRoutes";
-import Navigation from "./Components/Navigation";
+import Navigation from "./Components/Navigation/Navigation";
 import useMousePosition from "./Hooks/useMousePosition.js";
 import MouseTooltip from "./Hooks/MouseToolTip";
 import MouseFollower from "./Components/MouseFollower";
