@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./Home";
-import ProjectLifemap from "./Projects/lifemap";
+import Home from "../Sections/Home";
+import ProjectLifemap from "../Projects/lifemap";
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = ({projectContentRef}) => {

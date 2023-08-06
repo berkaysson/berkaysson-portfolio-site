@@ -2,8 +2,8 @@ import { useInView } from "framer-motion";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import lifemapLaunchImg from "../Images/lifemap/lifemap-launch.png";
-import LifemapLogo from "../Images/lifemap/LifemapLogo";
+import lifemapLaunchImg from "../../Images/lifemap/lifemap-launch.png";
+import LifemapLogo from "../../Images/lifemap/LifemapLogo";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;

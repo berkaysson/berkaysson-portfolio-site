@@ -1,6 +1,6 @@
 import { theme } from "../../Styles/theme";
-import Contact from "../Contact";
-import Footer from "../Footer";
+import Contact from "../Sections/Contact";
+import Footer from "../Sections/Footer";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import LifemapLogo from "../../Images/lifemap/LifemapLogo";

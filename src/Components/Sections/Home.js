@@ -1,9 +1,9 @@
-import { theme } from "../Styles/theme";
+import { theme } from "../../Styles/theme";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
-import Skills from "./Skills";
+import Skills from "./Skills/Skills";
 import { motion } from "framer-motion";
 
 const Home = ({projectContentRef}) => {
