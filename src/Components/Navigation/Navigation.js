@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -37,15 +36,18 @@ const Navigation = () => {
       <Link to="/" className="logo">
         <img src="" alt="avatar" /> <span>berkaysson</span>
       </Link>
-      {currentPath === "/" ? (
-        <NavigationMenuWrapper>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </NavigationMenuWrapper>
-      ) : (
-        ""
-      )}
+      <NavigationMenuWrapper>
+        {
+          currentPath === "/" ?
+          <>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </>
+          : 
+          <Link to="/">Home</Link>
+        }
+      </NavigationMenuWrapper>
     </NavigationWrapper>
   );
 };
