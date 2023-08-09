@@ -16,6 +16,12 @@ export const theme = {
   transitions: {
     main: "filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease",
   },
+  boxShadows: {
+    neumorphism:{
+      boxShadow:  "5px 5px 7px #898989,-5px -5px 7px #ffffff;",
+      background: "linear-gradient(145deg, #f0f0f0, #cacaca)",
+    }
+  },
   framerAnimations: {
     pageTransition: {
       initial: {
