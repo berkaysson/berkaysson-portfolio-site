@@ -56,6 +56,17 @@ const MainImgWrapper = styled.a`
   overflow: hidden;
   display: inline-block;
   position: relative;
+
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+
+  @media (max-width: 1024px){
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
 `;
 
 const MainImg = styled.img`
@@ -81,6 +92,16 @@ const ProjectContent = styled(Link)`
   text-align: center;
   font-size: 20px;
   transition: background-color 0.5s ease;
+
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  @media (max-width: 1024px){
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
 
   &:hover {
     background-color: lightgray;
