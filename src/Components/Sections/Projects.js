@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import lifemapLaunchImg from "../../Images/lifemap/lifemap-launch.png";
 import LifemapLogo from "../../Images/lifemap/LifemapLogo";
+import { NeuCardWrapper } from "../Wrappers/NeuCardWrapper";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -17,35 +18,36 @@ const ProjectsWrapper = styled.div`
     font-size: ${({ theme }) => theme.sizes.lg};
   }
 
-  @media(max-width:768px){
-    padding:${({ theme }) => theme.sizes.md};
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
 const ProjectItem = styled.div`
-  border: 1px solid blue;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  padding: 0;
   transition: ${({ theme, inView }) =>
     inView ? theme.transitions.main : "none"};
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
+`;
+
+const ProjectItemWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 1rem;
 
   @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
-    width: 75%;
     min-width: 550px;
   }
 
   @media (max-width: 768px) {
-    width: 90%;
     min-width: auto;
+    padding: 0.5rem;
   }
 
-  @media(max-width:425px){
+  @media (max-width: 425px) {
     width: 100%;
   }
 `;
@@ -80,7 +82,7 @@ const ProjectContent = styled(Link)`
   font-size: 20px;
   transition: background-color 0.5s ease;
 
-  &:hover{
+  &:hover {
     background-color: lightgray;
     cursor: pointer;
   }
@@ -89,9 +91,9 @@ const ProjectContent = styled(Link)`
     padding: ${({ theme }) => theme.sizes.lg};
   }
 
-  @media(max-width:425px){
+  @media (max-width: 425px) {
     font-size: 16px;
-    gap:${({ theme }) => theme.sizes.sl};
+    gap: ${({ theme }) => theme.sizes.sl};
   }
 `;
 
@@ -128,7 +130,7 @@ const ProjectItemContent = styled.div`
   }
 `;
 
-const Projects = ({projectContentRef}) => {
+const Projects = ({ projectContentRef }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -136,37 +138,49 @@ const Projects = ({projectContentRef}) => {
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
       <ProjectItem ref={ref} inView={inView}>
-        <MainImgWrapper
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://berkaysson.github.io/lifemap/"
-        >
-          <MainImg id="lifemapImg" src={lifemapLaunchImg} alt="lifemapImg" />
-        </MainImgWrapper>
+        <NeuCardWrapper neuType="concave">
+          <ProjectItemWrapper>
+            <MainImgWrapper
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://berkaysson.github.io/lifemap/"
+            >
+              <MainImg
+                id="lifemapImg"
+                src={lifemapLaunchImg}
+                alt="lifemapImg"
+              />
+            </MainImgWrapper>
 
-        <ProjectContent to="/project-lifemap" ref={projectContentRef} id="lifemapContent">
-          <ProjectItemHeader>
-            <LifemapLogo />
-          </ProjectItemHeader>
-          <ProjectItemContent>
-            <p>
-              <b
-                style={{
-                  color: "#abc4ff",
-                }}
-              >
-                lifemap
-              </b>{" "}
-              is a powerful life tracking platform designed to help you stay
-              organized and achieve your goals
-            </p>
-            <p>
-              Devoloped with JavaScript, React.js, CSS, Material UI,
-              styled-components and more
-            </p>
-          </ProjectItemContent>
-        </ProjectContent>
-        <DetailsButton to="/project-lifemap">More details...</DetailsButton>
+            <ProjectContent
+              to="/project-lifemap"
+              ref={projectContentRef}
+              id="lifemapContent"
+            >
+              <ProjectItemHeader>
+                <LifemapLogo />
+              </ProjectItemHeader>
+              <ProjectItemContent>
+                <p>
+                  <b
+                    style={{
+                      color: "#abc4ff",
+                    }}
+                  >
+                    lifemap
+                  </b>{" "}
+                  is a powerful life tracking platform designed to help you stay
+                  organized and achieve your goals
+                </p>
+                <p>
+                  Devoloped with JavaScript, React.js, CSS, Material UI,
+                  styled-components and more
+                </p>
+              </ProjectItemContent>
+            </ProjectContent>
+            <DetailsButton to="/project-lifemap">More details...</DetailsButton>
+          </ProjectItemWrapper>
+        </NeuCardWrapper>
       </ProjectItem>
     </ProjectsWrapper>
   );
