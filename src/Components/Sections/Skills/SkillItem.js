@@ -37,16 +37,16 @@ const SkillItem = ({ skill, index }) => {
   const inView = useInView(ref, { once: true });
 
   return (
-    <NeuCardWrapper>
-      <SkillItemWrapper
-        style={{ transitionDelay: `${index / Math.exp(3)}s` }}
-        ref={ref}
-        inView={inView}
-      >
+    <SkillItemWrapper
+      style={{ transitionDelay: `${index / Math.exp(3)}s` }}
+      ref={ref}
+      inView={inView}
+    >
+      <NeuCardWrapper>
         <span>{skill}</span>
         <img src="" alt="skillItemImg" />
-      </SkillItemWrapper>
-    </NeuCardWrapper>
+      </NeuCardWrapper>
+    </SkillItemWrapper>
   );
 };
 
