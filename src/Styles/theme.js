@@ -18,8 +18,14 @@ export const theme = {
   },
   boxShadows: {
     neumorphism:{
-      boxShadow:  "5px 5px 7px #898989,-5px -5px 7px #ffffff;",
-      background: "linear-gradient(145deg, #f0f0f0, #cacaca)",
+      convex:{
+        boxShadow:  "4px 4px 5px #d6d6d6,-4px -4px 5px #ffffff",
+        background: "linear-gradient(145deg, #ffffff, #e6e6e6)",
+      },
+      concave:{
+        boxShadow:  "4px 4px 5px #d6d6d6,-4px -4px 5px #ffffff",
+        background: "linear-gradient(145deg, #e6e6e6, #ffffff)",
+      }
     }
   },
   framerAnimations: {

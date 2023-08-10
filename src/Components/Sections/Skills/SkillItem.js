@@ -42,7 +42,7 @@ const SkillItem = ({ skill, index }) => {
       ref={ref}
       inView={inView}
     >
-      <NeuCardWrapper>
+      <NeuCardWrapper neuType="convex">
         <span>{skill}</span>
         <img src="" alt="skillItemImg" />
       </NeuCardWrapper>

@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
 
 export const NeuCardWrapper = styled.div`
-  box-shadow: ${({ theme }) => theme.boxShadows.neumorphism.boxShadow};
-  background: ${({ theme }) => theme.boxShadows.neumorphism.background};
+  box-shadow: ${({ theme, neuType }) => theme.boxShadows.neumorphism[neuType].boxShadow};
+  background: ${({ theme, neuType }) => theme.boxShadows.neumorphism[neuType].background};
   border-radius: ${({ theme }) => theme.sizes.md};
+  border: 1px solid lightgray;
   width: 100%;
   height: 100%;
 `;
