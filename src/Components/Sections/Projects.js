@@ -119,14 +119,6 @@ const ProjectContent = styled(Link)`
   }
 `;
 
-const DetailsButton = styled(Link)`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-  z-index: 3;
-`;
-
 const ProjectItemHeader = styled.div`
   display: flex;
   flex-direction: column;
@@ -229,7 +221,6 @@ const Projects = ({ projectContentRef, screenWidth }) => {
                 ""
               )}
             </ProjectContent>
-            <DetailsButton to="/project-lifemap">More details...</DetailsButton>
           </ProjectItemWrapper>
         </NeuCardWrapper>
       </ProjectItem>
