@@ -55,7 +55,10 @@ const MainImg = styled.img`
   height: 100%;
   width: 100%;
   vertical-align: center;
-  filter: grayscale(100%) contrast(0.8);
+  filter: ${({ isMouseFollowerOn }) =>
+    isMouseFollowerOn
+      ? "grayscale(0) contrast(1.1)"
+      : "grayscale(100%) contrast(0.8)"};
   transition: filter 0.2s ease, transform 0.5s ease;
 
   &:hover {
@@ -156,6 +159,7 @@ const ProjectItem = ({
               id={`${itemName}Img`}
               src={imgPath}
               alt={`${itemName}Img`}
+              isMouseFollowerOn={isMouseFollowerOn}
             />
             {isMouseFollowerOn ? (
               <MouseFollowerWrapper>
