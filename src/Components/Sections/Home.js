@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import Skills from "./Skills/Skills";
 import { motion } from "framer-motion";
 
-const Home = ({projectContentRef}) => {
+const Home = ({ projectContentRef, screenWidth }) => {
   return (
     <motion.div
       initial={theme.framerAnimations.pageTransition.initial}
@@ -16,7 +16,10 @@ const Home = ({projectContentRef}) => {
     >
       <About />
       <Skills />
-      <Projects projectContentRef={projectContentRef} />
+      <Projects
+        projectContentRef={projectContentRef}
+        screenWidth={screenWidth}
+      />
       <Contact />
       <Footer />
     </motion.div>

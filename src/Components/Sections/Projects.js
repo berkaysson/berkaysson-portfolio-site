@@ -5,6 +5,7 @@ import { useRef } from "react";
 import lifemapLaunchImg from "../../Images/lifemap/lifemap-launch.png";
 import LifemapLogo from "../../Images/lifemap/LifemapLogo";
 import { NeuCardWrapper } from "../Wrappers/NeuCardWrapper";
+import MouseFollower from "../MouseFollower";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -60,13 +61,12 @@ const MainImgWrapper = styled.a`
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 
-  @media (max-width: 1024px){
+  @media (max-width: 1024px) {
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-
 `;
 
 const MainImg = styled.img`
@@ -92,11 +92,12 @@ const ProjectContent = styled(Link)`
   text-align: center;
   font-size: 20px;
   transition: background-color 0.5s ease;
+  position: relative;
 
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 
-  @media (max-width: 1024px){
+  @media (max-width: 1024px) {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border-top-right-radius: 0;
@@ -151,7 +152,13 @@ const ProjectItemContent = styled.div`
   }
 `;
 
-const Projects = ({ projectContentRef }) => {
+const MouseFollowerWrapper = styled.span`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+`;
+
+const Projects = ({ projectContentRef, screenWidth }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -171,6 +178,17 @@ const Projects = ({ projectContentRef }) => {
                 src={lifemapLaunchImg}
                 alt="lifemapImg"
               />
+              {screenWidth <= 1024 ? (
+                <MouseFollowerWrapper>
+                  <MouseFollower
+                    visible={true}
+                    text={"PREVIEW"}
+                    mouseFollowerType={"lifemapImg"}
+                  />
+                </MouseFollowerWrapper>
+              ) : (
+                ""
+              )}
             </MainImgWrapper>
 
             <ProjectContent
@@ -198,6 +216,18 @@ const Projects = ({ projectContentRef }) => {
                   styled-components and more
                 </p>
               </ProjectItemContent>
+
+              {screenWidth <= 1024 ? (
+                <MouseFollowerWrapper>
+                  <MouseFollower
+                    visible={true}
+                    text={"DETAILS"}
+                    mouseFollowerType={"lifemapContent"}
+                  />
+                </MouseFollowerWrapper>
+              ) : (
+                ""
+              )}
             </ProjectContent>
             <DetailsButton to="/project-lifemap">More details...</DetailsButton>
           </ProjectItemWrapper>

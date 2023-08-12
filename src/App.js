@@ -7,6 +7,7 @@ import useMousePosition from "./Hooks/useMousePosition.js";
 import MouseTooltip from "./Hooks/MouseToolTip";
 import MouseFollower from "./Components/MouseFollower";
 import { useEffect, useRef, useState } from "react";
+import useScreenSize from "./Hooks/useScreenSize";
 
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.primary};
@@ -31,6 +32,7 @@ const App = () => {
   const { targetID: onMouseTarget, target } = useMousePosition();
   const projectContentRef = useRef();
   const isMouseOverProjectContent = projectContentRef.current?.contains(target);
+  const { width: screenWidth } = useScreenSize();
 
   useEffect(() => {
     if (onMouseTarget === "lifemapImg") {
@@ -44,24 +46,32 @@ const App = () => {
 
   return (
     <>
-      <MouseTooltip
-        children={
-          <MouseFollower
-            text={mouseFollowerText}
-            mouseFollowerType={mouseFollowerType}
-            visible={
-              onMouseTarget === "lifemapImg" || isMouseOverProjectContent
-            }
-          />
-        }
-      />
+      {screenWidth <= 1024 ? (
+        ""
+      ) : (
+        <MouseTooltip
+          children={
+            <MouseFollower
+              text={mouseFollowerText}
+              mouseFollowerType={mouseFollowerType}
+              visible={
+                onMouseTarget === "lifemapImg" || isMouseOverProjectContent
+              }
+              screenWidth={screenWidth}
+            />
+          }
+        />
+      )}
 
       <BrowserRouter>
         <ScrollToTop />
         <AppWrapper>
           <MainWrapper>
             <Navigation />
-            <AnimatedRoutes projectContentRef={projectContentRef} />
+            <AnimatedRoutes
+              projectContentRef={projectContentRef}
+              screenWidth={screenWidth}
+            />
           </MainWrapper>
         </AppWrapper>
       </BrowserRouter>

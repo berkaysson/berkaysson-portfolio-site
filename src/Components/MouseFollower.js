@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import TouchAppIcon from "@mui/icons-material/TouchApp";
 
 const MouseFollowerWrapper = styled.div`
   width: 62px;
@@ -26,22 +27,35 @@ const MouseFollowerWrapper = styled.div`
     position: absolute;
     content: "";
     background-color: ${({ mouseFollowerType }) =>
-    mouseFollowerType === "lifemapImg" ? "#ff6d00" : "black"};
+      mouseFollowerType === "lifemapImg" ? "#ff6d00" : "black"};
     width: 100%;
     height: 100%;
     border-radius: 50%;
     opacity: 0.6;
     z-index: -1;
   }
+
+  svg {
+    position: absolute;
+    color: black;
+    z-index: -1;
+    font-size: 30px;
+  }
 `;
 
-const MouseFollower = ({ visible, text, mouseFollowerType }) => {
+const MouseFollower = ({
+  visible,
+  text,
+  mouseFollowerType,
+  screenWidth = 1,
+}) => {
   return (
     <MouseFollowerWrapper
       mouseFollowerType={mouseFollowerType}
       visible={visible}
     >
       {text}
+      {screenWidth <= 1024 ? <TouchAppIcon /> : ""}
     </MouseFollowerWrapper>
   );
 };
