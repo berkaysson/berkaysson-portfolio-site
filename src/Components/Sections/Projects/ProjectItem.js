@@ -138,10 +138,10 @@ const ProjectItem = ({
   isMouseFollowerOn,
   projectContentRef,
   imgPath,
-  logoComponent
+  logoComponent,
 }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, {once:true});
+  const inView = useInView(ref, { once: true });
 
   return (
     <ProjectItemWrapper ref={ref} inView={inView}>
@@ -152,7 +152,11 @@ const ProjectItem = ({
             rel="noopener noreferrer"
             href={siteLink}
           >
-            <MainImg id={`${itemName}Img`} src={imgPath} alt={`${itemName}Img`} />
+            <MainImg
+              id={`${itemName}Img`}
+              src={imgPath}
+              alt={`${itemName}Img`}
+            />
             {isMouseFollowerOn ? (
               <MouseFollowerWrapper>
                 <MouseFollower
@@ -171,11 +175,7 @@ const ProjectItem = ({
             ref={projectContentRef}
             id={`${itemName}Content`}
           >
-            <ProjectLogo>
-              {
-                logoComponent
-              }
-            </ProjectLogo>
+            <ProjectLogo>{logoComponent}</ProjectLogo>
             <ProjectContent>
               {projectContents[itemName].description}
             </ProjectContent>
