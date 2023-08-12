@@ -137,7 +137,8 @@ const ProjectItem = ({
   siteLink,
   isMouseFollowerOn,
   projectContentRef,
-  imgPath
+  imgPath,
+  logoComponent
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, {once:true});
@@ -172,7 +173,7 @@ const ProjectItem = ({
           >
             <ProjectLogo>
               {
-                //logo
+                logoComponent
               }
             </ProjectLogo>
             <ProjectContent>

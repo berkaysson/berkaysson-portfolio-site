@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import ProjectItem from "./ProjectItem";
 import lifemapImg from "../../../Images/lifemap/lifemap-launch.png";
+import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -29,6 +30,7 @@ const Projects = ({ projectContentRef, screenWidth }) => {
         isMouseFollowerOn={screenWidth <= 1024}
         projectContentRef={projectContentRef}
         imgPath={lifemapImg}
+        logoComponent={<LifemapLogo />}
       />
     </ProjectsWrapper>
   );
