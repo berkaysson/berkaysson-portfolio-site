@@ -2,10 +2,22 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   useScroll as framerUseScroll,
+  motion,
   useMotionValueEvent,
 } from "framer-motion";
 import { theme } from "../../Styles/theme";
 import { NavigationWrapper, NavigationMenuWrapper } from "./NavigationStyles";
+import { GlassCardWrapper } from "../Wrappers/Effects/GlassCardWrapper";
+import { styled } from "styled-components";
+
+const NavigationContainer = styled(motion.div)`
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  margin: 1rem;
+  padding: 1rem;
+`;
 
 const Navigation = () => {
   const [currentPath, setCurrentPath] = useState("/");
@@ -26,29 +38,32 @@ const Navigation = () => {
   });
 
   return (
-    <NavigationWrapper
+    <NavigationContainer
       currentPath={currentPath}
       variants={theme.framerAnimations.navTransition}
       animate={hidden ? "hidden" : "visible"}
       exit={"exit"}
       transition={theme.framerAnimations.navTransition.transition}
     >
-      <Link to="/" className="logo">
-        <img src="" alt="avatar" /> <span>berkaysson</span>
-      </Link>
-      <NavigationMenuWrapper>
-        {
-          currentPath === "/" ?
-          <>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </>
-          : 
-          <Link to="/">Home</Link>
-        }
-      </NavigationMenuWrapper>
-    </NavigationWrapper>
+      <GlassCardWrapper>
+        <NavigationWrapper>
+          <Link to="/" className="logo">
+            <img src="" alt="avatar" /> <span>berkaysson</span>
+          </Link>
+          <NavigationMenuWrapper>
+            {currentPath === "/" ? (
+              <>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+              </>
+            ) : (
+              <Link to="/">Home</Link>
+            )}
+          </NavigationMenuWrapper>
+        </NavigationWrapper>
+      </GlassCardWrapper>
+    </NavigationContainer>
   );
 };
 
