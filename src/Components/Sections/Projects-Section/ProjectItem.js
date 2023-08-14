@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import { NeuCardWrapper } from "../../Wrappers/Effects/NeuCardWrapper";
-import MouseFollower from "../../MouseFollower";
 import { Link } from "react-router-dom";
 import { projectContents } from "./projectContents";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { GlassCardWrapper } from './../../Wrappers/Effects/GlassCardWrapper';
+import { GlassCardWrapper } from "./../../Wrappers/Effects/GlassCardWrapper";
 
 const ProjectItemWrapper = styled.div`
   transition: ${({ theme, inView }) =>
@@ -67,12 +66,6 @@ const MainImg = styled.img`
     transform: scale(1.1);
     cursor: pointer;
   }
-`;
-
-const MouseFollowerWrapper = styled.span`
-  position: absolute;
-  left: 50%;
-  top: 50%;
 `;
 
 const ProjectContentWrapper = styled(Link)`
@@ -174,17 +167,6 @@ const ProjectItem = ({
               alt={`${itemName}Img`}
               isMouseFollowerOn={isMouseFollowerOn}
             />
-            {isMouseFollowerOn ? (
-              <MouseFollowerWrapper>
-                <MouseFollower
-                  visible={true}
-                  text={"PREVIEW"}
-                  mouseFollowerType={`${itemName}Img`}
-                />
-              </MouseFollowerWrapper>
-            ) : (
-              ""
-            )}
             <ClickText>GO TO WEBSITE</ClickText>
           </MainImgWrapper>
 
@@ -197,17 +179,6 @@ const ProjectItem = ({
             <ProjectContent>
               {projectContents[itemName].description}
             </ProjectContent>
-            {isMouseFollowerOn ? (
-              <MouseFollowerWrapper>
-                <MouseFollower
-                  visible={true}
-                  text={"DETAILS"}
-                  mouseFollowerType={`${itemName}Content`}
-                />
-              </MouseFollowerWrapper>
-            ) : (
-              ""
-            )}
             <ClickText>GO TO DETAILS</ClickText>
           </ProjectContentWrapper>
         </ProjectItemInnerWrapper>

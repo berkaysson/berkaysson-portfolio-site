@@ -46,22 +46,18 @@ const App = () => {
 
   return (
     <>
-      {screenWidth <= 1024 ? (
-        ""
-      ) : (
-        <MouseTooltip
-          children={
-            <MouseFollower
-              text={mouseFollowerText}
-              mouseFollowerType={mouseFollowerType}
-              visible={
-                onMouseTarget === "lifemapImg" || isMouseOverProjectContent
-              }
-              screenWidth={screenWidth}
-            />
-          }
-        />
-      )}
+      <MouseTooltip
+        children={
+          <MouseFollower
+            text={mouseFollowerText}
+            mouseFollowerType={mouseFollowerType}
+            visible={
+              onMouseTarget === "lifemapImg" || isMouseOverProjectContent
+            }
+            screenWidth={screenWidth}
+          />
+        }
+      />
 
       <BrowserRouter>
         <ScrollToTop />

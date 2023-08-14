@@ -59,7 +59,6 @@ const MouseFollower = ({
       visible={visible}
     >
       {text}
-      {screenWidth <= 1024 ? <TouchAppIcon /> : ""}
     </MouseFollowerWrapper>
   );
 };
