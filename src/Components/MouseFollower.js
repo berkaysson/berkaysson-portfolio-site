@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import TouchAppIcon from "@mui/icons-material/TouchApp";
 
 const MouseFollowerWrapper = styled.div`
   width: 62px;
