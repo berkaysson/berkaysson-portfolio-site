@@ -2,7 +2,7 @@ import { theme } from "../../Styles/theme";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import Projects from "./Projects/Projects-Section";
+import Projects from "./Projects-Section/Projects-Section";
 import Skills from "./Skills/Skills";
 import { motion } from "framer-motion";
 
