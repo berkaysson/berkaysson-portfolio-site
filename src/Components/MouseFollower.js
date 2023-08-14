@@ -31,8 +31,12 @@ const MouseFollowerWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: -1;
+
+    @media (max-width: 1024px){
+      opacity: 0.3;
+    }
   }
 
   svg {
