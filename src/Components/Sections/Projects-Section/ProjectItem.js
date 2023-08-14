@@ -5,6 +5,7 @@ import { projectContents } from "./projectContents";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { GlassCardWrapper } from "./../../Wrappers/Effects/GlassCardWrapper";
+import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
 
 const ProjectItemWrapper = styled.div`
   transition: ${({ theme, inView }) =>
@@ -139,6 +140,12 @@ const ClickText = styled(GlassCardWrapper)`
   pointer-events: none;
   font-size: ${({ theme }) => theme.sizes.sl};
   padding: ${({ theme }) => theme.sizes.xsl};
+
+  svg {
+    margin-left: 5px;
+    font-size: 16px;
+    transform: translateY(23%);
+  }
 `;
 
 const ProjectItem = ({
@@ -167,7 +174,9 @@ const ProjectItem = ({
               alt={`${itemName}Img`}
               isMouseFollowerOn={isMouseFollowerOn}
             />
-            <ClickText>GO TO WEBSITE</ClickText>
+            <ClickText>
+              GO TO WEBSITE <OpenInBrowserIcon />
+            </ClickText>
           </MainImgWrapper>
 
           <ProjectContentWrapper
@@ -179,7 +188,9 @@ const ProjectItem = ({
             <ProjectContent>
               {projectContents[itemName].description}
             </ProjectContent>
-            <ClickText>GO TO DETAILS</ClickText>
+            <ClickText>
+              GO TO DETAILS <OpenInBrowserIcon />
+            </ClickText>
           </ProjectContentWrapper>
         </ProjectItemInnerWrapper>
       </NeuCardWrapper>
