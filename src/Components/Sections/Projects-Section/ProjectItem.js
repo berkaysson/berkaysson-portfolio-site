@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { NeuCardWrapper } from "../../Wrappers/NeuCardWrapper";
+import { NeuCardWrapper } from "../../Wrappers/Effects/NeuCardWrapper";
 import MouseFollower from "../../MouseFollower";
 import { Link } from "react-router-dom";
 import { projectContents } from "./projectContents";

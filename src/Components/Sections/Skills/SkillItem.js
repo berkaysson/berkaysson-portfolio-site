@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { NeuCardWrapper } from "../../Wrappers/NeuCardWrapper";
+import { NeuCardWrapper } from "../../Wrappers/Effects/NeuCardWrapper";
 
 const SkillItemWrapper = styled.li`
   width: 150px;
