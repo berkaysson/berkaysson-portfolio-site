@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { projectContents } from "./projectContents";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { GlassCardWrapper } from './../../Wrappers/Effects/GlassCardWrapper';
 
 const ProjectItemWrapper = styled.div`
   transition: ${({ theme, inView }) =>
@@ -102,6 +103,7 @@ const ProjectContentWrapper = styled(Link)`
 
   @media (max-width: 1024px) {
     padding: ${({ theme }) => theme.sizes.lg};
+    padding-bottom: 3rem;
   }
 
   @media (max-width: 425px) {
@@ -135,16 +137,15 @@ const ProjectContent = styled.div`
   }
 `;
 
-const ClickText = styled.span`
+const ClickText = styled(GlassCardWrapper)`
   position: absolute;
-  bottom: 0;
-  right: 1rem;
-  color: white;
-  text-shadow: black 1px 1px 3px;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  color: black;
+  font-weight: bold;
   pointer-events: none;
   font-size: ${({ theme }) => theme.sizes.sl};
   padding: ${({ theme }) => theme.sizes.xsl};
-  letter-spacing: 1.5px;
 `;
 
 const ProjectItem = ({
