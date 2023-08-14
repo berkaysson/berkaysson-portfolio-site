@@ -56,14 +56,10 @@ const MainImg = styled.img`
   height: 100%;
   width: 100%;
   vertical-align: center;
-  filter: ${({ isMouseFollowerOn }) =>
-    isMouseFollowerOn
-      ? "grayscale(0) contrast(1.1)"
-      : "grayscale(100%) contrast(0.8)"};
   transition: filter 0.2s ease, transform 0.5s ease;
 
   &:hover {
-    filter: grayscale(0) contrast(1.1);
+    filter: contrast(1.1);
     transform: scale(1.1);
     cursor: pointer;
   }
