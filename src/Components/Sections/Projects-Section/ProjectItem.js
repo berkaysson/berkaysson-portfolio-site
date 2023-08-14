@@ -135,6 +135,18 @@ const ProjectContent = styled.div`
   }
 `;
 
+const ClickText = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  color: white;
+  text-shadow: black 1px 1px 3px;
+  pointer-events: none;
+  font-size: ${({ theme }) => theme.sizes.sl};
+  padding: ${({ theme }) => theme.sizes.xsl};
+  letter-spacing: 1.5px;
+`;
+
 const ProjectItem = ({
   itemName,
   siteLink,
@@ -172,6 +184,7 @@ const ProjectItem = ({
             ) : (
               ""
             )}
+            <ClickText>GO TO WEBSITE</ClickText>
           </MainImgWrapper>
 
           <ProjectContentWrapper
@@ -194,6 +207,7 @@ const ProjectItem = ({
             ) : (
               ""
             )}
+            <ClickText>GO TO DETAILS</ClickText>
           </ProjectContentWrapper>
         </ProjectItemInnerWrapper>
       </NeuCardWrapper>
