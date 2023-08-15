@@ -129,8 +129,8 @@ const ProjectContent = styled.div`
 
 const ClickText = styled(GlassCardWrapper)`
   position: absolute;
-  bottom: 0.3rem;
-  right: 0.3rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
   color: black;
   font-weight: bold;
   pointer-events: none;
