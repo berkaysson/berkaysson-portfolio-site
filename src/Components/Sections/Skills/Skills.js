@@ -39,6 +39,7 @@ const Skills = () => {
     "npm",
     "git",
     "Styled-Components",
+    "C#"
   ];
   return (
     <SkillsWrapper id="skills">
