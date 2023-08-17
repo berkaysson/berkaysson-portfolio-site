@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import LifemapLogo from "../../Images/lifemap/LifemapLogo";
 import ProjectContentItem from "./ProjectContentItem";
+import HidingDiv from "../Wrappers/Effects/HidingDiv";
 
 const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
@@ -172,8 +173,10 @@ const ProjectLifemap = () => {
           <img src="" alt="summaryImg" />
         </ProjectContentItem>
       </ProjectLifemapWrapper>
-      <Contact />
-      <Footer />
+      <HidingDiv id={"lifemapHideDiv"}>
+        <Contact />
+        <Footer />
+      </HidingDiv>
     </ProjectLifemapContainer>
   );
 };
