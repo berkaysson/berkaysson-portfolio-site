@@ -1,4 +1,5 @@
 import { theme } from "../../Styles/theme";
+import HidingDiv from "../Wrappers/Effects/HidingDiv";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -20,8 +21,10 @@ const Home = ({ projectContentRef, screenWidth }) => {
         projectContentRef={projectContentRef}
         screenWidth={screenWidth}
       />
-      <Contact />
-      <Footer />
+      <HidingDiv id={"homeHideDiv"}>
+        <Contact />
+        <Footer />
+      </HidingDiv>
     </motion.div>
   );
 };
