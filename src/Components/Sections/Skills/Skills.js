@@ -13,8 +13,8 @@ const SkillsWrapper = styled.div`
     font-size: ${({ theme }) => theme.sizes.lg};
   }
 
-  @media(max-width:768px){
-    padding:${({ theme }) => theme.sizes.md};
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
@@ -30,16 +30,16 @@ const SkillsListWrapper = styled.ul`
 
 const Skills = () => {
   const skills = [
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "React.js",
-    "React Router",
-    "Material UI",
-    "npm",
-    "git",
-    "Styled-Components",
-    "C#"
+    { name: "JavaScript", img: "" },
+    { name: "HTML", img: "" },
+    { name: "CSS", img: "" },
+    { name: "React.js", img: "" },
+    { name: "React Router", img: "" },
+    { name: "Material UI", img: "" },
+    { name: "npm", img: "" },
+    { name: "git", img: "" },
+    { name: "Styled-Components", img: "" },
+    { name: "C#", img: "" },
   ];
   return (
     <SkillsWrapper id="skills">
