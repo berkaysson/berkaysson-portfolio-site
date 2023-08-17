@@ -12,7 +12,7 @@ const HidingDivWrapper = styled.div`
   position: relative;
   transform: translateY(${({ yValue }) => yValue}%);
   z-index: -1;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease-out;
 `;
 
 const HidingDiv = ({ children, id }) => {
@@ -22,9 +22,11 @@ const HidingDiv = ({ children, id }) => {
   const documentHeight =
     document.documentElement.scrollHeight - window.innerHeight;
   const divHeight = document.getElementById(id)?.offsetHeight;
-  
-  const yValue = (Math.max(scrollData.y - documentHeight, -divHeight) / divHeight) * 100;
-  
+
+  const yValue =
+    (Math.max(scrollData.y - documentHeight, -divHeight) / divHeight / 2.5) *
+    100;
+
   return (
     <Container ref={ref} inView={inView}>
       <HidingDivWrapper yValue={yValue} id={id}>
