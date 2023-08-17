@@ -48,9 +48,9 @@ const ContactFormWrapper = styled.form`
 
 const Contact = () => {
   return (
-    <ContactWrapper id="contact">
+    <ContactWrapper>
       <h1>Say Hi</h1>
-      <ContactFormWrapper>
+      <ContactFormWrapper id="contact">
         <label htmlFor="name">
           Name
           <input
