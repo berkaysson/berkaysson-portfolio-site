@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import ProjectItem from "./ProjectItem";
 import lifemapImg from "../../../Images/lifemap/lifemap-launch.png";
 import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
+import dhondtImg from "../../../Images/dhondt/dhondt-launch.png";
 
 const ProjectsWrapper = styled.div`
   border: 1px solid red;
@@ -32,6 +33,14 @@ const Projects = ({ projectContentRef, screenWidth }) => {
         projectContentRef={projectContentRef}
         imgPath={lifemapImg}
         logoComponent={<LifemapLogo />}
+      />
+      <ProjectItem
+        itemName={"dhondtApp"}
+        siteLink={"https://berkaysson.github.io/dhondt-system-calculator/"}
+        isMouseFollowerOn={screenWidth <= 1024}
+        projectContentRef={projectContentRef}
+        imgPath={dhondtImg}
+        logoComponent={""}
       />
     </ProjectsWrapper>
   );
