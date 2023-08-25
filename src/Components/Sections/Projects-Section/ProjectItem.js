@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { GlassCardWrapper } from "./../../Wrappers/Effects/GlassCardWrapper";
 import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 const ProjectItemWrapper = styled.div`
   transition: ${({ theme, inView }) =>
@@ -185,7 +186,7 @@ const ProjectItem = ({
               {projectContents[itemName].description}
             </ProjectContent>
             <ClickText>
-              GO TO DETAILS <OpenInBrowserIcon />
+              GO TO DETAILS <InfoOutlinedIcon />
             </ClickText>
           </ProjectContentWrapper>
         </ProjectItemInnerWrapper>
