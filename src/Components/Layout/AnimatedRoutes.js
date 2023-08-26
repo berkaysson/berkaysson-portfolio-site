@@ -3,7 +3,13 @@ import Home from "../Sections/Home";
 import ProjectLifemap from "../Projects/lifemap";
 import { AnimatePresence } from "framer-motion";
 
-const AnimatedRoutes = ({ projectContentRef, screenWidth }) => {
+const AnimatedRoutes = ({
+  lifemapImgRef,
+  lifemapContentRef,
+  dhondtAppImgRef,
+  dhondtAppContentRef,
+  screenWidth,
+}) => {
   const location = useLocation();
 
   return (
@@ -15,7 +21,10 @@ const AnimatedRoutes = ({ projectContentRef, screenWidth }) => {
           element={
             <Home
               screenWidth={screenWidth}
-              projectContentRef={projectContentRef}
+              lifemapImgRef={lifemapImgRef}
+              lifemapContentRef={lifemapContentRef}
+              dhondtAppImgRef={dhondtAppImgRef}
+              dhondtAppContentRef={dhondtAppContentRef}
             />
           }
         />

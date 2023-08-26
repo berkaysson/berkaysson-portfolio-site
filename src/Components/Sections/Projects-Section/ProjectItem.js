@@ -149,7 +149,8 @@ const ProjectItem = ({
   itemName,
   siteLink,
   isMouseFollowerOn,
-  projectContentRef,
+  imgRef,
+  contentRef,
   imgPath,
   logoComponent,
 }) => {
@@ -170,6 +171,7 @@ const ProjectItem = ({
               src={imgPath}
               alt={`${itemName}Img`}
               isMouseFollowerOn={isMouseFollowerOn}
+              ref={imgRef}
             />
             <ClickText>
               GO TO WEBSITE <OpenInBrowserIcon />
@@ -178,11 +180,11 @@ const ProjectItem = ({
 
           <ProjectContentWrapper
             to={`/project-${itemName}`}
-            ref={projectContentRef}
+            ref={contentRef}
             id={`${itemName}Content`}
           >
-            <ProjectLogo>{logoComponent}</ProjectLogo>
-            <ProjectContent>
+            <ProjectLogo style={{pointerEvents:"none"}}>{logoComponent}</ProjectLogo>
+            <ProjectContent style={{pointerEvents:"none"}}>
               {projectContents[itemName].description}
             </ProjectContent>
             <ClickText>

@@ -7,7 +7,13 @@ import Projects from "./Projects-Section/Projects-Section";
 import Skills from "./Skills/Skills";
 import { motion } from "framer-motion";
 
-const Home = ({ projectContentRef, screenWidth }) => {
+const Home = ({
+  lifemapImgRef,
+  lifemapContentRef,
+  dhondtAppImgRef,
+  dhondtAppContentRef,
+  screenWidth,
+}) => {
   return (
     <motion.div
       initial={theme.framerAnimations.pageTransition.initial}
@@ -18,7 +24,10 @@ const Home = ({ projectContentRef, screenWidth }) => {
       <About />
       <Skills />
       <Projects
-        projectContentRef={projectContentRef}
+        lifemapImgRef={lifemapImgRef}
+        lifemapContentRef={lifemapContentRef}
+        dhondtAppImgRef={dhondtAppImgRef}
+        dhondtAppContentRef={dhondtAppContentRef}
         screenWidth={screenWidth}
       />
       <HidingDiv id={"homeHideDiv"}>

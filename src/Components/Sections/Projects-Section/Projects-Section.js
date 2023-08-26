@@ -22,7 +22,10 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
-const Projects = ({ projectContentRef, screenWidth }) => {
+const Projects = ({   lifemapImgRef,
+  lifemapContentRef,
+  dhondtAppImgRef,
+  dhondtAppContentRef, screenWidth }) => {
   return (
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
@@ -30,7 +33,8 @@ const Projects = ({ projectContentRef, screenWidth }) => {
         itemName={"lifemap"}
         siteLink={"https://berkaysson.github.io/lifemap"}
         isMouseFollowerOn={screenWidth <= 1024}
-        projectContentRef={projectContentRef}
+        imgRef={lifemapImgRef}
+        contentRef={lifemapContentRef}
         imgPath={lifemapImg}
         logoComponent={<LifemapLogo />}
       />
@@ -38,7 +42,8 @@ const Projects = ({ projectContentRef, screenWidth }) => {
         itemName={"dhondtApp"}
         siteLink={"https://berkaysson.github.io/dhondt-system-calculator/"}
         isMouseFollowerOn={screenWidth <= 1024}
-        projectContentRef={projectContentRef}
+        imgRef={dhondtAppImgRef}
+        contentRef={dhondtAppContentRef}
         imgPath={dhondtImg}
         logoComponent={""}
       />
