@@ -28,21 +28,31 @@ const MainWrapper = styled.main`
 
 const App = () => {
   const [mouseFollowerText, setMouseFollowerText] = useState("");
-  const [mouseFollowerType, setMouseFollowerType] = useState("");
-  const { targetID: onMouseTarget, target } = useMousePosition();
-  const projectContentRef = useRef();
-  const isMouseOverProjectContent = projectContentRef.current?.contains(target);
+  const [mouseFollowerType, setMouseFollowerType] = useState(false);
+  const { target } = useMousePosition();
+  const lifemapImgRef = useRef();
+  const lifemapContentRef = useRef();
+  const dhondtAppImgRef = useRef();
+  const dhondtAppContentRef = useRef();
   const { width: screenWidth } = useScreenSize();
 
   useEffect(() => {
-    if (onMouseTarget === "lifemapImg") {
+    if (target === lifemapImgRef.current) {
       setMouseFollowerText("PREVIEW");
-      setMouseFollowerType("lifemapImg");
-    } else if (isMouseOverProjectContent) {
+      setMouseFollowerType({ img: true, type: "lifemap" });
+    } else if (target === lifemapContentRef.current) {
       setMouseFollowerText("DETAILS");
-      setMouseFollowerType("lifemapContent");
+      setMouseFollowerType({ img: false, type: "lifemap" });
+    } else if (target === dhondtAppImgRef.current) {
+      setMouseFollowerText("PREVIEW");
+      setMouseFollowerType({ img: true, type: "dhondtApp" });
+    } else if (target === dhondtAppContentRef.current) {
+      setMouseFollowerText("DETAILS");
+      setMouseFollowerType({ img: false, type: "dhondtApp" });
+    } else {
+      setMouseFollowerType(false);
     }
-  }, [isMouseOverProjectContent, onMouseTarget]);
+  }, [target]);
 
   return (
     <>
@@ -51,9 +61,7 @@ const App = () => {
           <MouseFollower
             text={mouseFollowerText}
             mouseFollowerType={mouseFollowerType}
-            visible={
-              onMouseTarget === "lifemapImg" || isMouseOverProjectContent
-            }
+            visible={mouseFollowerType}
             screenWidth={screenWidth}
           />
         }
@@ -65,7 +73,10 @@ const App = () => {
           <MainWrapper>
             <Navigation />
             <AnimatedRoutes
-              projectContentRef={projectContentRef}
+              lifemapImgRef={lifemapImgRef}
+              lifemapContentRef={lifemapContentRef}
+              dhondtAppImgRef={dhondtAppImgRef}
+              dhondtAppContentRef={dhondtAppContentRef}
               screenWidth={screenWidth}
             />
           </MainWrapper>
