@@ -39,16 +39,16 @@ const App = () => {
   useEffect(() => {
     if (target === lifemapImgRef.current) {
       setMouseFollowerText("PREVIEW");
-      setMouseFollowerType({ img: true, type: "lifemap" });
+      setMouseFollowerType({ type: "img", project: "lifemap" });
     } else if (target === lifemapContentRef.current) {
       setMouseFollowerText("DETAILS");
-      setMouseFollowerType({ img: false, type: "lifemap" });
+      setMouseFollowerType({ type: "content", project: "lifemap" });
     } else if (target === dhondtAppImgRef.current) {
       setMouseFollowerText("PREVIEW");
-      setMouseFollowerType({ img: true, type: "dhondtApp" });
+      setMouseFollowerType({ type: "img", project: "dhondtApp" });
     } else if (target === dhondtAppContentRef.current) {
       setMouseFollowerText("DETAILS");
-      setMouseFollowerType({ img: false, type: "dhondtApp" });
+      setMouseFollowerType({ type: "content", project: "dhondtApp" });
     } else {
       setMouseFollowerType(false);
     }
