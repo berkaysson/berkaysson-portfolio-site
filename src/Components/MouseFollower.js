@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const MouseFollowerWrapper = styled.div`
   width: 62px;
   height: 62px;
   background-color: transparent;
-  backdrop-filter: ${({ mouseFollowerType }) =>
-    mouseFollowerType === "lifemapImg" ? "blur(10px) contrast(1.5)" : "none"};
+  backdrop-filter: ${({ mouseFollowerStyle }) => mouseFollowerStyle};
   border-radius: 50%;
   pointer-events: none;
   font-size: 12px;
@@ -25,8 +25,7 @@ const MouseFollowerWrapper = styled.div`
     transition: background-color 0.3s;
     position: absolute;
     content: "";
-    background-color: ${({ mouseFollowerType }) =>
-      mouseFollowerType === "lifemapImg" ? "#ff6d00" : "black"};
+    background-color: ${({ mouseFollowerStyle }) => mouseFollowerStyle.bgColor};
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -42,15 +41,48 @@ const MouseFollowerWrapper = styled.div`
   }
 `;
 
+const projectStyles = {
+  img: {
+    lifemap: {
+      backDrop: "blur(10px) contrast(1.5)",
+      bgColor: "#ff6d00",
+    },
+    dhondtApp: {
+      backDrop: "blur(10px) contrast(1.5)",
+      bgColor: "#ff6d00",
+    },
+  },
+  content: {
+    lifemap: {
+      backDrop: "",
+      bgColor: "black",
+    },
+    dhondtApp: {
+      backDrop: "",
+      bgColor: "black",
+    },
+  },
+};
+
 const MouseFollower = ({
   visible,
   text,
   mouseFollowerType,
   screenWidth = 1,
 }) => {
+  const [mouseFollowerStyle, setMouseFollowerStyle] = useState({});
+
+  useEffect(() => {
+    if (visible) {
+      setMouseFollowerStyle(
+        projectStyles[mouseFollowerType?.type][mouseFollowerType?.project]
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mouseFollowerType]);
   return (
     <MouseFollowerWrapper
-      mouseFollowerType={mouseFollowerType}
+      mouseFollowerStyle={mouseFollowerStyle}
       visible={visible}
     >
       {text}
