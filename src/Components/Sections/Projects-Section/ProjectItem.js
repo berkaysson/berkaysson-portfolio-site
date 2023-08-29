@@ -88,7 +88,7 @@ const ProjectContentWrapper = styled(Link)`
   }
 
   &:hover {
-    background-color: lightgray;
+    background-color: ${({theme})=>theme.colors.medium};
     cursor: pointer;
   }
 
@@ -132,7 +132,8 @@ const ClickText = styled(GlassCardWrapper)`
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
-  color: black;
+  color: ${({theme})=>theme.colors.darker};
+  background-color: ${({theme})=>theme.colors.lightest};
   font-weight: bold;
   pointer-events: none;
   font-size: ${({ theme }) => theme.sizes.sl};

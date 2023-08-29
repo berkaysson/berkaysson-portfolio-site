@@ -10,13 +10,13 @@ import { useEffect, useRef, useState } from "react";
 import useScreenSize from "./Hooks/useScreenSize";
 
 const AppWrapper = styled.div`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.lightest};
   width: 100%;
   max-width: 1300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.darker};
 `;
 
 const MainWrapper = styled.main`

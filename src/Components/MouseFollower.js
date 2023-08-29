@@ -12,8 +12,8 @@ const MouseFollowerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-shadow: 0 0 2px black;
+  color: ${({theme})=>theme.colors.lightest};
+  text-shadow: 0 0 2px ${({theme})=>theme.colors.darker};
   transition: all 0.3s, transform 0.8s;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transform: ${({ visible }) =>
