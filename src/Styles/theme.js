@@ -29,11 +29,11 @@ export const theme = {
   boxShadows: {
     neumorphism: {
       convex: {
-        boxShadow: `4px 4px 5px ${COLORS.medium},-4px -4px 5px ${COLORS.dark}`,
+        boxShadow: `1px 1px 3px ${COLORS.medium},-1px -1px 3px ${COLORS.dark}`,
         background: `linear-gradient(145deg, ${COLORS.dark}, ${COLORS.medium})`,
       },
       concave: {
-        boxShadow: `4px 4px 5px ${COLORS.medium},-4px -4px 5px ${COLORS.dark}`,
+        boxShadow: `1px 1px 3px ${COLORS.medium},-1px -1px 3px ${COLORS.dark}`,
         background: `linear-gradient(145deg, ${COLORS.medium}, ${COLORS.dark})`,
       },
     },
