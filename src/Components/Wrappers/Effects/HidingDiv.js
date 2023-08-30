@@ -4,7 +4,6 @@ import { styled } from "styled-components";
 import useScroll from "../../../Hooks/useScroll";
 
 const Container = styled.div`
-  border: 1px solid black;
 `;
 
 const HidingDivWrapper = styled.div`
