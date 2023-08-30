@@ -7,7 +7,6 @@ const FooterWrapper = styled.footer`
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid red;
   padding: ${({ theme }) => theme.sizes.sl};
   font-size: 14px;
 `;

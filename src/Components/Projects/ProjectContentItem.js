@@ -6,7 +6,6 @@ const ProjectContentItemWrapper = styled.div`
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: auto auto;
-  border: 1px solid blue;
   position: relative;
   padding: 2rem;
   grid-gap: 1rem;
@@ -28,7 +27,6 @@ const ProjectContentItemWrapper = styled.div`
 
   img {
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/2/3/2" : "2/1/3/2")};
-    border: 1px solid green;
   }
 
   @media (max-width: 1024px) {

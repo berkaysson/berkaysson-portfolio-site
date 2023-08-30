@@ -5,7 +5,6 @@ import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
 import dhondtImg from "../../../Images/dhondt/dhondt-launch.png";
 
 const ProjectsWrapper = styled.div`
-  border: 1px solid red;
   padding: ${({ theme }) => theme.sizes.xlg};
   display: flex;
   flex-direction: column;

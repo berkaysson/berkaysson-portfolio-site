@@ -14,7 +14,6 @@ const AboutHeader = styled.header`
   height: 75vh;
   width: 100%;
   text-align: center;
-  border: 1px solid red;
   padding: 0 ${({ theme }) => theme.sizes.xlg};
 
   h3 {
@@ -28,7 +27,6 @@ const AboutHeader = styled.header`
   }
 
   img {
-    border: 1px solid blue;
     height: auto;
     width: 400px;
 
@@ -48,7 +46,6 @@ const AboutSection = styled.section`
   align-items: center;
   text-align: justify;
   gap: ${({ theme }) => theme.sizes.md};
-  border: 1px red solid;
   padding: ${({ theme }) => theme.sizes.xlg};
 
   h3 {

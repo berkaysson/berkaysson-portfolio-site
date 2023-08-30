@@ -14,7 +14,6 @@ const ProjectLifemapContainer = styled(motion.div)`
 
 const ProjectLifemapWrapper = styled.div`
   padding: ${({ theme }) => theme.sizes.xlg};
-  border: 1px solid red;
 
   @media (max-width: 768px) {
     padding: ${({ theme }) => theme.sizes.md};

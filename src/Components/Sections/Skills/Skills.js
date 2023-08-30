@@ -6,7 +6,6 @@ const SkillsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid red;
   padding: ${({ theme }) => theme.sizes.xlg};
 
   h2 {

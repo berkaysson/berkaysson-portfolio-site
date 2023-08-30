@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 const ContactWrapper = styled.div`
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +19,6 @@ const ContactWrapper = styled.div`
 const ContactFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
   padding: ${({ theme }) => theme.sizes.lg};
   width: 100%;
   gap: ${({ theme }) => theme.sizes.lg};
