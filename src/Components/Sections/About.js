@@ -61,6 +61,7 @@ const AboutSection = styled.section`
     &:last-child {
       font-size: ${({ theme }) => theme.sizes.md};
       text-align: center;
+      color: ${({ theme }) => theme.colors.theme};
     }
   }
 
