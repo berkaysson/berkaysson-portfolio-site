@@ -19,10 +19,12 @@ const AboutHeader = styled.header`
 
   h3 {
     font-size: ${({ theme }) => theme.sizes.xlg};
+    color: ${({ theme }) => theme.colors.theme};
   }
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
+    color: ${({ theme }) => theme.colors.lightest};
   }
 
   img {

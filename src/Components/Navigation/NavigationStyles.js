@@ -6,6 +6,7 @@ export const NavigationWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   opacity: 1;
+  color: ${({ theme }) => theme.colors.darker};
 
   .logo {
     padding: 0 ${({ theme }) => theme.sizes.sl};
