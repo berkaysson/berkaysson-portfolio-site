@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavigationWrapper = styled.div`
-  height: 100px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
