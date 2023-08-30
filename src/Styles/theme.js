@@ -5,6 +5,7 @@ const COLORS = {
   light: "#547C8C",
   lighter: "#8D9FA6",
   lightest: "#BEE5F2",
+  theme: "#E46434",
 };
 
 export const theme = {
@@ -15,6 +16,7 @@ export const theme = {
     light: COLORS.light,
     lighter: COLORS.lighter,
     lightest: COLORS.lightest,
+    theme: COLORS.theme
   },
   sizes: {
     xsl: "8px",
