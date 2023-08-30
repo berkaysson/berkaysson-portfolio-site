@@ -44,12 +44,18 @@ const MainImgWrapper = styled.a`
 
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  transition: border 0.5s;
+  border: 2px solid ${({ theme }) => theme.colors.darker};
 
   @media (max-width: 1024px) {
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.theme};
   }
 `;
 
@@ -61,7 +67,6 @@ const MainImg = styled.img`
 
   &:hover {
     filter: contrast(1.1);
-    transform: scale(1.1);
     cursor: pointer;
   }
 `;
@@ -80,6 +85,7 @@ const ProjectContentWrapper = styled(Link)`
 
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  border: 2px solid ${({ theme }) => theme.colors.medium};
 
   @media (max-width: 1024px) {
     border-bottom-left-radius: 1rem;
@@ -90,6 +96,7 @@ const ProjectContentWrapper = styled(Link)`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.light};
+    border-color: ${({ theme }) => theme.colors.theme};
     cursor: pointer;
   }
 
