@@ -4,6 +4,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1.4rem;
 `;
 
 const AboutHeader = styled.header`
@@ -47,6 +48,7 @@ const AboutSection = styled.section`
   text-align: justify;
   gap: ${({ theme }) => theme.sizes.md};
   padding: ${({ theme }) => theme.sizes.xlg};
+  padding-top: 0;
 
   h3 {
     font-size: ${({ theme }) => theme.sizes.lg};
