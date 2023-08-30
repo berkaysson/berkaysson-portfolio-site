@@ -11,6 +11,7 @@ const ProjectsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: ${({ theme }) => theme.sizes.lg};
+  background-color: ${({ theme }) => theme.colors.darker};
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};

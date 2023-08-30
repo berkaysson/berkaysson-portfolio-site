@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { GlassCardWrapper } from "./../../Wrappers/Effects/GlassCardWrapper";
 import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const ProjectItemWrapper = styled.div`
   transition: ${({ theme, inView }) =>
@@ -76,6 +76,7 @@ const ProjectContentWrapper = styled(Link)`
   font-size: 20px;
   transition: background-color 0.5s ease;
   position: relative;
+  background-color: ${({ theme }) => theme.colors.medium};
 
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -88,7 +89,7 @@ const ProjectContentWrapper = styled(Link)`
   }
 
   &:hover {
-    background-color: ${({theme})=>theme.colors.medium};
+    background-color: ${({ theme }) => theme.colors.light};
     cursor: pointer;
   }
 
@@ -132,8 +133,8 @@ const ClickText = styled(GlassCardWrapper)`
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
-  color: ${({theme})=>theme.colors.darker};
-  background-color: ${({theme})=>theme.colors.lightest};
+  color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.lightest};
   font-weight: bold;
   pointer-events: none;
   font-size: ${({ theme }) => theme.sizes.sl};
@@ -184,8 +185,10 @@ const ProjectItem = ({
             ref={contentRef}
             id={`${itemName}Content`}
           >
-            <ProjectLogo style={{pointerEvents:"none"}}>{logoComponent}</ProjectLogo>
-            <ProjectContent style={{pointerEvents:"none"}}>
+            <ProjectLogo style={{ pointerEvents: "none" }}>
+              {logoComponent}
+            </ProjectLogo>
+            <ProjectContent style={{ pointerEvents: "none" }}>
               {projectContents[itemName].description}
             </ProjectContent>
             <ClickText>
