@@ -4,13 +4,14 @@ import { styled } from "styled-components";
 import useScroll from "../../../Hooks/useScroll";
 
 const Container = styled.div`
+  position: relative;
+  z-index: -1;
 `;
 
 const HidingDivWrapper = styled.div`
   width: 100%;
   position: relative;
   transform: translateY(${({ yValue }) => yValue}%);
-  z-index: -1;
   transition: transform 0.3s ease-out;
 `;
 
