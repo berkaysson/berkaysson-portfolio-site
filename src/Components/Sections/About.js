@@ -18,13 +18,13 @@ const AboutHeader = styled.header`
   padding: 0 ${({ theme }) => theme.sizes.xlg};
 
   h3 {
-    font-size: ${({ theme }) => theme.sizes.xlg};
-    color: ${({ theme }) => theme.colors.theme};
+    font-size: ${({ theme }) => theme.sizes.lg};
+    color: ${({ theme }) => theme.colors.lightest};
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.sizes.lg};
-    color: ${({ theme }) => theme.colors.lightest};
+    font-size: ${({ theme }) => theme.sizes.xlg};
+    color: ${({ theme }) => theme.colors.theme};
   }
 
   img {
@@ -73,12 +73,12 @@ const About = () => {
   return (
     <AboutWrapper id="about">
       <AboutHeader>
-        <h3>Hi, I'm Berkay Sonel</h3>
+        <h1>Hi, I'm Berkay Sonel</h1>
         <img src="" alt="berkayPhoto" />
-        <h1>
+        <h3>
           I am self-taught front-end developer. I love creating awesome web
           experiences.
-        </h1>
+        </h3>
       </AboutHeader>
       <AboutSection>
         <h3>What is my story ?</h3>
