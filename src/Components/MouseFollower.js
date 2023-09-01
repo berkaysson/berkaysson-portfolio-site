@@ -5,7 +5,7 @@ const MouseFollowerWrapper = styled.div`
   width: 62px;
   height: 62px;
   background-color: transparent;
-  backdrop-filter: ${({ mouseFollowerStyle }) => mouseFollowerStyle};
+  backdrop-filter: ${({ mouseFollowerStyle }) => mouseFollowerStyle.backDrop};
   border-radius: 50%;
   pointer-events: none;
   font-size: 12px;
@@ -20,6 +20,7 @@ const MouseFollowerWrapper = styled.div`
     visible
       ? "scale(1) translate(-50%, -70%)"
       : "scale(0.5) translate(-50%, -70%)"};
+  color: ${({ mouseFollowerStyle }) => mouseFollowerStyle.color};
 
   &::before {
     transition: background-color 0.3s;
@@ -29,7 +30,7 @@ const MouseFollowerWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: -1;
   }
 
@@ -46,20 +47,24 @@ const projectStyles = {
     lifemap: {
       backDrop: "blur(10px) contrast(1.5)",
       bgColor: "#ff6d00",
+      color: "black",
     },
     dhondtApp: {
       backDrop: "blur(10px) contrast(1.5)",
-      bgColor: "#ff6d00",
+      bgColor: "white",
+      color: "#14213D",
     },
   },
   content: {
     lifemap: {
       backDrop: "",
       bgColor: "black",
+      color: "#ff6d00",
     },
     dhondtApp: {
       backDrop: "",
-      bgColor: "black",
+      bgColor: "#14213D",
+      color: "white",
     },
   },
 };
