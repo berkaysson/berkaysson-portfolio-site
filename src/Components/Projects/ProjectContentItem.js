@@ -15,12 +15,14 @@ const ProjectContentItemWrapper = styled.div`
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
+  background-color: ${({ theme }) => theme.colors.darker};
 
   h2 {
     grid-area: 1/1/2/3;
   }
 
-  p, ul {
+  p,
+  ul {
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/1/3/2" : "2/2/3/3")};
     text-align: justify;
   }
@@ -31,7 +33,8 @@ const ProjectContentItemWrapper = styled.div`
 
   @media (max-width: 1024px) {
     grid-template-rows: auto auto auto;
-    p, ul {
+    p,
+    ul {
       grid-area: 3/1/4/3;
     }
 
