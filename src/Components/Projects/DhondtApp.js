@@ -25,6 +25,7 @@ const ProjectHeaderWrapper = styled.header`
   text-align: center;
   margin: 10%;
   gap: ${({ theme }) => theme.sizes.md};
+  padding-top: 5rem;
 
   svg {
     height: 50px;
