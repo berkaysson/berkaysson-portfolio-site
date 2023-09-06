@@ -13,22 +13,26 @@ const useMousePosition = () => {
       setMousePosition({
         x: ev.clientX,
         y: ev.clientY,
-        targetID: ev.target.id,
+        targetID: ev.target?.id,
         target: ev.target,
       });
     };
 
     const updateMousePositionOnScroll = () => {
-      if (mousePosition.x !== null && mousePosition.y !== null) {
+      if (
+        mousePosition.x !== null &&
+        mousePosition.y !== null &&
+        mousePosition.target === "html"
+      ) {
         setMousePosition((prevMousePosition) => ({
           ...prevMousePosition,
           targetID: document.elementFromPoint(
-            prevMousePosition.x,
-            prevMousePosition.y
+            prevMousePosition?.x,
+            prevMousePosition?.y
           ).id,
           target: document.elementFromPoint(
-            prevMousePosition.x,
-            prevMousePosition.y
+            prevMousePosition?.x,
+            prevMousePosition?.y
           ),
         }));
       }
