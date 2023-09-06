@@ -12,7 +12,6 @@ import useScreenSize from "./Hooks/useScreenSize";
 const AppWrapper = styled.div`
   color: ${({ theme }) => theme.colors.lightest};
   width: 100%;
-  max-width: 1300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +22,7 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1300px;
 `;
 
 const App = () => {
