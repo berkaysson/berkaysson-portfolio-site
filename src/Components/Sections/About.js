@@ -6,7 +6,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1.4rem;
+  padding-top: 20%;
 `;
 
 const AboutHeader = styled.header`
@@ -14,7 +14,6 @@ const AboutHeader = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 75vh;
   width: 100%;
   text-align: center;
   padding: 0 ${({ theme }) => theme.sizes.xlg};
