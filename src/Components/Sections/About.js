@@ -29,15 +29,6 @@ const AboutHeader = styled.header`
     color: ${({ theme }) => theme.colors.theme};
   }
 
-  img {
-    height: auto;
-    width: 400px;
-
-    @media (max-width: 768px) {
-      width: 90%;
-    }
-  }
-
   @media (max-width: 768px) {
     padding: 0 ${({ theme }) => theme.sizes.md};
   }
