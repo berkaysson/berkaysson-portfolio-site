@@ -5,7 +5,7 @@ const COLORS = {
   light: "#547C8C",
   lighter: "#8D9FA6",
   lightest: "#BEE5F2",
-  theme: "#FA909B",
+  theme: "#F8A300",
 };
 
 export const theme = {
