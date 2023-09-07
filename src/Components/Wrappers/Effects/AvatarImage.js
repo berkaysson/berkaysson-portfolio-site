@@ -33,6 +33,7 @@ const AvatarImageWrapper = styled.img`
   
   transform: scale(var(--f));
   transition: 0.3s;
+  transition-delay: 0.1s;
 
   &:hover {
     --f: 1.5;
