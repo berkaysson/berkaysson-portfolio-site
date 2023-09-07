@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import BerkayAvatar from "../../Images/berkay-avatar.png"
+import AvatarImage from "../Wrappers/Effects/AvatarImage";
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -75,7 +76,7 @@ const About = () => {
     <AboutWrapper id="about">
       <AboutHeader>
         <h1>Hi, I'm Berkay Sonel</h1>
-        <img src={BerkayAvatar} alt="berkayPhoto" />
+        <AvatarImage src={BerkayAvatar} alt="berkayPhoto" />
         <h3>
           I am self-taught front-end developer. I love creating awesome web
           experiences.
