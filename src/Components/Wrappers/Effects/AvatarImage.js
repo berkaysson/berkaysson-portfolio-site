@@ -8,7 +8,6 @@ const AvatarImageWrapper = styled.img`
 
   width: var(--s);
   padding-top: calc(var(--s) / 5);
-  cursor: pointer;
   border-radius: 0 0 999px 999px;
 
   --_g: 50% / calc(100% / var(--f)) 100% no-repeat content-box;
