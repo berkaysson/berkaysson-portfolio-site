@@ -6,9 +6,9 @@ function LifemapLogo() {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsSvgjs="http://svgjs.dev/svgjs"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="1000"
+      width="290"
       height="290"
-      viewBox="0 0 1000 290"
+      viewBox="290 0 1000 290"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
