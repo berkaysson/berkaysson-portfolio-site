@@ -19,17 +19,9 @@ const useMousePosition = () => {
     };
 
     const updateMousePositionOnScroll = () => {
-      if (
-        mousePosition.x !== null &&
-        mousePosition.y !== null &&
-        mousePosition.target === "html"
-      ) {
+      if (mousePosition.x !== null && mousePosition.y !== null) {
         setMousePosition((prevMousePosition) => ({
           ...prevMousePosition,
-          targetID: document.elementFromPoint(
-            prevMousePosition?.x,
-            prevMousePosition?.y
-          ).id,
           target: document.elementFromPoint(
             prevMousePosition?.x,
             prevMousePosition?.y
