@@ -69,7 +69,7 @@ const App = () => {
       />
 
       <BrowserRouter>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <AppWrapper>
           <MainWrapper>
             <Navigation />
