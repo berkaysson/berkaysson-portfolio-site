@@ -12,6 +12,7 @@ const ProjectsWrapper = styled.div`
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.darker};
   width: 100%;
+  padding-bottom: 4rem;
 
   h1 {
     font-size: 2rem;
@@ -41,11 +42,20 @@ const ProjectsGithubLink = styled.a`
 
     svg {
       font-size: 2rem;
+      transition: transform 0.5s, color 0.2s;
     }
   }
 
   &:hover{
     text-decoration: underline;
+
+    span{
+      svg{
+        transform: rotate(360deg);
+        color: ${({ theme }) => theme.colors.theme};
+      }
+      
+    }
   }
 `;
 
