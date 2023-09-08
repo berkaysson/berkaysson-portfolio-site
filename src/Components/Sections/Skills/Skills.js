@@ -47,7 +47,7 @@ const Skills = () => {
   ];
   return (
     <SkillsWrapper id="skills">
-      <h2>What are my Skills?</h2>
+      <h2>What are my Skills ?</h2>
       <SkillsListWrapper>
         {skills.map((skill, index) => (
           <SkillItem skill={skill} key={index} index={index} />
