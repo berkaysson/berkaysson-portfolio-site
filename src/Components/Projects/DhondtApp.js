@@ -9,30 +9,42 @@ import HidingDiv from "../Wrappers/Effects/HidingDiv";
 const ProjectDhondtAppContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const ProjectDhondtAppWrapper = styled.div`
-  padding: ${({ theme }) => theme.sizes.xlg};
-
+  padding: ${({ theme }) => theme.sectionPadding};
+  background-color: ${({ theme }) => theme.colors.darker};
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
 const ProjectHeaderWrapper = styled.header`
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 10%;
-  gap: ${({ theme }) => theme.sizes.md};
-  padding-top: 5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  align-items: center;
 
-  svg {
-    height: 50px;
+  h1 {
+    font-size: 3rem;
+    color: ${({ theme }) => theme.colors.theme};
+
+    @media (max-width: 425px) {
+      font-size: 2rem;
+    }
   }
 
   h2 {
-    font-size: ${({ theme }) => theme.sizes.lg};
+    font-size: 2rem;
+    text-align: right;
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
@@ -47,7 +59,7 @@ const ProjectDhondtApp = () => {
     >
       <ProjectDhondtAppWrapper theme={theme}>
         <ProjectHeaderWrapper theme={theme}>
-          {/* <DhondtAppLogo /> */}
+          <h1>D'Hondt System Calculator</h1>
           <h2>Front-end and application development</h2>
         </ProjectHeaderWrapper>
         <ProjectContentItem order={1}>
