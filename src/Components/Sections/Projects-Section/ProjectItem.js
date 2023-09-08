@@ -67,6 +67,7 @@ const MainImg = styled.img`
 
   &:hover {
     filter: contrast(1.1);
+    transform: scale(1.01);
     cursor: pointer;
   }
 `;
@@ -82,7 +83,7 @@ const ProjectContentWrapper = styled(Link)`
   transition: background-color 0.5s ease;
   position: relative;
   background-color: ${({ theme }) => theme.colors.medium};
-
+  padding: 1rem;
   border-top-right-radius: ${({ theme }) => theme.borders.sharp};
   border-bottom-right-radius: ${({ theme }) => theme.borders.sharp};
   border: 2px solid ${({ theme }) => theme.colors.medium};
