@@ -6,6 +6,7 @@ const ContactWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.sizes.xlg};
   gap: ${({ theme }) => theme.sizes.lg};
+  background-color: ${({ theme }) => theme.colors.black};
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
