@@ -81,15 +81,15 @@ li{
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 3px;
+  border-radius: 5px;
   background: #BEE5F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  border-radius: 5px;
   background: #2d4c5f;
 }
 
 ::-webkit-scrollbar-corner{
-  border-radius: 3px;
+  border-radius: 5px;
 }

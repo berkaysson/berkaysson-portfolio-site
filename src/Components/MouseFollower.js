@@ -6,14 +6,14 @@ const MouseFollowerWrapper = styled.div`
   height: 62px;
   background-color: transparent;
   backdrop-filter: ${({ mouseFollowerStyle }) => mouseFollowerStyle.backDrop};
-  border-radius: 50%;
+  border-radius: ${({ theme }) => theme.borders.circular};
   pointer-events: none;
   font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({theme})=>theme.colors.lightest};
-  text-shadow: 0 0 2px ${({theme})=>theme.colors.darker};
+  color: ${({ theme }) => theme.colors.lightest};
+  text-shadow: 0 0 2px ${({ theme }) => theme.colors.darker};
   transition: all 0.3s, transform 0.8s;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transform: ${({ visible }) =>
@@ -29,7 +29,7 @@ const MouseFollowerWrapper = styled.div`
     background-color: ${({ mouseFollowerStyle }) => mouseFollowerStyle.bgColor};
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: ${({ theme }) => theme.borders.circular};
     opacity: 0.6;
     z-index: -1;
   }

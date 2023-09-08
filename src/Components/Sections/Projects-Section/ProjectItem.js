@@ -42,14 +42,14 @@ const MainImgWrapper = styled.a`
   display: inline-block;
   position: relative;
 
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-top-left-radius: ${({ theme }) => theme.borders.sharp};
+  border-bottom-left-radius: ${({ theme }) => theme.borders.sharp};
   transition: border 0.5s;
   border: 2px solid ${({ theme }) => theme.colors.darker};
 
   @media (max-width: 1024px) {
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: ${({ theme }) => theme.borders.sharp};
+    border-top-left-radius: ${({ theme }) => theme.borders.sharp};
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -83,13 +83,13 @@ const ProjectContentWrapper = styled(Link)`
   position: relative;
   background-color: ${({ theme }) => theme.colors.medium};
 
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-top-right-radius: ${({ theme }) => theme.borders.sharp};
+  border-bottom-right-radius: ${({ theme }) => theme.borders.sharp};
   border: 2px solid ${({ theme }) => theme.colors.medium};
 
   @media (max-width: 1024px) {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: ${({ theme }) => theme.borders.sharp};
+    border-bottom-right-radius: ${({ theme }) => theme.borders.sharp};
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }

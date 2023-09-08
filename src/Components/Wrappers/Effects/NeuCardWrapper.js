@@ -5,7 +5,7 @@ export const NeuCardWrapper = styled.div`
     theme.boxShadows.neumorphism[neuType].boxShadow};
   background: ${({ theme, neuType }) =>
     theme.boxShadows.neumorphism[neuType].background};
-  border-radius: ${({ theme }) => theme.sizes.md};
+  border-radius: ${({ theme }) => theme.borders.roundedSl};
   border: 1px solid ${({ theme }) => theme.colors.medium};
   width: 100%;
   height: 100%;
