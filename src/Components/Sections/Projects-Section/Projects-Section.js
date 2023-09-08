@@ -3,6 +3,7 @@ import ProjectItem from "./ProjectItem";
 import lifemapImg from "../../../Images/lifemap/lifemap-launch.png";
 import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
 import dhondtImg from "../../../Images/dhondt/dhondt-launch.png";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const ProjectsWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
@@ -20,10 +21,41 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
-const Projects = ({   lifemapImgRef,
+const ProjectsGithubLink = styled.a`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 2px dashed ${({ theme }) => theme.colors.lighter};
+  border-radius: ${({ theme }) => theme.borders.roundedSl};
+  background-color: ${({ theme }) => theme.colors.dark};
+  cursor: pointer;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  &:hover{
+    text-decoration: underline;
+  }
+`;
+
+const Projects = ({
+  lifemapImgRef,
   lifemapContentRef,
   dhondtAppImgRef,
-  dhondtAppContentRef, screenWidth }) => {
+  dhondtAppContentRef,
+  screenWidth,
+}) => {
   return (
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
@@ -45,6 +77,16 @@ const Projects = ({   lifemapImgRef,
         imgPath={dhondtImg}
         logoComponent={""}
       />
+      <ProjectsGithubLink
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/berkaysson"
+      >
+        You can find more on my github profile
+        <span>
+          <GitHubIcon /> Github
+        </span>
+      </ProjectsGithubLink>
     </ProjectsWrapper>
   );
 };
