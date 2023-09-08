@@ -1,4 +1,5 @@
 const COLORS = {
+  black: "#040D12",
   darker: "#141A26",
   dark: "#242D40",
   medium: "#3C5E73",
@@ -10,6 +11,7 @@ const COLORS = {
 
 export const theme = {
   colors: {
+    black: COLORS.black,
     darker: COLORS.darker,
     dark: COLORS.dark,
     medium: COLORS.medium,
