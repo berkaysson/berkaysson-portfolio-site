@@ -37,7 +37,17 @@ export const NavigationMenuWrapper = styled.nav`
   align-items: center;
   font-size: ${({ theme }) => theme.sizes.md};
   margin-left: 4rem;
-  gap: 0.5rem;
+  gap: 0.8rem;
+
+  a {
+    padding-bottom: 3px;
+    box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.medium};
+    transition: .1s box-shadow;
+    &:hover {
+      box-shadow: 0px 1px 0px ${({ theme }) => theme.colors.darker};
+      padding-bottom: 1px;
+    }
+  }
 
   @media (max-width: 475px) {
     margin-left: 1rem;
