@@ -121,8 +121,8 @@ const ProjectLogo = styled.div`
   }
 
   svg {
-    width: 120px;
-    height: auto;
+    height: 50px;
+    margin-left: 20%;
   }
 `;
 
