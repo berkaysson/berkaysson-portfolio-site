@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 
 const AvatarImageWrapper = styled.img`
-  --s: 280px; /* image size */
+  --s: 400px; /* image size */
+  @media (max-width: 768px) {
+    --s: 280px;
+  }
   --b: 5px; /* border thickness */
   --c: ${({ theme }) => theme.colors.light}; /* border color */
   --f: 1; /* initial scale */

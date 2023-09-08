@@ -22,7 +22,9 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1300px;
+  padding-top: 150px;
+  overflow-x: hidden;
+  max-width: 1500px;
 `;
 
 const App = () => {
@@ -67,7 +69,7 @@ const App = () => {
       />
 
       <BrowserRouter>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <AppWrapper>
           <MainWrapper>
             <Navigation />

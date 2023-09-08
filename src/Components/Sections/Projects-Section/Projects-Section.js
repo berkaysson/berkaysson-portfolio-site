@@ -5,19 +5,18 @@ import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
 import dhondtImg from "../../../Images/dhondt/dhondt-launch.png";
 
 const ProjectsWrapper = styled.div`
-  padding: ${({ theme }) => theme.sizes.xlg};
+  padding: ${({ theme }) => theme.sectionPadding};
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.darker};
+  width: 100%;
 
   h1 {
-    font-size: ${({ theme }) => theme.sizes.lg};
+    font-size: 2rem;
   }
 
-  @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.sizes.md};
+  @media (max-width: 1000px) {
   }
 `;
 

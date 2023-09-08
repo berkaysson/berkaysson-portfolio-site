@@ -3,17 +3,19 @@ import SkillItem from "./SkillItem";
 
 const SkillsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: ${({ theme }) => theme.sizes.xlg};
+  flex-direction: row;
+  justify-content: space-between;
+  padding: ${({ theme }) => theme.sectionPadding};
+  width: 100%;
+  height: 50vh;
 
   h2 {
-    font-size: ${({ theme }) => theme.sizes.lg};
+    font-size: 2rem;
   }
 
-  @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.sizes.md};
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    height: auto;
   }
 `;
 
@@ -21,10 +23,14 @@ const SkillsListWrapper = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: ${({ theme }) => theme.sizes.lg};
+  justify-content: flex-end;
   gap: ${({ theme }) => theme.sizes.xsl};
+  max-width: 1300px;
+
+  @media (max-width: 1000px) {
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
 `;
 
 const Skills = () => {

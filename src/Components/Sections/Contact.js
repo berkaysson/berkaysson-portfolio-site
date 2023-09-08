@@ -3,16 +3,16 @@ import { styled } from "styled-components";
 const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: ${({ theme }) => theme.sizes.xlg};
+  padding: ${({ theme }) => theme.sectionPadding};
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.black};
+  width: 100%;
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
 
-  @media(max-width:768px){
+  @media(max-width:1000px){
     padding:${({ theme }) => theme.sizes.md};
   }
 `;
@@ -20,7 +20,6 @@ const ContactWrapper = styled.div`
 const ContactFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  padding: ${({ theme }) => theme.sizes.lg};
   width: 100%;
   gap: ${({ theme }) => theme.sizes.lg};
 
@@ -40,8 +39,7 @@ const ContactFormWrapper = styled.form`
     }
   }
 
-  @media(max-width:768px){
-    padding:${({ theme }) => theme.sizes.md};
+  @media(max-width:1000px){
   }
 `;
 
