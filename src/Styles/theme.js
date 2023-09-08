@@ -27,6 +27,7 @@ export const theme = {
     lg: "24px",
     xlg: "34px",
   },
+  sectionPadding: "1rem 2rem",
   borders: {
     sharp: "3px",
     roundedSl: "5px",
