@@ -10,30 +10,39 @@ import HidingDiv from "../Wrappers/Effects/HidingDiv";
 const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const ProjectLifemapWrapper = styled.div`
-  padding: ${({ theme }) => theme.sizes.xlg};
-
+  padding: ${({ theme }) => theme.sectionPadding};
+  background-color: ${({ theme }) => theme.colors.darker};
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
 const ProjectHeaderWrapper = styled.header`
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 10%;
-  gap: ${({ theme }) => theme.sizes.md};
-  padding-top: 5rem;
-
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
   svg {
     height: 50px;
+
+    @media (max-width: 365px) {
+      height: 45px;
+    }
   }
 
   h2 {
-    font-size: ${({ theme }) => theme.sizes.lg};
+    font-size: 2rem;
+    text-align: right;
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
