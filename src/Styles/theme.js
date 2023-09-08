@@ -25,6 +25,13 @@ export const theme = {
     lg: "24px",
     xlg: "34px",
   },
+  borders: {
+    sharp: "3px",
+    roundedSl: "5px",
+    roundedMd: "10px",
+    roundedLg: "18px",
+    circular: "50%",
+  },
   transitions: {
     main: "filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease",
   },
