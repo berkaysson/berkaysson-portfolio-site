@@ -4,20 +4,14 @@ export const NavigationWrapper = styled.div`
   height: 84px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   opacity: 1;
   color: ${({ theme }) => theme.colors.darker};
 
   .logo {
-    padding: 0 ${({ theme }) => theme.sizes.sl};
-    img {
-      margin: auto ${({ theme }) => theme.sizes.sl};
-      width: ${({ theme }) => theme.sizes.xlg};
-      height: auto;
-
-      @media (max-width: 768px) {
-        width: ${({ theme }) => theme.sizes.lg};
-      }
+    svg {
+      margin: auto ${({ theme }) => theme.sizes.md};
+      width: 90px;
     }
   }
 `;

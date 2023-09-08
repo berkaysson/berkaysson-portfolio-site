@@ -9,6 +9,7 @@ import { theme } from "../../Styles/theme";
 import { NavigationWrapper, NavigationMenuWrapper } from "./NavigationStyles";
 import { GlassCardWrapper } from "../Wrappers/Effects/GlassCardWrapper";
 import { styled } from "styled-components";
+import BerkaySonelLogo from './../../Images/BerkaySonelLogo';
 
 const NavigationContainer = styled(motion.div)`
   height: 100px;
@@ -48,7 +49,7 @@ const Navigation = () => {
       <GlassCardWrapper>
         <NavigationWrapper>
           <Link to="/" className="logo">
-            <img src="" alt="avatar" /> <span>berkaysson</span>
+            <BerkaySonelLogo />
           </Link>
           <NavigationMenuWrapper>
             {currentPath === "/" ? (
