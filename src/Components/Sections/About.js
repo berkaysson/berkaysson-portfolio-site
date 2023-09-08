@@ -49,7 +49,7 @@ const AboutSection = styled.section`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 70vh;
+  height: 63vh;
   gap: ${({ theme }) => theme.sizes.md};
   padding: ${({ theme }) => theme.sectionPadding};
 
