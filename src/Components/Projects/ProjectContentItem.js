@@ -4,10 +4,9 @@ import { styled } from "styled-components";
 
 const ProjectContentItemWrapper = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto auto;
   position: relative;
-  padding: 2rem;
   grid-gap: 1rem;
   justify-content: center;
   transition: ${({ theme, inView }) =>
@@ -19,12 +18,12 @@ const ProjectContentItemWrapper = styled.div`
 
   h2 {
     grid-area: 1/1/2/3;
+    font-size: 2rem;
   }
 
   p,
   ul {
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/1/3/2" : "2/2/3/3")};
-    text-align: justify;
   }
 
   img {
