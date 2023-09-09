@@ -48,7 +48,7 @@ const ProjectsGithubLink = styled.a`
 
   &:hover{
     text-decoration: underline;
-
+    opacity: 0.9;
     span{
       svg{
         transform: rotate(360deg);
