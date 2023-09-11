@@ -57,6 +57,12 @@ const ProjectsGithubLink = styled.a`
       
     }
   }
+
+  @media(max-width: 578px){
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `;
 
 const Projects = ({
