@@ -43,6 +43,7 @@ export const NavigationMenuWrapper = styled.nav`
     padding-bottom: 3px;
     box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.medium};
     transition: .1s box-shadow;
+    border-radius: ${({ theme }) => theme.borders.sharp};
     &:hover {
       box-shadow: 0px 1px 0px ${({ theme }) => theme.colors.darker};
       padding-bottom: 1px;
