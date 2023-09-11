@@ -12,7 +12,7 @@ const ProjectsWrapper = styled.div`
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.darker};
   width: 100%;
-  padding-bottom: 3rem;
+  padding-bottom: 10%;
 
   h1 {
     font-size: 2rem;

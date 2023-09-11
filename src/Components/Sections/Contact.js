@@ -7,7 +7,7 @@ const ContactWrapper = styled.div`
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
-  box-shadow: 0px -50px 0px black;
+  box-shadow: 0px -100px 0px black;
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};

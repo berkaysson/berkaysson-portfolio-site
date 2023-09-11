@@ -22,9 +22,9 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 150px;
   overflow-x: hidden;
   max-width: 1500px;
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const App = () => {

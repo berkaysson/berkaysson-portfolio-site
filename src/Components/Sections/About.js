@@ -6,7 +6,13 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 10%;
+  padding-top: 150px;
+  background-color: ${({ theme }) => theme.colors.darker};
+
+  @media (max-width: 425px){
+    padding-top: 180px;
+  }
 `;
 
 const AboutHeader = styled.header`
@@ -16,7 +22,7 @@ const AboutHeader = styled.header`
   align-items: center;
   padding: ${({ theme }) => theme.sectionPadding};
   width: 100%;
-  height: 70vh;
+  height: 75vh;
 
   h3 {
     font-size: 3.3rem;
@@ -50,7 +56,6 @@ const AboutSection = styled.section`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 63vh;
   gap: ${({ theme }) => theme.sizes.md};
   padding: ${({ theme }) => theme.sectionPadding};
 

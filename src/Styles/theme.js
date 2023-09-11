@@ -32,7 +32,7 @@ export const theme = {
     sharp: "3px",
     roundedSl: "5px",
     roundedMd: "10px",
-    roundedLg: "18px",
+    roundedLg: "30px",
     circular: "50%",
   },
   transitions: {
