@@ -6,6 +6,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 3rem;
 `;
 
 const AboutHeader = styled.header`
