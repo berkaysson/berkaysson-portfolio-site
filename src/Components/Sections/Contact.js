@@ -7,13 +7,14 @@ const ContactWrapper = styled.div`
   gap: ${({ theme }) => theme.sizes.lg};
   background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
+  box-shadow: 0px -50px 0px black;
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
   }
 
-  @media(max-width:1000px){
-    padding:${({ theme }) => theme.sizes.md};
+  @media (max-width: 1000px) {
+    padding: ${({ theme }) => theme.sizes.md};
   }
 `;
 
@@ -29,17 +30,19 @@ const ContactFormWrapper = styled.form`
     width: 100%;
     gap: ${({ theme }) => theme.sizes.xsl};
 
-    input, textarea{
-      padding: ${({ theme }) => theme.sizes.xsl} ${({ theme }) => theme.sizes.sl};
+    input,
+    textarea {
+      padding: ${({ theme }) => theme.sizes.xsl}
+        ${({ theme }) => theme.sizes.sl};
       font-size: 14px;
     }
 
-    textarea{
+    textarea {
       resize: none;
     }
   }
 
-  @media(max-width:1000px){
+  @media (max-width: 1000px) {
   }
 `;
 

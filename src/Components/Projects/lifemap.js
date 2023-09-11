@@ -16,6 +16,10 @@ const ProjectLifemapContainer = styled(motion.div)`
 const ProjectLifemapWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
   background-color: ${({ theme }) => theme.colors.darker};
+  padding-bottom: 3rem;
+  border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
+  border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};
+
   @media (max-width: 768px) {
   }
 `;
