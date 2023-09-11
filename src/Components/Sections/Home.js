@@ -22,7 +22,6 @@ const Home = ({
       transition={theme.framerAnimations.pageTransition.transition}
     >
       <About />
-      <Skills />
       <Projects
         lifemapImgRef={lifemapImgRef}
         lifemapContentRef={lifemapContentRef}
@@ -30,6 +29,7 @@ const Home = ({
         dhondtAppContentRef={dhondtAppContentRef}
         screenWidth={screenWidth}
       />
+      <Skills />
       <HidingDiv id={"homeHideDiv"}>
         <Contact />
         <Footer />

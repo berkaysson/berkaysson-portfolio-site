@@ -8,6 +8,8 @@ const SkillsWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
   width: 100%;
   height: 50vh;
+  background-color: ${({ theme }) => theme.colors.darker};
+  padding-bottom: 3rem;
 
   h2 {
     font-size: 2rem;
