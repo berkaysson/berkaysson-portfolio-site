@@ -16,6 +16,13 @@ const ProjectContentItemWrapper = styled.div`
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
   background-color: ${({ theme }) => theme.colors.darker};
 
+  &:last-child {
+    margin-bottom: 1rem;
+    hr {
+      display: none;
+    }
+  }
+
   h2 {
     grid-area: 1/1/2/3;
     font-size: 2rem;
@@ -28,6 +35,18 @@ const ProjectContentItemWrapper = styled.div`
 
   img {
     grid-area: ${({ order }) => (order % 2 === 0 ? "2/2/3/2" : "2/1/3/2")};
+  }
+
+  hr {
+    margin: 0 auto;
+    grid-column: 1/3;
+    height: 1px;
+    width: 20%;
+    border-color: ${({ theme }) => theme.colors.dark};
+    border-style: solid;
+    background-color: ${({ theme }) => theme.colors.dark};
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: 1024px) {
@@ -50,6 +69,7 @@ const ProjectContentItem = ({ order, children }) => {
   return (
     <ProjectContentItemWrapper order={order} ref={ref} inView={inView}>
       {children}
+      <hr />
     </ProjectContentItemWrapper>
   );
 };
