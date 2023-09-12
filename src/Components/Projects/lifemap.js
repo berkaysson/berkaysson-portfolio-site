@@ -11,6 +11,7 @@ const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 150px;
 `;
 
 const ProjectLifemapWrapper = styled.div`
