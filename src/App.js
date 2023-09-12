@@ -24,7 +24,7 @@ const MainWrapper = styled.main`
   align-items: center;
   overflow-x: hidden;
   max-width: 1500px;
-  background-color: ${({ theme }) => theme.colors.black};
+
 `;
 
 const App = () => {

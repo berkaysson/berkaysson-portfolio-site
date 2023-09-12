@@ -6,6 +6,12 @@ import useScroll from "../../../Hooks/useScroll";
 const Container = styled.div`
   position: relative;
   z-index: -1;
+  background: rgb(60, 94, 115);
+  background: radial-gradient(
+    circle,
+    rgba(60, 94, 115, 0.4) 0%,
+    rgba(20, 26, 38, 1) 90%
+  );
 `;
 
 const HidingDivWrapper = styled.div`

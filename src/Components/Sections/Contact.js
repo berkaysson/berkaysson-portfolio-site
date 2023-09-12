@@ -5,9 +5,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   padding: ${({ theme }) => theme.sectionPadding};
   gap: ${({ theme }) => theme.sizes.lg};
-  background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
-  /* box-shadow: 0px -100px 0px black; */
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};

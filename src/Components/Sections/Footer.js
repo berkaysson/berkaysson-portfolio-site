@@ -9,7 +9,6 @@ const FooterWrapper = styled.footer`
   align-items: center;
   padding: ${({ theme }) => theme.sizes.sl};
   font-size: 14px;
-  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const AnchorsContainer = styled.div`
