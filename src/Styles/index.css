@@ -77,12 +77,11 @@ li{
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background: #BEE5F2;
+  background: #141A26;
 }
 
 ::-webkit-scrollbar-thumb {
