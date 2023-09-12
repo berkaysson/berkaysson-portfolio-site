@@ -9,10 +9,6 @@ const AboutWrapper = styled.div`
   padding-bottom: 10%;
   padding-top: 150px;
   background-color: ${({ theme }) => theme.colors.darker};
-
-  @media (max-width: 425px){
-    padding-top: 180px;
-  }
 `;
 
 const AboutHeader = styled.header`

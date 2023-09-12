@@ -18,6 +18,12 @@ const NavigationContainer = styled(motion.div)`
   z-index: 3;
   margin: 1rem;
   padding: 1rem;
+
+  @media (max-width: 425px){
+    margin: 0;
+    padding: 0rem;
+    width: 100%;
+  }
 `;
 
 const Navigation = () => {

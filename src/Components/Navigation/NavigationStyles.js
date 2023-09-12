@@ -27,7 +27,7 @@ export const NavigationWrapper = styled.div`
     flex-direction: column;
     padding: 1rem;
     height: auto;
-    gap: 1.5rem;
+    gap: 0.8rem;
   }
 `;
 

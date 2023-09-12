@@ -12,6 +12,11 @@ const ProjectLifemapContainer = styled(motion.div)`
   flex-direction: column;
   width: 100%;
   padding-top: 150px;
+
+  
+  @media (max-width: 425px){
+    padding-top: 180px;
+  }
 `;
 
 const ProjectLifemapWrapper = styled.div`
