@@ -11,6 +11,8 @@ const SkillsWrapper = styled.div`
   padding-bottom: 10%;
   border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.lighter};
+  box-shadow: rgba(190,229,242, 0.45) 0px 5px 8px -5px;
 
   h2 {
     font-size: 2rem;

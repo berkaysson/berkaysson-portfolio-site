@@ -18,6 +18,8 @@ const ProjectDhondtAppWrapper = styled.div`
   padding-bottom: 3rem;
   border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.lighter};
+  box-shadow: rgba(190,229,242, 0.45) 0px 5px 8px -5px;
 
   @media (max-width: 768px) {
   }
