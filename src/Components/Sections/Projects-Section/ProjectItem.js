@@ -18,7 +18,7 @@ const ProjectItemWrapper = styled.div`
 
 const ProjectItemInnerWrapper = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 50%;
   padding: 1rem;
 
   @media (max-width: 1024px) {
@@ -75,18 +75,17 @@ const MainImg = styled.img`
 const ProjectContentWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.sizes.lg};
-  text-align: center;
-  font-size: 20px;
+  text-align: left;
+  font-size: 1.3rem;
   transition: background-color 0.5s ease;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.medium};
+  background-color: ${({ theme }) => theme.colors.dark};
   padding: 1rem;
   border-top-right-radius: ${({ theme }) => theme.borders.sharp};
   border-bottom-right-radius: ${({ theme }) => theme.borders.sharp};
-  border: 2px solid ${({ theme }) => theme.colors.medium};
+  border: 2px solid ${({ theme }) => theme.colors.dark};
 
   @media (max-width: 1024px) {
     border-bottom-left-radius: ${({ theme }) => theme.borders.sharp};
@@ -96,7 +95,7 @@ const ProjectContentWrapper = styled(Link)`
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.light};
+    background-color: ${({ theme }) => theme.colors.darker};
     border-color: ${({ theme }) => theme.colors.theme};
     cursor: pointer;
   }
@@ -123,7 +122,13 @@ const ProjectLogo = styled.div`
 
   svg {
     height: 50px;
-    margin-left: 20%;
+
+    @media (max-width: 425px) {
+      height: 35px;
+    }
+    @media (max-width: 325px) {
+      height: 27px;
+    }
   }
 `;
 
@@ -133,11 +138,13 @@ const ProjectContent = styled.div`
   gap: ${({ theme }) => theme.sizes.md};
 
   p:last-child {
-    font-size: ${({ theme }) => theme.sizes.sl};
+    font-size: 0.9rem;
   }
 `;
 
 const ClickText = styled(GlassCardWrapper)`
+  display: flex;
+  align-items: center;
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
@@ -151,7 +158,7 @@ const ClickText = styled(GlassCardWrapper)`
   svg {
     margin-left: 5px;
     font-size: 16px;
-    transform: translateY(23%);
+    color: ${({ theme }) => theme.colors.black};
   }
 `;
 
