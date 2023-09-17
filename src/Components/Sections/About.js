@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import BerkayAvatar from "../../Images/berkay-avatar.png";
 import AvatarImage from "../Wrappers/Effects/AvatarImage";
+import ContactButton from "../Wrappers/Effects/ContactButton";
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -123,6 +124,7 @@ const About = () => {
           </p>
         </div>
       </AboutSection>
+      <ContactButton />
     </AboutWrapper>
   );
 };
