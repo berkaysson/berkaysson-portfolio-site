@@ -18,6 +18,13 @@ const NavigationContainer = styled(motion.div)`
   z-index: 3;
   margin: 1rem;
   padding: 1rem;
+  
+  svg{
+    transition: transform 0.1s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
 
   @media (max-width: 425px){
     margin: 0;
