@@ -29,12 +29,12 @@ const SkillsListWrapper = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: ${({ theme }) => theme.sizes.xsl};
-  max-width: 1300px;
+  gap: ${({ theme }) => theme.sizes.lg};
+  max-width: 1000px;
 
   @media (max-width: 1000px) {
     justify-content: flex-start;
-    padding-top: 1rem;
+    padding-top: ${({ theme }) => theme.sizes.xlg};
   }
 `;
 
