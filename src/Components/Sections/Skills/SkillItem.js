@@ -15,13 +15,21 @@ const SkillItemWrapper = styled.li`
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
 
+  &:hover {
+    span {
+      opacity: 1;
+    }
+    img {
+      filter: blur(10px) contrast(0.5);
+    }
+  }
+
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 10%;
+    border-radius: ${({ theme }) => theme.borders.roundedMd};
     height: 100%;
     width: 100%;
-    z-index: 2;
+    transition: filter 0.2s;
   }
   span {
     position: absolute;
@@ -29,6 +37,11 @@ const SkillItemWrapper = styled.li`
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    color: ${({ theme }) => theme.colors.theme};
+    text-shadow: 1px 1px 1px ${({ theme }) => theme.colors.darker};
   }
 `;
 
@@ -44,7 +57,7 @@ const SkillItem = ({ skill, index }) => {
     >
       <NeuCardWrapper neuType="convex">
         <span>{skill.name}</span>
-        <img src="" alt="skillItemImg" />
+        <img src={skill.img} alt="skillItemImg" />
       </NeuCardWrapper>
     </SkillItemWrapper>
   );
