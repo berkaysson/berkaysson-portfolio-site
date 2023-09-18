@@ -29,13 +29,25 @@ const ContactButtonWrapper = styled.button`
   }
 `;
 
+const EMAILTEXT = "berkaysonel85@gmail.com";
+const COPYTEXT = "Copied 👍";
+
 const ContactButton = () => {
   const [emailTextSpanY, setEmailTextSpanY] = useState(-70);
+  const [spanText, setSpanText] = useState(EMAILTEXT);
+
+  const clickHandler = () => {
+    navigator.clipboard.writeText(EMAILTEXT).then(function () {
+      setSpanText(COPYTEXT);
+    });
+    setTimeout(()=>setSpanText(EMAILTEXT), 1500);
+  }
 
   return (
     <ContactButtonWrapper
       onMouseEnter={() => setEmailTextSpanY(0)}
       onMouseLeave={() => setEmailTextSpanY(-70)}
+      onClick={clickHandler}
     >
       Let's Connect
       <motion.span
@@ -44,7 +56,7 @@ const ContactButton = () => {
           y: emailTextSpanY,
         }}
       >
-        berkaysonel85@gmail.com
+        {spanText}
       </motion.span>
     </ContactButtonWrapper>
   );
