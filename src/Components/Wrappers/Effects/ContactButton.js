@@ -39,6 +39,7 @@ const ContactButton = () => {
     >
       Let's Connect
       <motion.span
+        transition={{ease: "backInOut"}}
         animate={{
           y: emailTextSpanY,
         }}
