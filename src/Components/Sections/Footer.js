@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -23,7 +23,7 @@ const AnchorWrapper = styled.a`
   align-items: center;
   gap: 0.4rem;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
@@ -33,11 +33,19 @@ const Footer = () => {
     <FooterWrapper>
       <span>©Berkay Sonel - 2023</span>
       <AnchorsContainer>
-        <AnchorWrapper href="/">
+        <AnchorWrapper
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/berkaysson"
+        >
           <GitHubIcon /> <span>Github</span>
         </AnchorWrapper>
-        <AnchorWrapper href="/">
-          <EmailIcon /> <span>Email</span>
+        <AnchorWrapper
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/berkaysonel/"
+        >
+          <LinkedInIcon /> <span>linkedIn</span>
         </AnchorWrapper>
       </AnchorsContainer>
     </FooterWrapper>
