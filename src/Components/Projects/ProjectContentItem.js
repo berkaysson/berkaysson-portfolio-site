@@ -39,7 +39,15 @@ const ProjectContentItemWrapper = styled.div`
   }
 
   img {
-    width: 100%;
+    width: 60%;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: ${({ theme }) => theme.borders.roundedSl};
+    margin-top: 5rem;
+    box-shadow: 0px 0px 3px ${({ theme }) => theme.colors.lighter};
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
   }
 
   hr {
