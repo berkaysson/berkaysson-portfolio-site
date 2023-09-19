@@ -6,6 +6,8 @@ import styled from "@emotion/styled";
 import LifemapLogo from "../../Images/lifemap/LifemapLogo";
 import ProjectContentItem from "./ProjectContentItem";
 import HidingDiv from "../Wrappers/Effects/HidingDiv";
+import LifemapLaunch from "../../Images/lifemap/lifemap-launch.png";
+import Lifemap1 from "../../Images/lifemap/lifemapGeneral.png";
 
 const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
@@ -80,7 +82,7 @@ const ProjectLifemap = () => {
             solution for tracking your activities and finances, allowing you to
             have a clear overview of your progress and make informed decisions.
           </p>
-          <img src="" alt="projectOverviewImg" />
+          <img src={LifemapLaunch} alt="projectOverviewImg" />
         </ProjectContentItem>
         <ProjectContentItem order={2}>
           <h2>Purpose and Inspiration</h2>
@@ -105,7 +107,7 @@ const ProjectLifemap = () => {
             more visual interactions, such as charts and other interactive
             elements.
           </p>
-          <img src="" alt="purposeImg" />
+          <img src={Lifemap1} alt="purposeImg" />
         </ProjectContentItem>
         <ProjectContentItem order={3}>
           <h2>Technologies</h2>
@@ -130,7 +132,6 @@ const ProjectLifemap = () => {
             combination of technologies ensures an accessible platform for users
             to track their activities and manage their life goals effectively.
           </p>
-          <img src="" alt="techImg" />
         </ProjectContentItem>
         <ProjectContentItem order={4}>
           <h2>Challenges and Problems</h2>
@@ -152,7 +153,6 @@ const ProjectLifemap = () => {
             ensuring that the codebase was reuseable, well-structured and
             organized.
           </p>
-          <img src="" alt="challengesImg" />
         </ProjectContentItem>
         <ProjectContentItem order={5}>
           <h2>Learnings</h2>
@@ -164,7 +164,6 @@ const ProjectLifemap = () => {
             components, realizing their potential of efficiency and
             maintainability.
           </p>
-          <img src="" alt="learningsImg" />
         </ProjectContentItem>
         <ProjectContentItem order={6}>
           <h2>Summary</h2>
@@ -191,7 +190,6 @@ const ProjectLifemap = () => {
               Realtime Database, and the Lifemap application
             </li>
           </ul>
-          <img src="" alt="summaryImg" />
         </ProjectContentItem>
       </ProjectLifemapWrapper>
       <HidingDiv id={"lifemapHideDiv"}>
