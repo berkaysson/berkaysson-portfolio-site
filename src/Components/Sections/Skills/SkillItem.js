@@ -59,8 +59,8 @@ const SkillItem = ({ skill, index, size = "normal" }) => {
       size={size}
     >
       <NeuCardWrapper neuType="convex">
-        <span>{skill.name}</span>
-        <img src={skill.iconSrc} alt="skillItemImg" />
+        <span>{skill?.name}</span>
+        <img src={skill?.iconSrc} alt="skillItemImg" />
       </NeuCardWrapper>
     </SkillItemWrapper>
   );
