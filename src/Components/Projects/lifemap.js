@@ -8,6 +8,9 @@ import ProjectContentItem from "./ProjectContentItem";
 import HidingDiv from "../Wrappers/Effects/HidingDiv";
 import LifemapLaunch from "../../Images/lifemap/lifemap-launch.png";
 import Lifemap1 from "../../Images/lifemap/lifemapGeneral.png";
+import SkillItem from "../Sections/Skills/SkillItem";
+import { skillsData } from "../Sections/Skills/skillsData";
+import SkillsList from "../Sections/Skills/SkillsList";
 
 const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
@@ -15,8 +18,7 @@ const ProjectLifemapContainer = styled(motion.div)`
   width: 100%;
   padding-top: 150px;
 
-  
-  @media (max-width: 425px){
+  @media (max-width: 425px) {
     padding-top: 180px;
   }
 `;
@@ -28,7 +30,7 @@ const ProjectLifemapWrapper = styled.div`
   border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom: 2px solid ${({ theme }) => theme.colors.lighter};
-  box-shadow: rgba(190,229,242, 0.45) 0px 5px 8px -5px;
+  box-shadow: rgba(190, 229, 242, 0.45) 0px 5px 8px -5px;
 
   @media (max-width: 768px) {
   }
@@ -61,6 +63,17 @@ const ProjectHeaderWrapper = styled.header`
 `;
 
 const ProjectLifemap = () => {
+  const techsUsed = [
+    "javaScript",
+    "react",
+    "css",
+    "styledComponents",
+    "indexedDB",
+    "reactRouter",
+    "materialUI",
+    "firebase",
+    "framerMotion",
+  ];
   return (
     <ProjectLifemapContainer
       initial={theme.framerAnimations.pageTransition.initial}
@@ -82,7 +95,11 @@ const ProjectLifemap = () => {
             solution for tracking your activities and finances, allowing you to
             have a clear overview of your progress and make informed decisions.
           </p>
-          <img src={LifemapLaunch} alt="projectOverviewImg" />
+          <img
+            className="itemImage"
+            src={LifemapLaunch}
+            alt="projectOverviewImg"
+          />
         </ProjectContentItem>
         <ProjectContentItem order={2}>
           <h2>Purpose and Inspiration</h2>
@@ -107,7 +124,7 @@ const ProjectLifemap = () => {
             more visual interactions, such as charts and other interactive
             elements.
           </p>
-          <img src={Lifemap1} alt="purposeImg" />
+          <img className="itemImage" src={Lifemap1} alt="purposeImg" />
         </ProjectContentItem>
         <ProjectContentItem order={3}>
           <h2>Technologies</h2>
@@ -132,6 +149,16 @@ const ProjectLifemap = () => {
             combination of technologies ensures an accessible platform for users
             to track their activities and manage their life goals effectively.
           </p>
+          <SkillsList>
+            {techsUsed.map((skill, index) => (
+              <SkillItem
+                skill={skillsData[skill]}
+                key={index}
+                index={index}
+                size="small"
+              />
+            ))}
+          </SkillsList>
         </ProjectContentItem>
         <ProjectContentItem order={4}>
           <h2>Challenges and Problems</h2>

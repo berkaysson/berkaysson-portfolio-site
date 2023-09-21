@@ -38,7 +38,7 @@ const ProjectContentItemWrapper = styled.div`
     }
   }
 
-  img {
+  .itemImage {
     width: 60%;
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: ${({ theme }) => theme.borders.roundedSl};
