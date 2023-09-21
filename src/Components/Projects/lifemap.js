@@ -11,6 +11,7 @@ import Lifemap1 from "../../Images/lifemap/lifemapGeneral.png";
 import SkillItem from "../Sections/Skills/SkillItem";
 import { skillsData } from "../Sections/Skills/skillsData";
 import SkillsList from "../Sections/Skills/SkillsList";
+import LifemapSummaryGIF from "../../Images/lifemap/lifemapSummary.gif";
 
 const ProjectLifemapContainer = styled(motion.div)`
   display: flex;
@@ -195,28 +196,29 @@ const ProjectLifemap = () => {
         <ProjectContentItem order={6}>
           <h2>Summary</h2>
           <ul>
-            <li>
+            <li className="summaryListItem">
               Utilized JavaScript, React.js, CSS, Material UI, and
               styled-components for development
             </li>
-            <li>
+            <li className="summaryListItem">
               Implemented features for activity tracking, habit-building, task
               management, and financial tracking along their user friendly
               interfaces
             </li>
-            <li>
+            <li className="summaryListItem">
               Integrated React Router for navigation and Firebase Auth for user
               authentication
             </li>
-            <li>
+            <li className="summaryListItem">
               Implemented Firebase Realtime Database and IndexedDB for data
               storage and management
             </li>
-            <li>
+            <li className="summaryListItem">
               Implemented asynchronous data fetches across IndexedDB, Firebase
               Realtime Database, and the Lifemap application
             </li>
           </ul>
+          <img className="itemImage" src={LifemapSummaryGIF} alt="summaryGIF" />
         </ProjectContentItem>
       </ProjectLifemapWrapper>
       <HidingDiv id={"lifemapHideDiv"}>
