@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import SkillItem from "./SkillItem";
-import { skillsData } from "./skillsData";
+import { skillsData, skillsSectionData } from "./skillsData";
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -44,8 +44,8 @@ const Skills = () => {
     <SkillsWrapper id="skills">
       <h2>What are my Skills ?</h2>
       <SkillsListWrapper>
-        {skillsData.map((skill, index) => (
-          <SkillItem skill={skill} key={index} index={index} />
+        {skillsSectionData.map((skill, index) => (
+          <SkillItem skill={skillsData[skill]} key={index} index={index} />
         ))}
       </SkillsListWrapper>
     </SkillsWrapper>
