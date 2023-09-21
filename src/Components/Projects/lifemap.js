@@ -63,6 +63,32 @@ const ProjectHeaderWrapper = styled.header`
   }
 `;
 
+const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+
+  a {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.4rem;
+    text-decoration: underline;
+    color: #ABC4FE;
+    text-shadow: 0px 0px 5px black;
+
+    &:first-child{
+      color: #fc6d01;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`;
+
 const ProjectLifemap = () => {
   const techsUsed = [
     "javaScript",
@@ -192,6 +218,23 @@ const ProjectLifemap = () => {
             components, realizing their potential of efficiency and
             maintainability.
           </p>
+          <img className="itemImage" src={LifemapSummaryGIF} alt="summaryGIF" />
+          <LinksWrapper>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://berkaysson.github.io/lifemap/"
+            >
+              Try it now
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/berkaysson/lifemap"
+            >
+              GitHub Repo
+            </a>
+          </LinksWrapper>
         </ProjectContentItem>
         <ProjectContentItem order={6}>
           <h2>Summary</h2>
@@ -218,7 +261,6 @@ const ProjectLifemap = () => {
               Realtime Database, and the Lifemap application
             </li>
           </ul>
-          <img className="itemImage" src={LifemapSummaryGIF} alt="summaryGIF" />
         </ProjectContentItem>
       </ProjectLifemapWrapper>
       <HidingDiv id={"lifemapHideDiv"}>
