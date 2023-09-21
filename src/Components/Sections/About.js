@@ -7,7 +7,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   padding-top: 150px;
   background-color: ${({ theme }) => theme.colors.darker};
 `;

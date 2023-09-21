@@ -6,7 +6,7 @@ const ContactButtonWrapper = styled.button`
   width: 300px;
   height: 50px;
   border: 1px solid ${({ theme }) => theme.colors.lightest};
-  border-radius: ${({ theme }) => theme.borders.roundedSl};
+  border-radius: ${({ theme }) => theme.borders.roundedLg};
   display: flex;
   align-items: center;
   justify-content: center;
