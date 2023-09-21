@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { NeuCardWrapper } from "../../Wrappers/Effects/NeuCardWrapper";
 
 const SkillItemWrapper = styled.li`
-  width: 150px;
-  height: 150px;
+  width: ${({ size }) => (size === "normal" ? "150px" : "90px")};
+  height: ${({ size }) => (size === "normal" ? "150px" : "90px")};
   position: relative;
   text-align: center;
   //fade out transition
@@ -42,10 +42,12 @@ const SkillItemWrapper = styled.li`
     pointer-events: none;
     color: ${({ theme }) => theme.colors.theme};
     text-shadow: 1px 1px 1px ${({ theme }) => theme.colors.darker};
+    font-size: ${({ size, theme }) =>
+      size === "normal" ? theme.sizes.md : theme.sizes.sl};
   }
 `;
 
-const SkillItem = ({ skill, index }) => {
+const SkillItem = ({ skill, index, size = "normal" }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -54,6 +56,7 @@ const SkillItem = ({ skill, index }) => {
       style={{ transitionDelay: `${index / Math.exp(3)}s` }}
       ref={ref}
       inView={inView}
+      size={size}
     >
       <NeuCardWrapper neuType="convex">
         <span>{skill.name}</span>
