@@ -36,6 +36,11 @@ const ProjectContentItemWrapper = styled.div`
     @media (max-width: 1024px) {
       width: 100%;
     }
+    .summaryListItem {
+      margin-bottom: 5px;
+      list-style: circle;
+      list-style-position: inside;
+    }
   }
 
   .itemImage {
