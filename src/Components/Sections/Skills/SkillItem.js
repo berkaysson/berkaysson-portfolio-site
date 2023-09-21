@@ -20,7 +20,8 @@ const SkillItemWrapper = styled.li`
       opacity: 1;
     }
     img {
-      filter: blur(10px) contrast(0.5);
+      filter: blur(10px) contrast(1.4);
+      transform: scale(0.8) rotate(3deg);
     }
   }
 
@@ -29,7 +30,7 @@ const SkillItemWrapper = styled.li`
     border-radius: ${({ theme }) => theme.borders.roundedMd};
     height: 100%;
     width: 100%;
-    transition: filter 0.2s;
+    transition: filter 0.2s, transform 0.6s;
   }
   span {
     position: absolute;
