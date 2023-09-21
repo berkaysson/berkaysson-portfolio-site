@@ -1,3 +1,6 @@
+import dexieLogo from "../../../Images/dexieLogo.webp";
+import reactRouterLogo from "../../../Images/reactRouterLogo.webp";
+
 export const skillsData = {
   javaScript: {
     name: "JavaScript",
@@ -37,6 +40,24 @@ export const skillsData = {
   styledComponents: {
     name: "Styled Components",
     iconSrc: "https://avatars.githubusercontent.com/u/20658825?s=200&v=4",
+  },
+  indexedDB: {
+    name: "IndexedDB, Dexie.js",
+    iconSrc: dexieLogo,
+  },
+  reactRouter: {
+    name: "React Router",
+    iconSrc: reactRouterLogo,
+  },
+  firebase: {
+    name: "Firebase",
+    iconSrc:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg",
+  },
+  framerMotion: {
+    name: "Framer Motion",
+    iconSrc:
+      "https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png",
   },
 };
 
