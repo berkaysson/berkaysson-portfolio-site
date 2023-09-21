@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import SkillItem from "./SkillItem";
 import { skillsData, skillsSectionData } from "./skillsData";
+import SkillsList from "./SkillsList";
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -25,29 +26,15 @@ const SkillsWrapper = styled.div`
   }
 `;
 
-const SkillsListWrapper = styled.ul`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: ${({ theme }) => theme.sizes.lg};
-  max-width: 1000px;
-
-  @media (max-width: 1000px) {
-    justify-content: flex-start;
-    padding-top: ${({ theme }) => theme.sizes.xlg};
-  }
-`;
-
 const Skills = () => {
   return (
     <SkillsWrapper id="skills">
       <h2>What are my Skills ?</h2>
-      <SkillsListWrapper>
+      <SkillsList>
         {skillsSectionData.map((skill, index) => (
           <SkillItem skill={skillsData[skill]} key={index} index={index} />
         ))}
-      </SkillsListWrapper>
+      </SkillsList>
     </SkillsWrapper>
   );
 };
