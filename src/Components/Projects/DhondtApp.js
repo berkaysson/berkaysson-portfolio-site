@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import ProjectContentItem from "./ProjectContentItem";
 import HidingDiv from "../Wrappers/Effects/HidingDiv";
+import DhondtAppLaunch from "../../Images/dhondt/dhondt-launch.png";
+import SkillsList from "../Sections/Skills/SkillsList";
+import SkillItem from "../Sections/Skills/SkillItem";
+import { skillsData } from "../Sections/Skills/skillsData";
 
 const ProjectDhondtAppContainer = styled(motion.div)`
   display: flex;
@@ -60,6 +64,12 @@ const ProjectHeaderWrapper = styled.header`
 `;
 
 const ProjectDhondtApp = () => {
+  const techsUsed = [
+    "javaScript",
+    "react",
+    "css",
+    "styledComponents",
+  ];
   return (
     <ProjectDhondtAppContainer
       initial={theme.framerAnimations.pageTransition.initial}
@@ -87,7 +97,7 @@ const ProjectDhondtApp = () => {
             Election, allowing users to simulate this election on a
             district-by-district basis.
           </p>
-          <img src="" alt="projectOverviewImg" />
+          <img src={DhondtAppLaunch} alt="projectOverviewImg" className="itemImage" />
         </ProjectContentItem>
         <ProjectContentItem order={2}>
           <h2>Purpose and Inspiration</h2>
@@ -101,7 +111,6 @@ const ProjectDhondtApp = () => {
             understanding of political processes, ultimately fostering informed
             decision-making in electoral systems.
           </p>
-          <img src="" alt="purposeImg" />
         </ProjectContentItem>
         <ProjectContentItem order={3}>
           <h2>Technologies</h2>
@@ -115,7 +124,16 @@ const ProjectDhondtApp = () => {
             lines, stored in JSON format, allowing users to simulate 2023
             elections in Turkey with a wealth of real-world data.
           </p>
-          <img src="" alt="techImg" />
+          <SkillsList>
+            {techsUsed.map((skill, index) => (
+              <SkillItem
+                skill={skillsData[skill]}
+                key={index}
+                index={index}
+                size="small"
+              />
+            ))}
+          </SkillsList>
         </ProjectContentItem>
         <ProjectContentItem order={4}>
           <h2>Challenges and Problems</h2>
@@ -140,7 +158,7 @@ const ProjectDhondtApp = () => {
             well-organized JSON format, ready for integration into the
             application.
           </p>
-          <img src="" alt="challengesImg" />
+          <img src={""} alt="challengesImg" className="itemImage" />
         </ProjectContentItem>
         <ProjectContentItem order={5}>
           <h2>Learnings</h2>
@@ -152,7 +170,6 @@ const ProjectDhondtApp = () => {
             D'Hondt System Calculator provided practical experience and valuable
             skills for solving real-world software development challenges.
           </p>
-          <img src="" alt="learningsImg" />
         </ProjectContentItem>
         <ProjectContentItem order={6}>
           <h2>Summary</h2>
@@ -175,7 +192,6 @@ const ProjectDhondtApp = () => {
               as a developer and problem solver.
             </li>
           </ul>
-          <img src="" alt="summaryImg" />
         </ProjectContentItem>
       </ProjectDhondtAppWrapper>
       <HidingDiv id={"lifemapHideDiv"}>
