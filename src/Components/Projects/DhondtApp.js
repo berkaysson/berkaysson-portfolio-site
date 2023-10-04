@@ -158,7 +158,6 @@ const ProjectDhondtApp = () => {
             well-organized JSON format, ready for integration into the
             application.
           </p>
-          <img src={""} alt="challengesImg" className="itemImage" />
         </ProjectContentItem>
         <ProjectContentItem order={5}>
           <h2>Learnings</h2>
