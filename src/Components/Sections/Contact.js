@@ -9,6 +9,7 @@ const ContactWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
   gap: ${({ theme }) => theme.sizes.lg};
   width: 100%;
+  align-items: center;
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
@@ -24,18 +25,19 @@ const ContactFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: ${({ theme }) => theme.sizes.lg};
+  gap: 3rem;
+  max-width: 1000px;
 
   label {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: ${({ theme }) => theme.sizes.xsl};
-    font-size: 14px;
+    font-size: 16px;
 
     input,
     textarea {
-      padding: ${({ theme }) => theme.sizes.xsl} ${({ theme }) => theme.sizes.sl};
+      padding: ${({ theme }) => theme.sizes.sl} ${({ theme }) => theme.sizes.md};
       border: 1px solid ${({ theme }) => theme.colors.medium};
       border-radius: ${({ theme }) => theme.borders.roundedSl};
       background-color: ${({ theme }) => theme.colors.lightest};
@@ -43,7 +45,7 @@ const ContactFormWrapper = styled.form`
 
       &::placeholder {
         color: ${({ theme }) => theme.colors.medium};
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -58,7 +60,7 @@ const ContactFormWrapper = styled.form`
 
 const ContactFormSubmitButton = styled.button`
   width: 250px;
-  height: 40px;
+  height: 45px;
   border: 1px solid ${({ theme }) => theme.colors.medium};
   border-radius: ${({ theme }) => theme.borders.roundedSl};
   display: flex;
