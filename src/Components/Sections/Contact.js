@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ const ContactWrapper = styled.div`
 
   h1 {
     font-size: ${({ theme }) => theme.sizes.lg};
+    margin-top: 2rem;
   }
 
   @media (max-width: 1000px) {
@@ -39,10 +41,10 @@ const ContactFormWrapper = styled.form`
       background-color: ${({ theme }) => theme.colors.lightest};
       color: ${({ theme }) => theme.colors.black};
 
-    &::placeholder{
-      color: ${({ theme }) => theme.colors.medium};
-      font-size: 12px;
-    }
+      &::placeholder {
+        color: ${({ theme }) => theme.colors.medium};
+        font-size: 12px;
+      }
     }
 
     textarea {
@@ -54,9 +56,38 @@ const ContactFormWrapper = styled.form`
   }
 `;
 
+const ContactFormSubmitButton = styled.button`
+  width: 250px;
+  height: 40px;
+  border: 1px solid ${({ theme }) => theme.colors.medium};
+  border-radius: ${({ theme }) => theme.borders.roundedSl};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.colors.lightest};
+  color: ${({ theme }) => theme.colors.black};
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+
+  span {
+    position: absolute;
+    color: ${({ theme }) => theme.colors.lightest};
+    background-color: ${({ theme }) => theme.colors.dark};
+    height: 70px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 const Contact = () => {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailTextSpanY, setEmailTextSpanY] = useState(-70);
 
   const sendEmailForm = (event) => {
     event.preventDefault();
@@ -81,7 +112,8 @@ const Contact = () => {
 
   return (
     <ContactWrapper>
-      <h1>Say Hi</h1>
+      <h1>Want to get in touch?</h1>
+      <h2>Drop me a line!</h2>
       <ContactFormWrapper id="contact" ref={form} onSubmit={sendEmailForm}>
         <label htmlFor="from_name">
           Name
@@ -118,9 +150,22 @@ const Contact = () => {
             rows={7}
           />
         </label>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send"}
-        </button>
+        <ContactFormSubmitButton
+          type="submit"
+          disabled={isSubmitting}
+          onMouseEnter={() => setEmailTextSpanY(0)}
+          onMouseLeave={() => setEmailTextSpanY(-60)}
+        >
+          {!isSubmitting ? "Send" : "Sending..."}
+          <motion.span
+            transition={{ ease: "backInOut" }}
+            animate={{
+              y: emailTextSpanY,
+            }}
+          >
+            {!isSubmitting ? "Send to berkaysonel85@gmail.com" : "Sending..."}
+          </motion.span>
+        </ContactFormSubmitButton>
       </ContactFormWrapper>
     </ContactWrapper>
   );
