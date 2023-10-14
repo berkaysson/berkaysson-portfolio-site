@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import emailjs from "emailjs-com";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -48,9 +48,11 @@ const ContactFormWrapper = styled.form`
 
 const Contact = () => {
   const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmailForm = (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
     emailjs
       .sendForm(
         "service_3d3qgab",
@@ -59,9 +61,13 @@ const Contact = () => {
         "O8ko5TRQKxDrO981S"
       )
       .then((result) => {
+        form.current.reset();
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
 
@@ -104,7 +110,9 @@ const Contact = () => {
             rows={7}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send"}
+        </button>
       </ContactFormWrapper>
     </ContactWrapper>
   );
