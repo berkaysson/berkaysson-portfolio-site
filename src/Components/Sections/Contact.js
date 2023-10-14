@@ -72,7 +72,7 @@ const ContactFormSubmitButton = styled.button`
   font-weight: bold;
   position: relative;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 18px;
 
   span {
     position: absolute;
@@ -83,6 +83,7 @@ const ContactFormSubmitButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
   }
 `;
 
