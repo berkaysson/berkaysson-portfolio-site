@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import emailjs from "emailjs-com";
+import { useRef } from "react";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -45,28 +47,46 @@ const ContactFormWrapper = styled.form`
 `;
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmailForm = (event) => {
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        "service_3d3qgab",
+        "template_zggdnef",
+        form.current,
+        "O8ko5TRQKxDrO981S"
+      )
+      .then((result) => {
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <ContactWrapper>
       <h1>Say Hi</h1>
-      <ContactFormWrapper id="contact">
-        <label htmlFor="name">
+      <ContactFormWrapper id="contact" ref={form} onSubmit={sendEmailForm}>
+        <label htmlFor="from_name">
           Name
           <input
             type="text"
-            name="name"
-            id="name"
+            name="from_name"
+            id="from_name"
             required
             minLength="2"
             maxLength="100"
             placeholder="Enter your name"
           />
         </label>
-        <label htmlFor="email">
+        <label htmlFor="email_id">
           Email Address
           <input
             type="email"
-            name="email"
-            id="email"
+            name="email_id"
+            id="email_id"
             required
             maxLength="100"
             placeholder="Enter your email"
