@@ -29,12 +29,20 @@ const ContactFormWrapper = styled.form`
     flex-direction: column;
     width: 100%;
     gap: ${({ theme }) => theme.sizes.xsl};
+    font-size: 14px;
 
     input,
     textarea {
-      padding: ${({ theme }) => theme.sizes.xsl}
-        ${({ theme }) => theme.sizes.sl};
-      font-size: 14px;
+      padding: ${({ theme }) => theme.sizes.xsl} ${({ theme }) => theme.sizes.sl};
+      border: 1px solid ${({ theme }) => theme.colors.medium};
+      border-radius: ${({ theme }) => theme.borders.roundedSl};
+      background-color: ${({ theme }) => theme.colors.lightest};
+      color: ${({ theme }) => theme.colors.black};
+
+    &::placeholder{
+      color: ${({ theme }) => theme.colors.medium};
+      font-size: 12px;
+    }
     }
 
     textarea {
