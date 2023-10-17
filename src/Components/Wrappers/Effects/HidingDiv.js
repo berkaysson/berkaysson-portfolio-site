@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { styled } from "styled-components";
 import useScroll from "../../../Hooks/useScroll";
+import LinearProgress from "@mui/material/LinearProgress";
+import { theme } from "./../../../Styles/theme";
 
 const Container = styled.div`
   position: relative;
@@ -10,7 +12,7 @@ const Container = styled.div`
   background: radial-gradient(
     circle,
     rgba(60, 94, 115, 0.4) 0%,
-    rgba(20, 26, 38, 1) 90%
+    rgba(20, 26, 38, 1) ${({ inViewPercentage }) => inViewPercentage}%
   );
 `;
 
@@ -32,9 +34,32 @@ const HidingDiv = ({ children, id }) => {
   const yValue =
     (Math.max(scrollData.y - documentHeight, -divHeight) / divHeight / 2.5) *
     100;
+  const inViewPercentage =
+    100 +
+    (Math.max(scrollData.y - documentHeight, -divHeight) / divHeight) * 100;
 
   return (
-    <Container ref={ref} inView={inView}>
+    <Container ref={ref} inView={inView} inViewPercentage={inViewPercentage}>
+      <LinearProgress
+        sx={{
+          "&.MuiLinearProgress-root": {
+            marginTop: "1rem",
+            zIndex: "99",
+            color: theme.colors.darker,
+            borderRadius: "1rem",
+            width: "80%",
+            marginLeft: "10%",
+            boxShadow: "0 0 3px lightgray",
+          },
+          "&.MuiLinearProgress-determinate": {
+            borderRadius: "1rem",
+            backgroundColor: theme.colors.lightest,
+          },
+        }}
+        variant="determinate"
+        value={inViewPercentage}
+        color="inherit"
+      />
       <HidingDivWrapper yValue={yValue} id={id}>
         {children}
       </HidingDivWrapper>
