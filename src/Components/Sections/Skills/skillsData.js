@@ -67,7 +67,6 @@ export const skillsSectionData = [
   "css",
   "react",
   "materialUI",
-  "nodeJS",
   "git",
   "styledComponents",
 ];
