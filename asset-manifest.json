@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/berkaysson-portfolio-site/static/css/main.33720fbf.css",
+    "main.js": "/berkaysson-portfolio-site/static/js/main.78d2d656.js",
+    "static/media/berkay-avatar.png": "/berkaysson-portfolio-site/static/media/berkay-avatar.2c1f20f58da9df6517e8.png",
+    "static/media/lifemap-launch.png": "/berkaysson-portfolio-site/static/media/lifemap-launch.425636a4dbf838e87d7b.png",
+    "static/media/lifemapGeneral.png": "/berkaysson-portfolio-site/static/media/lifemapGeneral.15c486da8616b3de9ef3.png",
+    "static/media/lifemapSummary.gif": "/berkaysson-portfolio-site/static/media/lifemapSummary.45f51786c086eee95851.gif",
+    "static/media/dhondt-launch.png": "/berkaysson-portfolio-site/static/media/dhondt-launch.88a638d67d64ace1a636.png",
+    "static/media/dexieLogo.webp": "/berkaysson-portfolio-site/static/media/dexieLogo.5fcf627d82c1d6def732.webp",
+    "static/media/reactRouterLogo.webp": "/berkaysson-portfolio-site/static/media/reactRouterLogo.87847827f89bf3738fdf.webp",
+    "index.html": "/berkaysson-portfolio-site/index.html",
+    "main.33720fbf.css.map": "/berkaysson-portfolio-site/static/css/main.33720fbf.css.map",
+    "main.78d2d656.js.map": "/berkaysson-portfolio-site/static/js/main.78d2d656.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33720fbf.css",
+    "static/js/main.78d2d656.js"
+  ]
+}
