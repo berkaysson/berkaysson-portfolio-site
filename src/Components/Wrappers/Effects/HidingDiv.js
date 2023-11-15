@@ -12,7 +12,7 @@ const Container = styled.div`
   background: radial-gradient(
     circle,
     rgba(60, 94, 115, 0.4) 0%,
-    rgba(20, 26, 38, 1) ${({ inViewPercentage }) => inViewPercentage}%
+    rgba(20, 26, 38, 1) ${({ inViewPercentage }) => inViewPercentage - 10}%
   );
 `;
 
