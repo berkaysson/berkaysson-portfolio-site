@@ -70,9 +70,13 @@ const Navigation = () => {
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
+                <a href="https://github.com/berkaysson" target="_blank" rel="noreferrer">GitHub</a>
               </>
             ) : (
-              <Link to="/">Home</Link>
+              <>
+                <Link to="/">Home</Link>
+                <a href="https://github.com/berkaysson" target="_blank" rel="noreferrer">GitHub</a>
+              </>
             )}
           </NavigationMenuWrapper>
         </NavigationWrapper>
