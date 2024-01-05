@@ -3,12 +3,15 @@ import Home from "../Sections/Home";
 import ProjectLifemap from "../Projects/lifemap";
 import { AnimatePresence } from "framer-motion";
 import ProjectDhondtApp from "../Projects/DhondtApp";
+import ProjectHarmonii from "../Projects/harmonii";
 
 const AnimatedRoutes = ({
   lifemapImgRef,
   lifemapContentRef,
   dhondtAppImgRef,
   dhondtAppContentRef,
+  harmoniiImgRef,
+  harmoniiContentRef,
   screenWidth,
 }) => {
   const location = useLocation();
@@ -26,11 +29,14 @@ const AnimatedRoutes = ({
               lifemapContentRef={lifemapContentRef}
               dhondtAppImgRef={dhondtAppImgRef}
               dhondtAppContentRef={dhondtAppContentRef}
+              harmoniiImgRef={harmoniiImgRef}
+              harmoniiContentRef={harmoniiContentRef}
             />
           }
         />
         <Route path="/project-lifemap" element={<ProjectLifemap />} />
         <Route path="/project-dhondtApp" element={<ProjectDhondtApp />} />
+        <Route path="/project-harmonii" element={<ProjectHarmonii />} />
       </Routes>
     </AnimatePresence>
   );

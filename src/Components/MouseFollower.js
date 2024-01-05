@@ -54,6 +54,11 @@ const projectStyles = {
       bgColor: "white",
       color: "#14213D",
     },
+    harmonii: {
+      backDrop: "blur(10px) contrast(1.5)",
+      bgColor: "#F2658B",
+      color: "black",
+    }
   },
   content: {
     lifemap: {
@@ -66,6 +71,11 @@ const projectStyles = {
       bgColor: "#14213D",
       color: "white",
     },
+    harmonii: {
+      backDrop: "",
+      bgColor: "black",
+      color: "white",
+    }
   },
 };
 

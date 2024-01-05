@@ -1,4 +1,21 @@
 export const projectContents = {
+  harmonii: {
+    description: (
+      <div>
+        <p>
+          <b
+          >
+            harmonii
+          </b>{" "}
+          aims to create a social music-sharing platform where users can contribute and curate their own library of songs.
+        </p>
+        <p>
+          <br />
+          Developed with Asp.Net Core, MsSQL, JavaScript, React.js, CSS and more
+        </p>
+      </div>
+    ),
+  },
   lifemap: {
     description: (
       <div>

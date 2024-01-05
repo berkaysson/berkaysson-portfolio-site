@@ -12,6 +12,8 @@ const Home = ({
   lifemapContentRef,
   dhondtAppImgRef,
   dhondtAppContentRef,
+  harmoniiImgRef,
+  harmoniiContentRef,
   screenWidth,
 }) => {
   return (
@@ -27,6 +29,8 @@ const Home = ({
         lifemapContentRef={lifemapContentRef}
         dhondtAppImgRef={dhondtAppImgRef}
         dhondtAppContentRef={dhondtAppContentRef}
+        harmoniiImgRef={harmoniiImgRef}
+        harmoniiContentRef={harmoniiContentRef}
         screenWidth={screenWidth}
       />
       <Skills />

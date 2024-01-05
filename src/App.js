@@ -35,6 +35,8 @@ const App = () => {
   const lifemapContentRef = useRef();
   const dhondtAppImgRef = useRef();
   const dhondtAppContentRef = useRef();
+  const harmoniiImgRef = useRef();
+  const harmoniiContentRef = useRef();
   const { width: screenWidth } = useScreenSize();
 
   useEffect(() => {
@@ -50,6 +52,12 @@ const App = () => {
     } else if (target === dhondtAppContentRef.current) {
       setMouseFollowerText("DETAILS");
       setMouseFollowerType({ type: "content", project: "dhondtApp" });
+    } else if (target === harmoniiImgRef.current) {
+      setMouseFollowerText("PREVIEW");
+      setMouseFollowerType({ type: "img", project: "harmonii" });
+    } else if (target === harmoniiContentRef.current) {
+      setMouseFollowerText("DETAILS");
+      setMouseFollowerType({ type: "content", project: "harmonii" });
     } else {
       setMouseFollowerType(false);
     }
@@ -78,6 +86,8 @@ const App = () => {
               lifemapContentRef={lifemapContentRef}
               dhondtAppImgRef={dhondtAppImgRef}
               dhondtAppContentRef={dhondtAppContentRef}
+              harmoniiImgRef={harmoniiImgRef}
+              harmoniiContentRef={harmoniiContentRef}
               screenWidth={screenWidth}
             />
           </MainWrapper>

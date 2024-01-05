@@ -4,6 +4,8 @@ import lifemapImg from "../../../Images/lifemap/lifemap-launch.png";
 import LifemapLogo from "../../../Images/lifemap/LifemapLogo";
 import dhondtImg from "../../../Images/dhondt/dhondt-launch.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import HarmoniiLogo from "../../../Images/harmonii/harmonii_logo.png";
+import HarmoniiLaunch from "../../../Images/harmonii/harmonii_launch.png";
 
 const ProjectsWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
@@ -70,11 +72,23 @@ const Projects = ({
   lifemapContentRef,
   dhondtAppImgRef,
   dhondtAppContentRef,
+  harmoniiImgRef,
+  harmoniiContentRef,
   screenWidth,
 }) => {
   return (
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
+      <ProjectItem 
+        itemName={"harmonii"}
+        siteLink={"https://harmoniiserver20240101185412.azurewebsites.net/"}
+        isMouseFollowerOn={screenWidth <= 1024}
+        imgRef={harmoniiImgRef}
+        contentRef={harmoniiContentRef}
+        imgPath={HarmoniiLaunch}
+        logoComponent={""}
+        logoImg={HarmoniiLogo}
+      />
       <ProjectItem
         itemName={"lifemap"}
         siteLink={"https://berkaysson.github.io/lifemap"}
