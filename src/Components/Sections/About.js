@@ -46,6 +46,10 @@ const AboutHeader = styled.header`
     flex-direction: column;
     height: auto;
   }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
+  }
 `;
 
 const AboutSection = styled.section`
@@ -59,6 +63,10 @@ const AboutSection = styled.section`
 
   h3 {
     font-size: 2rem;
+      
+    @media(max-width: 330px){
+     font-size: 1.7rem; 
+    }
   }
 
   p {
@@ -74,6 +82,10 @@ const AboutSection = styled.section`
   @media (max-width: 1000px) {
     flex-direction: column;
     height: auto;
+  }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
   }
 `;
 

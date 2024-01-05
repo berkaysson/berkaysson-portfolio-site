@@ -22,6 +22,10 @@ const ProjectsWrapper = styled.div`
 
   @media (max-width: 1000px) {
   }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
+  }
 `;
 
 const ProjectsGithubLink = styled.a`

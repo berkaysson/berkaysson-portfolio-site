@@ -34,6 +34,11 @@ const ProjectLifemapWrapper = styled.div`
   box-shadow: rgba(190, 229, 242, 0.45) 0px 5px 8px -5px;
 
   @media (max-width: 768px) {
+    padding: .7rem 1.2rem;
+  }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
   }
 `;
 
@@ -60,6 +65,7 @@ const ProjectHeaderWrapper = styled.header`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -122,13 +128,15 @@ const ProjectLifemap = () => {
             solution for tracking your activities and finances, allowing you to
             have a clear overview of your progress and make informed decisions.
           </p>
-          <img
-            className="itemImage"
-            src={LifemapLaunch}
-            alt="projectOverviewImg"
-          />
+          </ProjectContentItem>
+          <ProjectContentItem order={2}>
+            <img
+              className="itemImage"
+              src={LifemapLaunch}
+              alt="projectOverviewImg"
+            />
         </ProjectContentItem>
-        <ProjectContentItem order={2}>
+        <ProjectContentItem order={3}>
           <h2>Purpose and Inspiration</h2>
           <p>
             I developed Lifemap with a clear purpose in mind — to effectively
@@ -151,9 +159,11 @@ const ProjectLifemap = () => {
             more visual interactions, such as charts and other interactive
             elements.
           </p>
-          <img className="itemImage" src={Lifemap1} alt="purposeImg" />
+          </ProjectContentItem>
+          <ProjectContentItem order={4}>
+            <img className="itemImage" src={Lifemap1} alt="purposeImg" />
         </ProjectContentItem>
-        <ProjectContentItem order={3}>
+        <ProjectContentItem order={5}>
           <h2>Technologies</h2>
           <p>
             For Lifemap, I utilized various technologies to build a robust and
@@ -176,6 +186,8 @@ const ProjectLifemap = () => {
             combination of technologies ensures an accessible platform for users
             to track their activities and manage their life goals effectively.
           </p>
+          </ProjectContentItem>
+          <ProjectContentItem order={6}>
           <SkillsList>
             {techsUsed.map((skill, index) => (
               <SkillItem
@@ -187,7 +199,7 @@ const ProjectLifemap = () => {
             ))}
           </SkillsList>
         </ProjectContentItem>
-        <ProjectContentItem order={4}>
+        <ProjectContentItem order={7}>
           <h2>Challenges and Problems</h2>
           <p>
             Like most of the projects, I ran into a few bumps along the way. The
@@ -208,7 +220,7 @@ const ProjectLifemap = () => {
             organized.
           </p>
         </ProjectContentItem>
-        <ProjectContentItem order={5}>
+        <ProjectContentItem order={8}>
           <h2>Learnings</h2>
           <p>
             I could spend pages to describing the things i learned from this
@@ -218,6 +230,8 @@ const ProjectLifemap = () => {
             components, realizing their potential of efficiency and
             maintainability.
           </p>
+          </ProjectContentItem>
+          <ProjectContentItem order={9}>
           <img className="itemImage" src={LifemapSummaryGIF} alt="summaryGIF" />
           <LinksWrapper>
             <a
@@ -236,7 +250,7 @@ const ProjectLifemap = () => {
             </a>
           </LinksWrapper>
         </ProjectContentItem>
-        <ProjectContentItem order={6}>
+        <ProjectContentItem order={10}>
           <h2>Summary</h2>
           <ul>
             <li className="summaryListItem">

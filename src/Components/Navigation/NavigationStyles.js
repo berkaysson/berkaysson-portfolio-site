@@ -57,6 +57,6 @@ export const NavigationMenuWrapper = styled.nav`
   @media (max-width: 425px) {
     padding: 0 2rem;
     margin-left: 0;
-    gap: 2rem;
+    gap: 1rem;
   }
 `;

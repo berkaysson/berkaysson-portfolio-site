@@ -32,6 +32,11 @@ const ProjectHarmoniiWrapper = styled.div`
   box-shadow: rgba(190, 229, 242, 0.45) 0px 5px 8px -5px;
 
   @media (max-width: 768px) {
+    padding: .7rem 1.2rem;
+  }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
   }
 `;
 
@@ -55,10 +60,17 @@ const ProjectHeaderWrapper = styled.header`
     @media (max-width: 768px) {
       text-align: left;
     }
+
+    &:first-child{
+      color: orange;
+    }
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -131,16 +143,17 @@ const ProjectHarmonii = () => {
             music experience with a clear path for future enhancements and user
             engagement features.
           </p>
-          <img
-            className="itemImage"
-            src={HarmoniiLaunch}
-            alt="projectOverviewImg"
-          />
+          </ProjectContentItem>
+          <ProjectContentItem order={2}>
+            <img
+              className="itemImage"
+              src={HarmoniiLaunch}
+              alt="projectOverviewImg"
+            />
         </ProjectContentItem>
-        <ProjectContentItem order={2}>
+        <ProjectContentItem order={3}>
           <h2>Purpose and Inspiration</h2>
           <p>
-            <br />
             The Harmonii Music App stands as the culmination of my internship
             journey at KoçSistem, primarily aimed at fostering my expertise in
             backend development using C# with ASP.NET while gaining practical
@@ -151,11 +164,9 @@ const ProjectHarmonii = () => {
             technologies within the Azure ecosystem, driving my exploration and
             growth as a developer while contributing to a functional and
             immersive music app experience.
-            <br />
           </p>
-          {/* <img className="itemImage" src={Harmonii1} alt="purposeImg" /> */}
         </ProjectContentItem>
-        <ProjectContentItem order={3}>
+        <ProjectContentItem order={4}>
           <h2>Technologies</h2>
           <p>
             The Harmonii Music App implements a robust tech stack to power its
@@ -171,20 +182,21 @@ const ProjectHarmonii = () => {
             environment for functionality and performance optimization.
             Additionally, the integration of Firebase Cloud Storage enhances the
             app's capabilities by efficiently storing and managing audio files.
-            <br />
           </p>
-          <SkillsList>
-            {techsUsed.map((skill, index) => (
-              <SkillItem
-                skill={skillsData[skill]}
-                key={index}
-                index={index}
-                size="small"
-              />
-            ))}
-          </SkillsList>
+          </ProjectContentItem>
+          <ProjectContentItem order={5}>
+            <SkillsList>
+              {techsUsed.map((skill, index) => (
+                <SkillItem
+                  skill={skillsData[skill]}
+                  key={index}
+                  index={index}
+                  size="small"
+                />
+              ))}
+            </SkillsList>
         </ProjectContentItem>
-        <ProjectContentItem order={4}>
+        <ProjectContentItem order={6}>
           <h2>Challenges and Problems</h2>
           <p>
             Navigating authentication and authorization complexities, the
@@ -195,10 +207,9 @@ const ProjectHarmonii = () => {
             fortified user access control but also streamlined the management
             and playback of audio content, enhancing the overall user experience
             within the application.
-            <br />
           </p>
         </ProjectContentItem>
-        <ProjectContentItem order={5}>
+        <ProjectContentItem order={7}>
           <h2>Learnings</h2>
           <p>
             During the Harmonii Music App's development, I honed my backend
@@ -213,25 +224,27 @@ const ProjectHarmonii = () => {
             the crucial synergy between frontend and backend components for
             cohesive application development.
           </p>
-          <img className="itemImage" src={HarmoniiSummary} alt="summaryGIF" />
-          <LinksWrapper>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://harmoniiserver20240101185412.azurewebsites.net/login"
-            >
-              Try it now
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/berkaysson/harmonii-music-app"
-            >
-              GitHub Repo
-            </a>
-          </LinksWrapper>
+          </ProjectContentItem>
+          <ProjectContentItem order={8}>
+            <img className="itemImage" src={HarmoniiSummary} alt="summaryGIF" />
+            <LinksWrapper>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://harmoniiserver20240101185412.azurewebsites.net/login"
+              >
+                Try it now
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/berkaysson/harmonii-music-app"
+              >
+                GitHub Repo
+              </a>
+            </LinksWrapper>
         </ProjectContentItem>
-        <ProjectContentItem order={6}>
+        <ProjectContentItem order={9}>
           <h2>Summary</h2>
           <ul>
             <li className="summaryListItem">

@@ -31,6 +31,11 @@ const ProjectDhondtAppWrapper = styled.div`
   box-shadow: rgba(190,229,242, 0.45) 0px 5px 8px -5px;
 
   @media (max-width: 768px) {
+    padding: .7rem 1.2rem;
+  }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
   }
 `;
 
@@ -60,6 +65,7 @@ const ProjectHeaderWrapper = styled.header`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -97,9 +103,11 @@ const ProjectDhondtApp = () => {
             Election, allowing users to simulate this election on a
             district-by-district basis.
           </p>
+          </ProjectContentItem>
+          <ProjectContentItem order={2}>
           <img src={DhondtAppLaunch} alt="projectOverviewImg" className="itemImage" />
         </ProjectContentItem>
-        <ProjectContentItem order={2}>
+        <ProjectContentItem order={3}>
           <h2>Purpose and Inspiration</h2>
           <p>
             The inspiration behind the D'Hondt System Calculator project lies in
@@ -112,7 +120,7 @@ const ProjectDhondtApp = () => {
             decision-making in electoral systems.
           </p>
         </ProjectContentItem>
-        <ProjectContentItem order={3}>
+        <ProjectContentItem order={4}>
           <h2>Technologies</h2>
           <p>
             The D'Hondt System Calculator is built using React for the user
@@ -124,6 +132,8 @@ const ProjectDhondtApp = () => {
             lines, stored in JSON format, allowing users to simulate 2023
             elections in Turkey with a wealth of real-world data.
           </p>
+          </ProjectContentItem>
+          <ProjectContentItem order={5}>
           <SkillsList>
             {techsUsed.map((skill, index) => (
               <SkillItem
@@ -135,7 +145,7 @@ const ProjectDhondtApp = () => {
             ))}
           </SkillsList>
         </ProjectContentItem>
-        <ProjectContentItem order={4}>
+        <ProjectContentItem order={6}>
           <h2>Challenges and Problems</h2>
           <p>
             Creating a precise algorithm for the D'Hondt system was the initial
@@ -159,7 +169,7 @@ const ProjectDhondtApp = () => {
             application.
           </p>
         </ProjectContentItem>
-        <ProjectContentItem order={5}>
+        <ProjectContentItem order={7}>
           <h2>Learnings</h2>
           <p>
             This project enabled me to the conversion of CSV files into
@@ -170,7 +180,7 @@ const ProjectDhondtApp = () => {
             skills for solving real-world software development challenges.
           </p>
         </ProjectContentItem>
-        <ProjectContentItem order={6}>
+        <ProjectContentItem order={8}>
           <h2>Summary</h2>
           <ul>
             <li>

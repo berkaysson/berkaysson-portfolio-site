@@ -31,7 +31,7 @@ const AnchorWrapper = styled.a`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <span>©Berkay Sonel - 2023</span>
+      <span>©Berkay Sonel - 2024</span>
       <AnchorsContainer>
         <AnchorWrapper
           target="_blank"

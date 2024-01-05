@@ -19,6 +19,10 @@ const ContactWrapper = styled.div`
   @media (max-width: 1000px) {
     padding: ${({ theme }) => theme.sizes.md};
   }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
+  }
 `;
 
 const ContactFormWrapper = styled.form`

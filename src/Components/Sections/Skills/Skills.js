@@ -25,6 +25,10 @@ const SkillsWrapper = styled.div`
     flex-direction: column;
     height: auto;
   }
+
+  @media (max-width: 420px){
+    padding: .5rem 1rem;
+  }
 `;
 
 const Skills = () => {
