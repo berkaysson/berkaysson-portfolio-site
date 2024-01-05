@@ -59,6 +59,31 @@ export const skillsData = {
     iconSrc:
       "https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png",
   },
+  aspNet: {
+    name: "ASP.Net Core",
+    iconSrc:
+      "https://s2kdesign.com/wp-content/uploads/2016/11/aspnetcore-e1479370203357-417x300.png",
+  },
+  azure: {
+    name: "Azure",
+    iconSrc:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+  },
+  mongoDb: {
+    name: "MongoDb",
+    iconSrc: 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+  },
+  msSql: {
+    name: "MsSQL",
+    iconSrc: 
+    "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
+  },
+  axios: {
+    name: "Axios",
+    iconSrc: 
+    "https://tannerfriedman.com/wp-content/uploads/2022/08/91-913031_axios-axios-logo-hd-png-download.png"
+  }
 };
 
 export const skillsSectionData = [
@@ -69,4 +94,6 @@ export const skillsSectionData = [
   "materialUI",
   "git",
   "styledComponents",
+  "aspNet",
+  "nodeJS"
 ];
