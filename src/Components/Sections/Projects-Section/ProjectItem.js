@@ -67,7 +67,7 @@ const MainImg = styled.img`
 
   &:hover {
     filter: contrast(1.1);
-    transform: scale(1.01);
+    transform: scale(1.05);
     cursor: pointer;
   }
 `;
@@ -130,6 +130,11 @@ const ProjectLogo = styled.div`
       height: 27px;
     }
   }
+
+  img{
+    height: 100px;
+    width: 100px;
+  }
 `;
 
 const ProjectContent = styled.div`
@@ -170,6 +175,7 @@ const ProjectItem = ({
   contentRef,
   imgPath,
   logoComponent,
+  logoImg
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -201,7 +207,7 @@ const ProjectItem = ({
             id={`${itemName}Content`}
           >
             <ProjectLogo style={{ pointerEvents: "none" }}>
-              {logoComponent}
+              {logoComponent ? logoComponent : logoImg ? <img src={logoImg} alt="project-logo" /> : ""}
             </ProjectLogo>
             <ProjectContent style={{ pointerEvents: "none" }}>
               {projectContents[itemName].description}

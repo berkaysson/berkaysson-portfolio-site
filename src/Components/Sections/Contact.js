@@ -7,7 +7,7 @@ const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${({ theme }) => theme.sectionPadding};
-  gap: ${({ theme }) => theme.sizes.lg};
+  gap: ${({ theme }) => theme.sizes.sl};
   width: 100%;
   align-items: center;
 
@@ -25,7 +25,7 @@ const ContactFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 3rem;
+  gap: 1rem;
   max-width: 1000px;
 
   label {
@@ -33,7 +33,7 @@ const ContactFormWrapper = styled.form`
     flex-direction: column;
     width: 100%;
     gap: ${({ theme }) => theme.sizes.xsl};
-    font-size: 16px;
+    font-size: 15px;
 
     input,
     textarea {

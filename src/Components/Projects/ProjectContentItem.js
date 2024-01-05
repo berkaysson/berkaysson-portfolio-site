@@ -73,7 +73,7 @@ const ProjectContentItemWrapper = styled.div`
 
 const ProjectContentItem = ({ order, children }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, amount: 0 });
 
   return (
     <ProjectContentItemWrapper order={order} ref={ref} inView={inView}>

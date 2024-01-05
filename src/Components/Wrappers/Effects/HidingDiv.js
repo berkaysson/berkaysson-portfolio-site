@@ -14,9 +14,6 @@ const Container = styled.div`
     rgba(60, 94, 115, 0.6) 0%,
     rgba(0, 0, 0, 0) ${({ inViewPercentage }) => inViewPercentage - 30}%
   );
-  padding-top: 40px;
-  margin-top: -32px;
-  border-radius: 20px;
 `;
 
 const HidingDivWrapper = styled.div`
@@ -24,6 +21,10 @@ const HidingDivWrapper = styled.div`
   position: relative;
   transform: translateY(${({ yValue }) => yValue}%);
   transition: transform 0.3s ease-out;
+
+  @media(max-width: 768px){
+    transform: none;
+  }
 `;
 
 const HidingDiv = ({ children, id }) => {

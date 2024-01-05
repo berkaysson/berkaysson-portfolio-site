@@ -49,7 +49,7 @@ const ContactButton = () => {
       onMouseLeave={() => setEmailTextSpanY(-70)}
       onClick={clickHandler}
     >
-      Let's Connect
+      Click to Copy My Email
       <motion.span
         transition={{ease: "backInOut"}}
         animate={{

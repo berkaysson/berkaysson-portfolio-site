@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 const AvatarImageWrapper = styled.img`
-  --s: 400px; /* image size */
+  --s: 300px; /* image size */
   @media (max-width: 768px) {
     --s: 280px;
   }
@@ -39,7 +39,7 @@ const AvatarImageWrapper = styled.img`
   transition-delay: 0.1s;
 
   &:hover {
-    --f: 1.5;
+    --f: 1.3;
   }
 `;
 

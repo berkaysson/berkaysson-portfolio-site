@@ -21,11 +21,11 @@ export const theme = {
     theme: COLORS.theme
   },
   sizes: {
-    xsl: "8px",
-    sl: "12px",
-    md: "16px",
-    lg: "24px",
-    xlg: "34px",
+    xsl: "10px",
+    sl: "14px",
+    md: "18px",
+    lg: "25px",
+    xlg: "36px",
   },
   sectionPadding: "1rem 2rem",
   borders: {
@@ -36,7 +36,7 @@ export const theme = {
     circular: "50%",
   },
   transitions: {
-    main: "filter 0.2s ease, transform 0.2s ease, opacity 0.2s ease",
+    main: "all cubic-bezier( 0, 0.7, 0.2, 1 ) .6s",
   },
   boxShadows: {
     neumorphism: {
