@@ -15,7 +15,7 @@ const ProjectContentItemWrapper = styled.div`
   transform: scale(${({ inView }) => (inView ? 1 : 0)});
   opacity: ${({ inView }) => (inView ? 1 : 0)};
   filter: blur(${({ inView }) => (inView ? 0 : "3px")});
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
   max-width: 1300px;
 
   &:last-child {

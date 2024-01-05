@@ -9,7 +9,8 @@ const SkillsWrapper = styled.div`
   justify-content: space-between;
   padding: ${({ theme }) => theme.sectionPadding};
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
+  padding: 24px;
   padding-bottom: 10%;
   border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};

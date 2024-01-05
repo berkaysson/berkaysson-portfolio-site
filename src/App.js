@@ -15,7 +15,7 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const MainWrapper = styled.main`

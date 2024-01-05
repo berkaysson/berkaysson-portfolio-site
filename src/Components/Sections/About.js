@@ -9,7 +9,7 @@ const AboutWrapper = styled.div`
   gap: 2rem;
   padding-bottom: 5%;
   padding-top: 150px;
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const AboutHeader = styled.header`

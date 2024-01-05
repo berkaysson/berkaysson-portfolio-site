@@ -10,7 +10,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.sizes.lg};
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
   width: 100%;
   padding-bottom: 10%;
 

@@ -23,7 +23,7 @@ const ProjectDhondtAppContainer = styled(motion.div)`
 
 const ProjectDhondtAppWrapper = styled.div`
   padding: ${({ theme }) => theme.sectionPadding};
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: ${({ theme }) => theme.colors.black};
   padding-bottom: 3rem;
   border-bottom-left-radius: ${({ theme }) => theme.borders.roundedLg};
   border-bottom-right-radius: ${({ theme }) => theme.borders.roundedLg};

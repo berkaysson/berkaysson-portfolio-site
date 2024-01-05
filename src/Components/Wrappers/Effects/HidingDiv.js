@@ -11,9 +11,12 @@ const Container = styled.div`
   background: rgb(60, 94, 115);
   background: radial-gradient(
     circle,
-    rgba(60, 94, 115, 0.4) 0%,
-    rgba(20, 26, 38, 1) ${({ inViewPercentage }) => inViewPercentage - 10}%
+    rgba(60, 94, 115, 0.6) 0%,
+    rgba(0, 0, 0, 0) ${({ inViewPercentage }) => inViewPercentage - 30}%
   );
+  padding-top: 40px;
+  margin-top: -32px;
+  border-radius: 20px;
 `;
 
 const HidingDivWrapper = styled.div`
