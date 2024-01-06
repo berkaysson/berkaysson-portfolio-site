@@ -22,6 +22,10 @@ const MouseFollowerWrapper = styled.div`
       : "scale(0.5) translate(-50%, -70%)"};
   color: ${({ mouseFollowerStyle }) => mouseFollowerStyle.color};
 
+  @media(max-width: 768px){
+    display: none;
+  }
+
   &::before {
     transition: background-color 0.3s;
     position: absolute;

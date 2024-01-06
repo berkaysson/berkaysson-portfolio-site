@@ -13,21 +13,17 @@ export const NavigationWrapper = styled.div`
     svg {
       margin: auto ${({ theme }) => theme.sizes.md};
       width: 90px;
-
       @media (max-width: 475px) {
       }
     }
   }
-
+  
   @media (max-width: 475px) {
-    justify-content: space-between;
-  }
-
-  @media (max-width: 425px) {
     flex-direction: column;
     padding: 1rem;
     height: auto;
     gap: 0.8rem;
+    justify-content: space-between;
   }
 `;
 
@@ -51,7 +47,7 @@ export const NavigationMenuWrapper = styled.nav`
   }
 
   @media (max-width: 475px) {
-    margin-left: 1rem;
+    /* margin-left: .5rem; */
   }
 
   @media (max-width: 425px) {

@@ -102,7 +102,7 @@ const ProjectContentWrapper = styled(Link)`
 
   @media (max-width: 1024px) {
     padding: ${({ theme }) => theme.sizes.lg};
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
 
   @media (max-width: 425px) {
