@@ -47,8 +47,8 @@ const AboutHeader = styled.header`
     height: auto;
   }
 
-  @media (max-width: 420px){
-    padding: .5rem 1rem;
+  @media (max-width: 420px) {
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -63,9 +63,9 @@ const AboutSection = styled.section`
 
   h3 {
     font-size: 2rem;
-      
-    @media(max-width: 330px){
-     font-size: 1.7rem; 
+
+    @media (max-width: 330px) {
+      font-size: 1.7rem;
     }
   }
 
@@ -84,8 +84,46 @@ const AboutSection = styled.section`
     height: auto;
   }
 
-  @media (max-width: 420px){
-    padding: .5rem 1rem;
+  @media (max-width: 420px) {
+    padding: 0.5rem 1rem;
+  }
+`;
+
+const ResumeSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: ${({ theme }) => theme.sizes.md};
+  padding: ${({ theme }) => theme.sectionPadding};
+
+  div{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  a{
+    text-decoration: underline;
+    font-size: 20px;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+
+    @media (max-width: 330px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -132,6 +170,25 @@ const About = () => {
         </div>
       </AboutSection>
       <ContactButton />
+      <ResumeSection>
+        <h3>My Resumes</h3>
+        <div>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:61d87bfb-95a9-4072-8a7e-cbf8e0107a1b"
+            target="_blank"
+            rel="noreferrer"
+          >
+            English
+          </a>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:4346f07f-37f1-4a6e-ba60-457a9ba47756"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Turkish
+          </a>
+        </div>
+      </ResumeSection>
     </AboutWrapper>
   );
 };
