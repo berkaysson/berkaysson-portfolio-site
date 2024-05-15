@@ -7,6 +7,11 @@ export const skillsData = {
     iconSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
+  typeScript: {
+    name: "TypeScript",
+    iconSrc:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  },
   html: {
     name: "HTML",
     iconSrc:
@@ -62,7 +67,7 @@ export const skillsData = {
   aspNet: {
     name: "ASP.Net Core",
     iconSrc:
-      "https://s2kdesign.com/wp-content/uploads/2016/11/aspnetcore-e1479370203357-417x300.png",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original-wordmark.svg",
   },
   azure: {
     name: "Azure",
@@ -83,11 +88,17 @@ export const skillsData = {
     name: "Axios",
     iconSrc: 
     "https://tannerfriedman.com/wp-content/uploads/2022/08/91-913031_axios-axios-logo-hd-png-download.png"
+  },
+  tailwindcss: {
+    name: "Tailwindcss",
+    iconSrc: 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
   }
 };
 
 export const skillsSectionData = [
   "javaScript",
+  "typeScript",
   "html",
   "css",
   "react",
@@ -95,5 +106,5 @@ export const skillsSectionData = [
   "git",
   "styledComponents",
   "aspNet",
-  "nodeJS"
+  "tailwindcss"
 ];
