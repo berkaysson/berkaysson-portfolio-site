@@ -174,14 +174,14 @@ const About = () => {
         <h3>My Resumes</h3>
         <div>
           <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:61d87bfb-95a9-4072-8a7e-cbf8e0107a1b"
+            href="https://www.hostize.com/v/vugRUg1b-n/enberkay-sonel-pdf-berkay-sonel"
             target="_blank"
             rel="noreferrer"
           >
             English
           </a>
           <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:4346f07f-37f1-4a6e-ba60-457a9ba47756"
+            href="https://www.hostize.com/v/eiHr3m5XFa/trberkay-sonel-pdf"
             target="_blank"
             rel="noreferrer"
           >
