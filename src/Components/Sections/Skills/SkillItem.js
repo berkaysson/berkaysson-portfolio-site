@@ -18,6 +18,7 @@ const SkillItemWrapper = styled.li`
   &:hover {
     span {
       opacity: 1;
+      top: 50%;
     }
     img {
       filter: blur(10px) contrast(1.4);
@@ -34,17 +35,17 @@ const SkillItemWrapper = styled.li`
   }
   span {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    opacity: 0;
-    transition: opacity 0.2s;
+    opacity: 0.4;
+    font-style: italic;
+    transition: opacity 0.5s, top 0.4s;
     pointer-events: none;
-    color: ${({ theme }) => theme.colors.theme};
+    color: ${({ theme }) => theme.colors.lightest};
     text-shadow: 1px 1px 1px ${({ theme }) => theme.colors.darker};
-    font-size: ${({ size, theme }) =>
-      size === "normal" ? theme.sizes.md : theme.sizes.sl};
+    font-size: ${({ theme }) => theme.sizes.sl};
   }
 `;
 
