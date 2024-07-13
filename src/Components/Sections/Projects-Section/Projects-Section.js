@@ -23,8 +23,8 @@ const ProjectsWrapper = styled.div`
   @media (max-width: 1000px) {
   }
 
-  @media (max-width: 420px){
-    padding: .5rem 1rem;
+  @media (max-width: 420px) {
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -52,19 +52,18 @@ const ProjectsGithubLink = styled.a`
     }
   }
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
     border-style: solid;
-    span{
-      svg{
+    span {
+      svg {
         transform: rotate(360deg);
         color: ${({ theme }) => theme.colors.theme};
       }
-      
     }
   }
 
-  @media(max-width: 578px){
+  @media (max-width: 578px) {
     font-size: 1rem;
     flex-direction: column;
     gap: 0.5rem;
@@ -83,7 +82,7 @@ const Projects = ({
   return (
     <ProjectsWrapper id="projects">
       <h1>Projects</h1>
-      <ProjectItem 
+      <ProjectItem
         itemName={"harmonii"}
         siteLink={"https://harmoniiserver20240101185412.azurewebsites.net/"}
         isMouseFollowerOn={screenWidth <= 1024}
@@ -111,6 +110,13 @@ const Projects = ({
         imgPath={dhondtImg}
         logoComponent={""}
       />
+      <ProjectsGithubLink
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.paygenclikdernegi.org/"
+      >
+        Also click for my voluntarily freelance project for Pay Genclik Dernegi
+      </ProjectsGithubLink>
       <ProjectsGithubLink
         target="_blank"
         rel="noopener noreferrer"
